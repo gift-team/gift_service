@@ -27,6 +27,11 @@
     background: #C4C4C4;
     box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
+    outline: none;
+}
+
+.regForm button {
+    outline: none;
 }
 
 .regForm input::placeholder{
