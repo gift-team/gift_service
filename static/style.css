@@ -1,0 +1,130 @@
+
+
+.container{
+    max-width: 1440px;
+    padding: 0;
+}
+
+.registration{
+    margin: auto;
+    padding-top: 85px;
+    padding-bottom: 131px;
+    background: #FFFFFF;
+}
+
+.regHeader{
+    max-width: 100%;
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 5.7vw;
+    color: #535452;
+}
+
+.regForm input{
+    margin: 20px 0;
+    height: 60px;
+    background: #C4C4C4;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+}
+
+.regForm input::placeholder{
+    color: white;
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: medium;
+    line-height: normal;
+}
+
+@media (min-width: 768px) {
+    .regBtn{
+        font-size: 2vw!important;
+    }
+}
+
+@media (max-width: 700px) {
+    .regForm input{
+        height: 50px;
+    }
+    .regBtn{
+        height: 50px!important;
+    }
+}
+
+.regBtn{
+    height: 60px;
+    background: #E4444C;
+    border-radius: 20px;
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 3.5vw;
+    line-height: normal;
+    color: #FFFFFF;
+}
+
+.imgFooter{
+    position: absolute;
+    z-index: 100;
+    bottom: 0px;
+}
+
+.footer{
+    position: relative;
+    min-height: 277px;
+    background: #F7434C;
+    clear: both;
+}
+
+.footerMenu{
+    margin-top: 60px;
+    padding: 0;
+}
+
+.footerMenu p{
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: normal;
+    color: #FFFFFF;
+}
+
+.footerBottom{
+    clear: both;
+}
+
+@media (max-width: 768px) {
+    .footerMenu p{
+        font-size: 15px;
+        margin: 10px!important;
+    }
+    .copyright{
+        font-size: 15px!important;
+        padding: 10px!important;
+    }
+    .social i{
+        padding-top: 10px!important;
+    }
+}
+
+.copyright{
+    padding-top: 140px;
+    padding-left: 150px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: normal;
+    color: #FFFFFF;
+}
+
+.social i{
+    font-size: 60px;
+    color: #FFFFFF;
+    padding-left: 31px;
+    padding-right: 31px;
+    padding-top: 104px;
+}
