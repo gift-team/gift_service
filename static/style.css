@@ -78,7 +78,6 @@
     font-weight: normal;
     font-size: 2.5vw;
     line-height: normal;
-
     color: #535452;
 }
 
@@ -89,7 +88,6 @@
     font-weight: 800;
     font-size: 3.5vw;
     line-height: normal;
-
     color: #535452;
 }
 
@@ -123,9 +121,8 @@
     font-family: Montserrat, sans-serif;
     font-style: normal;
     font-weight: bold;
-    font-size: 72px;
+    font-size: 7vw;
     line-height: normal;
-
     color: #535452;
 }
 
@@ -140,7 +137,7 @@
     font-size: 36px;
     line-height: normal;
     color: #FFFFFF;
-    margin-top: 400px;
+    margin-top: 113%;
 }
 
 .servicesItems span{
@@ -158,26 +155,28 @@
 
 .leftItem{
     background: url("images/LIST.png"), no-repeat;
+    background-size: contain;
     margin: auto;
-    padding: 20px 0;
     min-height: 591px;
-    min-width: 360px;
+    /*min-width: 360px;*/
     max-width: 360px;
 }
 
 .middleItem{
     background: url("images/CART.png"), no-repeat;
+    background-size: contain;
     margin: auto;
     min-height: 591px;
-    min-width: 360px;
+    /*min-width: 360px;*/
     max-width: 360px;
 }
 
 .rightItem{
     background: url("images/FRIENDS.png"), no-repeat;
+    background-size: contain;
     margin: auto;
     min-height: 591px;
-    min-width: 360px;
+    /*min-width: 360px;*/
     max-width: 360px;
 }
 
@@ -245,9 +244,6 @@
         height: 40px;
         padding: 0;
     }
-}
-{
-
 }
 
 @media (max-width: 992px) {
