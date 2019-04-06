@@ -115,6 +115,7 @@
 
 .ourServices{
     margin-top: 170px;
+    margin-bottom: 170px;
 }
 
 .servicesHeader{
@@ -178,6 +179,47 @@
     min-height: 591px;
     /*min-width: 360px;*/
     max-width: 360px;
+}
+
+.aboutUs{
+    background: url("images/aboutBG.png"), no-repeat;
+    background-size: cover;
+    min-height: 1024px;
+    padding-bottom: 50px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.aboutUsHeader{
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 7vw;
+    line-height: normal;
+    color: #535452;
+    /*max-height: 100px;*/
+}
+
+.aboutLeft h3, .aboutRight h3{
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: normal;
+    color: #535452;
+}
+
+.aboutLeft span, .aboutRight span{
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 24px;
+    line-height: normal;
+    color: #535452;
+}
+
+.aboutUs img{
+    width: 100%;
 }
 
 .registration{
