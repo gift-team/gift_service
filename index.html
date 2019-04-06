@@ -15,12 +15,76 @@
 </head>
 <body>
 <div class="container text-center">
+    <div class="title">
+        <div class="titleMenu d-lg-flex">
+            <div class="pos-f-t d-sm-none">
+                <div class="collapse" id="navbarToggleExternalContent">
+                    <div class="bgNav">
+                        <ul class="navbar-nav navGroup">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">КОНТАКТЫ</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">ВОЙТИ</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">РЕГИСТРАЦИЯ</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <nav class="navbar navbar-light bgNav">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </nav>
+            </div>
+            <div class="logoTitle col-lg-4 col-12 d-flex">
+                <img src="static/images/LOGO.png" alt="">
+            </div>
+            <div class="menu col-lg-8 col-12 justify-content-around d-none d-sm-flex align-items-center">
+                <span>КОНТАКТЫ</span>
+                <span>ВОЙТИ</span>
+                <button class="regBtnTitle col-sm-4">РЕГИСТРАЦИЯ</button>
+            </div>
+        </div>
+        <div class="mainTitle d-sm-flex p-3">
+            <div class="mainLeft d-non p-3 text-sm-left col-12 col-sm-5 d-flex flex-column justify-content-center">
+                <h1 class="d-none d-sm-block">GIFT SERVICE</h1>
+                <span class="d-none d-sm-block">подарки каждому</span>
+                <button class="m-auto m-sm-0 giftBtn col-3 col-sm-11 col-lg-5">ПОДАРИТЬ</button>
+            </div>
+            <div class="mainRight col-12 col-sm-7">
+                <img src="static/images/SOLAR2.png" alt="no image">
+            </div>
+        </div>
+    </div>
+    <div class="ourServices">
+        <div class="servicesHeader text-center">
+            <span>НАШИ СЕРВИСЫ</span>
+        </div>
+        <div class="servicesItems d-flex flex-column flex-lg-row justify-content-around">
+            <div class="col-12 col-md-4 leftItem text-center d-flex flex-column align-items-center">
+                <h3>Списки</h3>
+                <span>Создавайте списки желаний</span>
+            </div>
+            <div class="col-12 col-md-4 middleItem text-center d-flex flex-column align-items-center">
+                <h3>Покупки</h3>
+                <span>Осуществляйте желания других и дарите подарки</span>
+            </div>
+            <div class="col-12 col-md-4 rightItem text-center d-flex flex-column align-items-center">
+                <h3>Друзья</h3>
+                <span>Ищите друзей по интересам и желаниям</span>
+            </div>
+        </div>
+    </div>
     <div class="registration">
         <div class="regHeader">
             <p>РЕГИСТРАЦИЯ</p>
         </div>
         <div class="regForm d-flex">
             <form class="text-center col-8 col-md-6 m-auto" action="#">
+                <input placeholder="Имя пользователя" class="email col-12" type="text">
                 <input placeholder="E-mail" class="email col-12" type="text">
                 <input placeholder="Пароль:" class="password1 col-12" type="text">
                 <input placeholder="Повторите пароль:" class="password2 col-12" type="text">
@@ -41,8 +105,10 @@
         <div class="footerBottom text-center d-inline-block d-md-flex">
             <div class="copyright col-12 col-md-6">&copy; 2018-2019 «GiftService»</div>
             <div class="social col-12 col-md-6 align-content-center justify-content-center justify-content-md-end">
-                <i class="fab fa-instagram"></i>
-                <i class="fab fa-facebook-square"></i>
+                <!--<i class="fab fa-instagram"></i>-->
+                <!--<i class="fab fa-facebook-square"></i>-->
+                <img src="static/images/instagram.png" alt="">
+                <img src="static/images/facebook.png" alt="">
             </div>
         </div>
     </div>

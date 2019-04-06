@@ -5,6 +5,182 @@
     padding: 0;
 }
 
+.title{
+    margin: auto;
+    width: 100%;
+}
+
+.titleMenu{
+    width: 100%;
+}
+
+.bgNav{
+    background: #7F2BC1;
+}
+
+.navbar-toggler{
+    background: white;
+}
+
+.navGroup .nav-link{
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: normal;
+    color: white;
+}
+
+.logoTitle img{
+    width: 100%;
+    height: 100%;
+    max-width: 346px;
+    margin: auto;
+}
+
+.regBtnTitle{
+    height: 60px;
+    background: #7F2BC1;
+    border-radius: 20px;
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 3.5vw;
+    line-height: normal;
+    color: #FFFFFF;
+    outline: none!important;
+}
+
+.logoTitle{
+    padding: 20px 40px;
+}
+
+.menu{
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: normal;
+    color: #7F2BC1;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 216px;
+}
+
+.mainTitle{
+    padding-top: 40px;
+}
+
+.mainLeft{
+    padding-left: 50px;
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 2.5vw;
+    line-height: normal;
+
+    color: #535452;
+}
+
+.mainLeft h1{
+    margin: 0;
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 3.5vw;
+    line-height: normal;
+
+    color: #535452;
+}
+
+.mainLeft span{
+    padding-bottom: 20px;
+}
+
+.giftBtn{
+    max-height: 60px;
+    margin-top: 20px;
+    background: #7F2BC1;
+    border-radius: 20px;
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 2.5vw;
+    line-height: normal;
+    color: #FFFFFF;
+    outline: none!important;
+}
+
+.mainRight img{
+    width: 100%;
+}
+
+.ourServices{
+    margin-top: 170px;
+}
+
+.servicesHeader{
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 72px;
+    line-height: normal;
+
+    color: #535452;
+}
+
+.servicesItems{
+    margin-top: 46px;
+}
+
+.servicesItems h3{
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: normal;
+    color: #FFFFFF;
+    margin-top: 400px;
+}
+
+.servicesItems span{
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 24px;
+    line-height: normal;
+    text-align: center;
+    color: #FFFFFF;
+    max-width: 229px;
+}
+
+.servicesItems
+
+.leftItem{
+    background: url("images/LIST.png"), no-repeat;
+    margin: auto;
+    padding: 20px 0;
+    min-height: 591px;
+    min-width: 360px;
+    max-width: 360px;
+}
+
+.middleItem{
+    background: url("images/CART.png"), no-repeat;
+    margin: auto;
+    min-height: 591px;
+    min-width: 360px;
+    max-width: 360px;
+}
+
+.rightItem{
+    background: url("images/FRIENDS.png"), no-repeat;
+    margin: auto;
+    min-height: 591px;
+    min-width: 360px;
+    max-width: 360px;
+}
+
 .registration{
     margin: auto;
     padding-top: 85px;
@@ -30,10 +206,6 @@
     outline: none;
 }
 
-.regForm button {
-    outline: none;
-}
-
 .regForm input::placeholder{
     color: white;
     font-family: Montserrat, sans-serif;
@@ -43,24 +215,9 @@
     line-height: normal;
 }
 
-@media (min-width: 768px) {
-    .regBtn{
-        font-size: 2vw!important;
-    }
-}
-
-@media (max-width: 700px) {
-    .regForm input{
-        height: 50px;
-    }
-    .regBtn{
-        height: 50px!important;
-    }
-}
-
 .regBtn{
     height: 60px;
-    background: #E4444C;
+    background: #7F2BC1;
     border-radius: 20px;
     font-family: Montserrat, sans-serif;
     font-style: normal;
@@ -68,18 +225,62 @@
     font-size: 3.5vw;
     line-height: normal;
     color: #FFFFFF;
+    outline: none!important;
+}
+
+@media (min-width: 768px) {
+    .regBtn{
+        font-size: 2vw!important;
+    }
+    .regBtnTitle{
+        font-size: 1.5vw!important;
+    }
+    .giftBtn{
+        font-size: 1.5vw!important;
+    }
+}
+
+@media (max-width: 576px) {
+    .giftBtn{
+        height: 40px;
+        padding: 0;
+    }
+}
+{
+
+}
+
+@media (max-width: 992px) {
+    .menu{
+        padding: 0!important;
+    }
+    .regForm input{
+        height: 40px!important;
+    }
+    .regBtn{
+        height: 40px!important;
+        font-size: 2.5vw!important;
+    }
+    .regBtnTitle{
+        height: 40px!important;
+        font-size: 2.5vw!important;
+    }
+    .giftBtn{
+        max-height: 40px!important;
+        font-size: 2.5vw!important;
+    }
 }
 
 .imgFooter{
     position: absolute;
     z-index: 100;
-    bottom: 0px;
+    bottom: 0;
 }
 
 .footer{
     position: relative;
     min-height: 277px;
-    background: #F7434C;
+    background: #7F2BC1;
     clear: both;
 }
 
@@ -116,9 +317,9 @@
 }
 
 .copyright{
-    padding-top: 140px;
+    padding-top: 126px;
     padding-left: 150px;
-    font-family: Montserrat;
+    font-family: Montserrat, sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 24px;
@@ -126,10 +327,10 @@
     color: #FFFFFF;
 }
 
-.social i{
+.social img{
     font-size: 60px;
     color: #FFFFFF;
     padding-left: 31px;
     padding-right: 31px;
-    padding-top: 104px;
+    padding-top: 90px;
 }
