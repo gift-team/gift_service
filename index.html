@@ -120,11 +120,26 @@
         </div>
         <div class="regForm d-flex">
             <form class="text-center col-8 col-md-6 m-auto" action="#">
-                <input placeholder="Имя пользователя" class="email col-12" type="text">
-                <input placeholder="E-mail" class="email col-12" type="text">
+                <input placeholder="Имя:" class="email col-12" type="text">
+                <input placeholder="Фамилия:" class="email col-12" type="text">
+                <input placeholder="E-mail:" class="email col-12" type="text">
                 <input placeholder="Пароль:" class="password1 col-12" type="text">
                 <input placeholder="Повторите пароль:" class="password2 col-12" type="text">
-                <button class="regBtn col-8 col-md-6 ">РЕГИСТРАЦИЯ</button>
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="customCheck1">
+                    <label class="custom-control-label" for="customCheck1">Подтверждаю обработку персональных данных</label>
+                </div>
+                <div class="lendBts p-0 col-12 flex-column flex-md-row d-flex justify-content-md-between align-items-center">
+                    <button class="regBtn col-8 col-md-6 ">РЕГИСТРАЦИЯ</button>
+                    <div class=" col-12 col-md-4 p-2 p-md-0 d-flex justify-content-center">
+                        <a href="#">
+                            <img src="static/images/VK.png" alt="">
+                        </a>
+                        <a href="#">
+                            <img src="static/images/G+.png" alt="">
+                        </a>
+                    </div>
+                </div>
             </form>
         </div>
     </div>

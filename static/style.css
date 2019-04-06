@@ -247,6 +247,27 @@
     outline: none;
 }
 
+
+.check span{
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: normal;
+    text-align: center;
+    color: #535452;
+}
+
+.regForm label{
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    text-align: center;
+    color: #535452;
+    margin-bottom: 20px;
+}
+
 .regForm input::placeholder{
     color: white;
     font-family: Montserrat, sans-serif;
@@ -267,6 +288,10 @@
     line-height: normal;
     color: #FFFFFF;
     outline: none!important;
+}
+
+.lendBts img{
+    width: 100%;
 }
 
 @media (min-width: 768px) {
