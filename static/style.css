@@ -154,7 +154,7 @@
 }
 
 .leftItem{
-    background: url("images/LIST.png"), no-repeat;
+    background: url("images/LIST.svg"), no-repeat;
     background-size: contain;
     margin: auto;
     min-height: 591px;
@@ -163,7 +163,7 @@
 }
 
 .middleItem{
-    background: url("images/CART.png"), no-repeat;
+    background: url("images/CART.svg"), no-repeat;
     background-size: contain;
     margin: auto;
     min-height: 591px;
@@ -172,7 +172,7 @@
 }
 
 .rightItem{
-    background: url("images/FRIENDS.png"), no-repeat;
+    background: url("images/FRIENDS.svg"), no-repeat;
     background-size: contain;
     margin: auto;
     min-height: 591px;
@@ -181,7 +181,7 @@
 }
 
 .aboutUs{
-    background: url("images/aboutBG.png"), no-repeat;
+    background: url("images/aboutBG.svg"), no-repeat;
     background-size: cover;
     min-height: 700px;
     max-width: 100%;
