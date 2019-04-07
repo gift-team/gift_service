@@ -3,6 +3,7 @@
 .container{
     max-width: 1440px;
     padding: 0;
+    margin: auto;
 }
 
 .title{
@@ -185,6 +186,8 @@
     background: url("images/aboutBG.png"), no-repeat;
     background-size: cover;
     min-height: 1024px;
+    max-width: 100%;
+    margin: 0;
     padding-bottom: 50px;
     padding-left: 30px;
     padding-right: 30px;
@@ -335,15 +338,16 @@
 }
 
 .imgFooter{
-    position: absolute;
-    z-index: 100;
-    bottom: 0;
+    position: relative;
+    top: 83px;
+    left: 120px;
 }
 
 .footer{
     position: relative;
     min-height: 277px;
-    background: #7F2BC1;
+    padding-bottom: 30px;
+    background: rgba(151, 77, 208, 0.65);
     clear: both;
 }
 
@@ -380,8 +384,7 @@
 }
 
 .copyright{
-    padding-top: 126px;
-    padding-left: 150px;
+    padding-top: 105px;
     font-family: Montserrat, sans-serif;
     font-style: normal;
     font-weight: normal;
