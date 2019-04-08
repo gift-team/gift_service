@@ -181,7 +181,7 @@
 }
 
 .aboutUs{
-    background: url("images/aboutBG.svg"), no-repeat;
+    background: url("images/aboutBG.png"), no-repeat;
     background-size: cover;
     min-height: 700px;
     max-width: 100%;
