@@ -1,4 +1,6 @@
-
+/*body{*/
+    /*line-height: 1;*/
+/*}*/
 
 .container{
     max-width: 1440px;
@@ -115,12 +117,13 @@
 }
 
 .ourServices{
-    margin-top: 170px;
-    margin-bottom: 170px;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 .servicesHeader{
     font-family: Montserrat, sans-serif;
+    margin-bottom: 30px;
     font-style: normal;
     font-weight: bold;
     font-size: 4vw;
@@ -128,56 +131,77 @@
     color: #535452;
 }
 
-.servicesItems{
-    margin-top: 46px;
+.servicesItems img{
+    max-height: 400px;
 }
 
-.servicesItems h3{
+.serviceItem{
+    position: relative;
+}
+
+.servicesText{
+    position: absolute;
+    top: 67%;
+    left: 0;
+    width: 100%;
+    padding: 0 23%;
+
+}
+
+.servicesText h3{
     font-family: Montserrat, sans-serif;
     font-style: normal;
     font-weight: 600;
-    font-size: 36px;
-    line-height: normal;
+    font-size: 23px;
+    line-height: 0!important;
     color: #FFFFFF;
-    margin-top: 113%;
 }
 
-.servicesItems span{
+.servicesText span{
+    margin-top: 10px;
     font-family: Montserrat, sans-serif;
     font-style: normal;
     font-weight: 300;
-    font-size: 24px;
-    line-height: normal;
+    line-height: 1!important;
+    font-size: 17px;
     text-align: center;
     color: #FFFFFF;
-    max-width: 229px;
+}
+
+@media (max-width: 980px) {
+    .servicesText span{
+        font-size: 13px;
+    }
+    .servicesText h3{
+        font-size: 20px;
+    }
 }
 
 .leftItem{
     background: url("images/LIST.svg"), no-repeat;
     background-size: contain;
     margin: auto;
-    min-height: 591px;
+    /*min-height: 300px;*/
     /*min-width: 360px;*/
-    max-width: 360px;
+    /*max-width: 215px;*/
 }
 
 .middleItem{
     background: url("images/CART.svg"), no-repeat;
     background-size: contain;
     margin: auto;
-    min-height: 591px;
+    /*min-height: 300px;*/
     /*min-width: 360px;*/
-    max-width: 360px;
+    /*max-width: 215px;*/
 }
 
 .rightItem{
     background: url("images/FRIENDS.svg"), no-repeat;
     background-size: contain;
     margin: auto;
-    min-height: 591px;
+    /*min-height: 300px;*/
     /*min-width: 360px;*/
-    max-width: 360px;
+    /*max-width: 215px;*/
 }
 
 .aboutUs{
@@ -205,7 +229,7 @@
     font-family: Montserrat, sans-serif;
     font-style: normal;
     font-weight: 600;
-    font-size: 36px;
+    font-size: 30px;
     line-height: normal;
     color: #535452;
 }
@@ -214,7 +238,7 @@
     font-family: Montserrat, sans-serif;
     font-style: normal;
     font-weight: 300;
-    font-size: 24px;
+    font-size: 17px;
     line-height: normal;
     color: #535452;
 }
@@ -335,22 +359,23 @@
     }
 }
 
-.imgFooter{
-    position: relative;
-    top: 83px;
-    left: 120px;
-}
+/*.imgFooter{*/
+/*position: relative;*/
+/*top: 83px;*/
+/*left: 120px;*/
+/*}*/
 
 .footer{
-    position: relative;
-    min-height: 277px;
-    padding-bottom: 30px;
+    /*position: relative;*/
+    /*min-height: 277px;*/
+    /*padding: 0 20px;*/
+
     background: rgba(151, 77, 208, 0.65);
-    clear: both;
+    /*clear: both;*/
 }
 
 .footerMenu{
-    margin-top: 60px;
+    margin-top: 30px;
     padding: 0;
 }
 
@@ -358,14 +383,14 @@
     font-family: Montserrat, sans-serif;
     font-style: normal;
     font-weight: normal;
-    font-size: 24px;
+    font-size: 19px;
     line-height: normal;
     color: #FFFFFF;
 }
 
-.footerBottom{
-    clear: both;
-}
+/*.footerBottom{*/
+/*clear: both;*/
+/*}*/
 
 @media (max-width: 768px) {
     .footerMenu p{
@@ -382,11 +407,13 @@
 }
 
 .copyright{
-    padding-top: 105px;
+    /*padding-top: 105px;*/
+    padding-left: 20px;
+    padding-bottom: 20px;
     font-family: Montserrat, sans-serif;
     font-style: normal;
     font-weight: normal;
-    font-size: 24px;
+    font-size: 20px;
     line-height: normal;
     color: #FFFFFF;
 }
@@ -394,7 +421,14 @@
 .social img{
     font-size: 60px;
     color: #FFFFFF;
-    padding-left: 31px;
-    padding-right: 31px;
-    padding-top: 90px;
+    /*padding-left: 31px;*/
+    /*padding-right: 31px;*/
+    /*padding-top: 90px;*/
+}
+
+@media (min-width: 768px) {
+    .footer{
+        padding-left: 40px!important;
+        padding-right: 80px!important;
+    }
 }

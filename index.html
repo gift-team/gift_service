@@ -22,7 +22,7 @@
                     <div class="bgNav">
                         <ul class="navbar-nav navGroup">
                             <li class="nav-item">
-                                <a class="nav-link" href="#">КОНТАКТЫ</a>
+                                <a class="nav-link" href="#">ПОЖЕЛАНИЯ</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">ВОЙТИ</a>
@@ -43,7 +43,7 @@
                 <img src="static/images/LOGO.svg" alt="">
             </div>
             <div class="menu col-lg-8 col-12 justify-content-around d-none d-sm-flex align-items-center">
-                <span>КОНТАКТЫ</span>
+                <span>ПОЖЕЛАНИЯ</span>
                 <span>ВОЙТИ</span>
                 <button class="regBtnTitle col-sm-4">РЕГИСТРАЦИЯ</button>
             </div>
@@ -55,7 +55,7 @@
                 <button class="m-auto m-sm-0 giftBtn col-3 col-sm-11 col-lg-5">ПОДАРИТЬ</button>
             </div>
             <div class="mainRight col-12 col-sm-7">
-                <img src="static/images/SOLAR.svg" alt="no image">
+                <img src="static/images/SOLAR3.svg" alt="no image">
             </div>
         </div>
     </div>
@@ -63,18 +63,43 @@
         <div class="servicesHeader text-center">
             <span>НАШИ СЕРВИСЫ</span>
         </div>
-        <div class="servicesItems d-flex flex-column flex-lg-row justify-content-around">
-            <div class="col-12 col-md-4 leftItem text-center d-flex flex-column align-items-center">
-                <h3>Списки</h3>
-                <span>Создавайте списки желаний</span>
-            </div>
-            <div class="col-12 col-md-4 middleItem text-center d-flex flex-column align-items-center">
-                <h3>Покупки</h3>
-                <span>Осуществляйте желания других и дарите подарки</span>
-            </div>
-            <div class="col-12 col-md-4 rightItem text-center d-flex flex-column align-items-center">
-                <h3>Друзья</h3>
-                <span>Ищите друзей по интересам и желаниям</span>
+        <!--<div class="servicesItems m-auto col-8 d-flex flex-column flex-lg-row justify-content-around">-->
+        <!--<div class="col-12 col-md-4 m-4 leftItem text-center d-flex flex-column align-items-center">-->
+        <!--<h3>Списки</h3>-->
+        <!--<span>Создавайте списки желаний</span>-->
+        <!--</div>-->
+        <!--<div class="col-12 col-md-4 m-4 middleItem text-center d-flex flex-column align-items-center">-->
+        <!--<h3>Покупки</h3>-->
+        <!--<span>Осуществляйте желания других и дарите подарки</span>-->
+        <!--</div>-->
+        <!--<div class="col-12 col-md-4 m-4 rightItem text-center d-flex flex-column align-items-center">-->
+        <!--<h3>Друзья</h3>-->
+        <!--<span>Ищите друзей по интересам и желаниям</span>-->
+        <!--</div>-->
+        <!--</div>-->
+        <div class="col-12">
+            <div class="m-auto d-flex flex-column flex-md-row col-9 servicesItems">
+                <div class="col-12 col-md-4 serviceItem">
+                    <img class="w-100" src="static/images/LIST.svg" alt="no image">
+                    <div class="servicesText d-flex flex-column">
+                        <h3>Списки</h3>
+                        <span>Создавайте списки желаний</span>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 serviceItem">
+                    <img class="w-100" src="static/images/CART.svg" alt="no image">
+                    <div class="servicesText d-flex flex-column">
+                        <h3>Покупки</h3>
+                        <span>Осуществляйте желания других и дарите подарки</span>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 serviceItem">
+                    <img class="w-100" src="static/images/FRIENDS.svg" alt="no image">
+                    <div class="servicesText d-flex flex-column">
+                        <h3>Друзья</h3>
+                        <span>Ищите друзей по интересам и желаниям</span>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -144,24 +169,29 @@
         </div>
     </div>
 
-    <div class="footer">
-        <div class="imgFooter d-none d-lg-block float-left">
-            <img src="static/images/LOGO.svg" alt="">
+    <div class="footer p-0 m-auto m-sm-0 d-md-flex">
+        <div class="left col-12 col-md-4 justify-content-center d-flex flex-column">
+            <div class="imgFooter d-none d-lg-flex">
+                <img class="w-100" src="static/images/LOGO.svg" alt="">
+            </div>
+            <div class="copyright">&copy; 2018-2019 «GiftService»</div>
         </div>
-        <div class="footerMenu col-12 col-md-6 float-right justify-content-around d-inline-block d-md-inline-flex">
-            <p>О НАС</p>
-            <p>КОНТАКТЫ</p>
-            <p>ОТЗЫВЫ</p>
-        </div>
-        <div class="footerBottom d-inline-block d-md-flex">
-            <div class="copyright col-12 col-md-6">&copy; 2018-2019 «GiftService»</div>
-            <div class="social col-12 col-md-6 align-content-center justify-content-center justify-content-md-end">
+        <div class="right col-12 col-md-8">
+            <div class="footerMenu col-12 float-right justify-content-end d-inline-block d-md-flex">
+                <p class="p-2">О НАС</p>
+                <p class="p-2">КОНТАКТЫ</p>
+                <p class="p-2">ОТЗЫВЫ</p>
+            </div>
+            <div class="footerBottom p-0 col-12 d-flex justify-content-end">
+                <!--<div class="social col-12 col-md-6 d-flex align-content-center justify-content-center justify-content-md-end">-->
                 <!--<i class="fab fa-instagram"></i>-->
                 <!--<i class="fab fa-facebook-square"></i>-->
-                <img src="static/images/instagram.svg" alt="">
-                <img src="static/images/facebook.svg" alt="">
+                <img class="p-2" src="static/images/instagram.svg" alt="">
+                <img class="p-2" src="static/images/facebook.svg" alt="">
+                <!--</div>-->
             </div>
         </div>
+
     </div>
 </div>
 </body>
