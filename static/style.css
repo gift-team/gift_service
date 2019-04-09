@@ -35,8 +35,8 @@
 }
 
 .logoTitle img{
-    width: 100%;
-    height: 100%;
+    width: 340px;
+    height: 132px;
     max-width: 346px;
     margin: auto;
 }
@@ -377,6 +377,11 @@
 .footerMenu{
     margin-top: 30px;
     padding: 0;
+}
+
+.imgFooter img{
+    width: 340px;
+    height: 132px;
 }
 
 .footerMenu p{
