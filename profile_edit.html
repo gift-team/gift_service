@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+    <!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+          integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="static/bootstrap4/css/bootstrap.min.css">
+    <script src="static/bootstrap4/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="static/style.css">
+    <title>Профиль (правка)</title>
+</head>
+<body>
+<div class="container text-center">
+    <div class="title">
+        <div class="titleMenu d-lg-flex">
+            <div class="pos-f-t d-sm-none">
+                <div class="collapse" id="navbarToggleExternalContent">
+                    <div class="bgNav">
+                        <ul class="navbar-nav navGroup">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">КОНТАКТЫ</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">ВОЙТИ</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">РЕГИСТРАЦИЯ</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <nav class="navbar navbar-light bgNav">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                            data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </nav>
+            </div>
+            <div class="logoTitle col-lg-4 col-12 d-flex">
+                <img src="static/images/LOGO.svg" alt="">
+            </div>
+            <div class="menu col-lg-8 col-12 justify-content-around d-none d-sm-flex align-items-center">
+                <span>КОНТАКТЫ</span>
+                <span>ВОЙТИ</span>
+                <button class="regBtnTitle col-sm-4">РЕГИСТРАЦИЯ</button>
+            </div>
+        </div>
+    </div>
+    <div class="body">
+        <div class="userEditData row">
+            <div class="col-6 text-center">
+                <div class="userEditDataProfile">
+                    <div class="userEditItemImg"></div>
+                    <div class="userEditItemName text-center">
+                        <div class="userEditItemNameText">
+                            <span class="text-uppercase">Фибаначи</span><br/>
+                            <span>Борис Семенович</span>
+                        </div>
+                        <img class="userEditItemNameTextCloud" src="static/images/cloud.svg">
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 ">
+                <div class="row userEditDataData">
+                    <span class="">Основные данные</span>
+                    <img src="static/images/edit_blue.svg">
+                </div>
+                <div class="row">
+                    <input class="form-control userEditDataForm" type="text" placeholder="Имя">
+                </div>
+                <div class="row">
+                    <input class="form-control userEditDataForm" type="text" placeholder="Фамилия">
+                </div>
+                <div class="row">
+                    <input type="email" class="form-control userEditDataForm" id="exampleInputEmail1"
+                           aria-describedby="emailHelp"
+                           placeholder="Enter email">
+                </div>
+                <div class="row">
+                    <input class="form-control userEditDataForm" type="tel" placeholder="Телефон">
+                </div>
+                <div class="row">
+                    <div class="col-4 userEditDataFormDataName text-left">
+                        Дата рождения:
+                    </div>
+                    <div class="col-4 userEditDataFormGenderName text-left">
+                        Пол:
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-4">
+                        <input class="form-control userEditDataFormData" type="date">
+                    </div>
+                    <div class="col-4 text-left">
+                        <div class="form-check userEditDataFormGenderDataMale">
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1"
+                                   value="option1" checked>
+                            <label class="form-check-label" for="exampleRadios1">
+                                М
+                            </label>
+
+                        </div>
+                        <div class="form-check userEditDataFormGenderDataFemale">
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2"
+                                   value="option2">
+                            <label class="form-check-label" for="exampleRadios2">
+                                Ж
+                            </label>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row text-center">
+                    <button class="userEditDataSave">Сохранить</button>
+                </div>
+            </div>
+        </div>
+        <div class="userEditDataSecond row">
+            <div class="col-6">
+                <div class="row userEditDataData">
+                    <span class="">Доставка</span>
+                    <img src="static/images/edit_blue.svg">
+                </div>
+                <div class="row">
+                    <input class="form-control userEditDataForm" type="text" placeholder="Регион">
+                </div>
+                <div class="row">
+                    <input class="form-control userEditDataForm" type="text" placeholder="Город">
+                </div>
+                <div class="row">
+                    <input class="form-control userEditDataForm" type="text" placeholder="Улица">
+                </div>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <input class="form-control userEditDataFormSmall" type="text" placeholder="Дом">
+                    </div>
+                    <div class="col-sm-4">
+                        <input class="form-control userEditDataFormSmall" type="text" placeholder="Квартира">
+                    </div>
+                    <div class="col-sm-4">
+                        <input class="form-control userEditDataFormSmall" type="text" placeholder="Дом">
+                    </div>
+                </div>
+                <div class="row">
+                    <button class="userEditDataSave">Сохранить</button>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="row userEditDataData">
+                    <span class="">Приватность</span>
+                    <img src="static/images/edit_blue.svg">
+                </div>
+                <div class="row userEditDataDataProfType">
+                    Тип профиля
+                </div>
+                <div class="row">
+                    <input class="form-control userEditDataForm" type="text" placeholder="Открытый">
+                </div>
+                <div class="row form-check form-check-inline userEditDataDataMent text-left">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                    <label class="form-check-label" for="inlineCheckbox1">Уведомления и оповещения</label>
+                </div>
+                <div class="row userEditDataDataPW">
+                    <span class="">Смена пароля</span>
+                    <img src="static/images/edit_blue.svg">
+                </div>
+                <div class="row form-group ">
+                    <input type="password" class="form-control userEditDataForm" id="exampleInputPassword1" placeholder="Старый пароль">
+                </div>
+                <div class="row form-group ">
+                    <input type="password" class="form-control userEditDataForm" id="exampleInputPassword1" placeholder="Новый пароль">
+                </div>
+                <div class="row form-group ">
+                    <input type="password" class="form-control userEditDataForm" id="exampleInputPassword1" placeholder="Подтверждение пароля">
+                </div>
+                <div class="row">
+                    <button class="userEditDataSave">Сохранить</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="imgFooter d-none d-lg-block float-left">
+            <img src="static/images/LOGO.svg" alt="">
+        </div>
+        <div class="footerMenu col-12 col-md-6 float-right justify-content-around d-inline-block d-md-inline-flex">
+            <p>О НАС</p>
+            <p>КОНТАКТЫ</p>
+            <p>ОТЗЫВЫ</p>
+        </div>
+        <div class="footerBottom d-inline-block d-md-flex">
+            <div class="copyright col-12 col-md-6">&copy; 2018-2019 «GiftService»</div>
+            <div class="social col-12 col-md-6 align-content-center justify-content-center justify-content-md-end">
+                <!--<i class="fab fa-instagram"></i>-->
+                <!--<i class="fab fa-facebook-square"></i>-->
+                <img src="static/images/instagram.svg" alt="">
+                <img src="static/images/facebook.svg" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
