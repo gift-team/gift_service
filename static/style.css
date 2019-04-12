@@ -1,11 +1,6 @@
-.title{
-    margin: auto;
-    width: 100%;
-}
 
-.titleMenu{
-    width: 100%;
-}
+
+
 
 .bgNav{
     background: #7F2BC1;
@@ -38,10 +33,9 @@
     font-family: Montserrat, sans-serif;
     font-style: normal;
     font-weight: bold;
-    font-size: 3.5vw;
+    font-size: 20px;
     line-height: normal;
     color: #FFFFFF;
-    outline: none!important;
 }
 
 .logoTitle{
@@ -54,10 +48,18 @@
     font-weight: bold;
     font-size: 20px;
     line-height: normal;
-    color: #7F2BC1;
     padding-top: 20px;
     padding-bottom: 20px;
     padding-left: 216px;
+}
+.menu a {
+    color: #7F2BC1;
+    text-transform: uppercase;
+}
+
+.menu button {
+    outline: none;
+    text-transform: uppercase;
 }
 
 .mainTitle{
@@ -291,9 +293,7 @@
     .regBtn{
         font-size: 2vw!important;
     }
-    .regBtnTitle{
-        font-size: 1.5vw!important;
-    }
+
     .giftBtn{
         font-size: 1.5vw!important;
     }
@@ -317,10 +317,7 @@
         height: 40px!important;
         font-size: 2.5vw!important;
     }
-    .regBtnTitle{
-        height: 40px!important;
-        font-size: 2.5vw!important;
-    }
+
     .giftBtn{
         max-height: 40px!important;
         font-size: 2.5vw!important;
