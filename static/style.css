@@ -397,7 +397,7 @@
 }
 
 .userItemData {
-    margin-top: 79px;
+    /*margin-top: 79px;*/
 }
 
 .userItemImg {
@@ -410,7 +410,7 @@
     width: 258.67px;
     height: 258.67px;
     border-radius: 50%;
-    left: 105px;
+    /*left: 105px;*/
 
 }
 
@@ -422,7 +422,7 @@
     border-radius: 20px;
     margin-top: -86px;
 
-    margin-left: 125px;
+
 
 
 }
@@ -447,20 +447,20 @@
 
 .userDataName {
     display: block;
-    height: 153px;
+    /*height: 153px;*/
     font-family: Montserrat, sans-serif;
     font-style: normal;
     font-weight: 600;
     font-size: 48px;
     line-height: normal;
     margin-left: 0;
-    margin-top: 79px;
 
     color: #535452;
 }
 
 .userDataWish {
-    display: inline-block;
+    /*display: inline-block;*/
+    padding-top: 20px;
     width: 230px;
     height: 270px;
     background: #7F2BC1;
@@ -472,7 +472,6 @@
     width: 177px;
     height: 177px;
     margin-left: 26px;
-    margin-top: 29px;
 
     background: url("images/apple_watch.png") #FFFFFF center center;
     background-size: cover;
@@ -523,8 +522,6 @@
     line-height: normal;
 
     color: #FFFFFF;
-
-    margin-bottom: 117px;
 }
 
 /*Friend*/
