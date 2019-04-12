@@ -6,7 +6,6 @@ import authapp.views as authapp
 
 router = routers.DefaultRouter()
 router.register(r'users', authapp.UserViewSet)
-router.register(r'groups', authapp.GroupViewSet)
 
 app_name = 'authapp'
 
