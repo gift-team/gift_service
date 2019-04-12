@@ -108,7 +108,3 @@ class UserViewSet(viewsets.ModelViewSet):
     serializer_class = GiftUserSerializer
     permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
 
-
-class GroupViewSet(viewsets.ModelViewSet):
-    queryset = Group.objects.all()
-    serializer_class = GiftGroupSerializer

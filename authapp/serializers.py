@@ -1,4 +1,3 @@
-from django.contrib.auth.models import Group
 from rest_framework import serializers
 
 from authapp.models import GiftUser
@@ -12,7 +11,3 @@ class GiftUserSerializer(serializers.HyperlinkedModelSerializer):
         read_only_fields = ('id',)
 
 
-class GiftGroupSerializer(serializers.HyperlinkedModelSerializer):
-    class Meta:
-        model = Group
-        fields = ('url', 'name')
