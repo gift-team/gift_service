@@ -1,3 +1,1 @@
-Django==2.1.7
-djangorestframework==3.9.2
-pytz==2018.9
+Tracking file by folder pattern:  migrations
