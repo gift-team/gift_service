@@ -56,49 +56,313 @@
     </div>
 </div>
 <div class="container">
-        <div class="row">
-            <div class="col-lg-4 userItemData d-flex flex-column align-items-center mb-5">
-                <div class="userItemImg"></div>
-                <div class="userItemName text-center">
-                    <div class="userItemNameText">
-                        <span class="text-uppercase">Фибоначчи</span><br/>
-                        <span>Борис Семенович</span>
-                    </div>
-                    <img class="userItemNameTextEdit" src="static/images/edit.svg">
+    <div class="row">
+        <div class="col-lg-4 userItemData d-flex flex-column align-items-center mb-5">
+            <div class="userItemImg"></div>
+            <div class="userItemName text-center">
+                <div class="userItemNameText">
+                    <span class="text-uppercase">Фибоначчи</span><br/>
+                    <span>Борис Семенович</span>
                 </div>
+                <img class="userItemNameTextEdit" src="static/images/edit.svg">
             </div>
-            <div class="col-lg-8">
-                <div class="row userDataName mb-5">
-                    <div class="text-uppercase">Фибоначчи</div>
-                    <div>Борис Семенович</div>
+        </div>
+        <div class="col-lg-8">
+            <div class="row userDataName mb-5">
+                <div class="text-uppercase">Фибоначчи</div>
+                <div>Борис Семенович</div>
+            </div>
+            <div class="row d-flex flex-row justify-content-sm-around-around">
+                <div class="col-lg-4  col-sm-12 mb-5 d-flex flex-column align-items-center">
+                    <div class="userDataWish ">
+                        <div class="userDataWishImg"></div>
+                        <div class="userDataWishName text-center">Часы</div>
+                    </div>
+                    <button class="userDataWishLook userDataWishLookText text-uppercase">Смотреть</button>
                 </div>
-                <div class="row d-flex flex-row justify-content-sm-around-around">
-                    <div class="col-lg-4  col-sm-12 mb-5 d-flex flex-column align-items-center">
-                        <div class="userDataWish ">
-                            <div class="userDataWishImg"></div>
-                            <div class="userDataWishName text-center">Часы</div>
-                        </div>
-                        <button class="userDataWishLook userDataWishLookText text-uppercase">Смотреть</button>
+                <div class="col-lg-4  col-sm-12 mb-5 d-flex flex-column align-items-center">
+                    <div class="userDataWish">
+                        <div class="userDataWishImg"></div>
+                        <div class="userDataWishName text-center">Часы</div>
                     </div>
-                    <div class="col-lg-4  col-sm-12 mb-5 d-flex flex-column align-items-center">
-                        <div class="userDataWish">
-                            <div class="userDataWishImg"></div>
-                            <div class="userDataWishName text-center">Часы</div>
-                        </div>
-                        <button class="userDataWishLook userDataWishLookText text-uppercase">Смотреть</button>
+                    <button class="userDataWishLook userDataWishLookText text-uppercase">Смотреть</button>
 
-                    </div>
-                    <div class="col-lg-4 col-sm-12 mb-5 d-flex flex-column align-items-center">
-                        <button class="userDataNewWish text-uppercase">
-                            Создать
-                        </button>
-                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-12 mb-5 d-flex flex-column align-items-center">
+                    <button class="userDataNewWish text-uppercase">
+                        Создать
+                    </button>
                 </div>
             </div>
         </div>
-        <div class="row">
+    </div>
+    <div class="row filter">
+        <div class=" col-lg-4 col-md-12 col-12">
+            <h2>Мои пожелания:</h2>
+            <div class="filters">
+                <h3>Фильтры</h3>
+                <div class="row myWishFilterRow">
+                    <div class="col-6 myWishesFilterName text-left">
+                        Категория
+                    </div>
+                    <div class="col-6">
+                        <div class="dropdown">
+                            <button class="myWishesDropdown btn dropdown-toggle" type="button"
+                                    id="dropdownMenuButton1"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Наименование
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row myWishFilterRow">
+                    <div class="col-6 myWishesFilterName text-left">
+                        Дата
+                    </div>
+                    <div class="col-6">
+                        <div class="dropdown">
+                            <button class="myWishesDropdown btn dropdown-toggle" type="button"
+                                    id="dropdownMenuButton2"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Наименование
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row myWishFilterRow">
+                    <div class="col-6 myWishesFilterName text-left">
+                        Исполнение
+                    </div>
+                    <div class="col-6">
+                        <div class="dropdown">
+                            <button class="myWishesDropdown btn dropdown-toggle" type="button"
+                                    id="dropdownMenuButton3"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Наименование
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton3">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row myWishFilterRow">
+                    <div class="col-6 myWishesFilterName text-left">
+                        Видимость
+                    </div>
+                    <div class="col-6">
+                        <div class="dropdown">
+                            <button class="myWishesDropdown btn dropdown-toggle" type="button"
+                                    id="dropdownMenuButton4"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Наименование
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton4">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
+            </div>
+            <h2>Создайте новое пожелание!</h2>
+            <button class="myWishesCreateButton">Создать</button>
         </div>
+        <div class="col-lg-8 col-md-12 col-12">
+            <h2 class="col-12 myWishesH2">
+                <span class="myWishesNameLogo">
+                    <img src="static/images/car.svg">
+                </span>
+                <span class="">Машина</span>
+            </h2>
+            <div class="row">
+                <button class="col-lg-1 col-md-1 col-12 d-flex flex-row justify-content-center align-items-center">
+                    <img class="myWishesElArr" src="static/images/arr_left.svg">
+                </button>
+                <div class="col-lg-5 col-md-5 col-12">
+                    <div class="myWishesElData">
+                        <div class="myWishesElText">
+                            <div class="myWishesElTextName">Часы</div>
+                            <div class="myWishesElTextDate">04.04.2019</div>
+                        </div>
+                        <div>
+                            <div class="myWishesElImg">
+
+                            </div>
+                            <div class="myWishesElInfo">
+                                <img src="static/images/lookin_glass.svg">
+                            </div>
+                            <div class="myWishesElInfo">
+                                <img src="static/images/pensil.svg">
+                            </div>
+                            <div class="myWishesElDel">
+                                <img src="static/images/garbage.svg">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="myWishesElData">
+                        <div class="myWishesElText">
+                            <div class="myWishesElTextName">Часы</div>
+                            <div class="myWishesElTextDate">04.04.2019</div>
+                        </div>
+                        <div>
+                            <div class="myWishesElImg">
+
+                            </div>
+                            <div class="myWishesElInfo">
+                                <img src="static/images/lookin_glass.svg">
+                            </div>
+                            <div class="myWishesElInfo">
+                                <img src="static/images/pensil.svg">
+                            </div>
+                            <div class="myWishesElDel">
+                                <img src="static/images/garbage.svg">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="myWishesElData">
+                        <div class="myWishesElText">
+                            <div class="myWishesElTextName">Часы</div>
+                            <div class="myWishesElTextDate">04.04.2019</div>
+                        </div>
+                        <div>
+                            <div class="myWishesElImg">
+
+                            </div>
+                            <div class="myWishesElInfo">
+                                <img src="static/images/lookin_glass.svg">
+                            </div>
+                            <div class="myWishesElInfo">
+                                <img src="static/images/pensil.svg">
+                            </div>
+                            <div class="myWishesElDel">
+                                <img src="static/images/garbage.svg">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="myWishesElData">
+                        <div class="myWishesElText">
+                            <div class="myWishesElTextName">Часы</div>
+                            <div class="myWishesElTextDate">04.04.2019</div>
+                        </div>
+                        <div>
+                            <div class="myWishesElImg">
+
+                            </div>
+                            <div class="myWishesElInfo">
+                                <img src="static/images/lookin_glass.svg">
+                            </div>
+                            <div class="myWishesElInfo">
+                                <img src="static/images/pensil.svg">
+                            </div>
+                            <div class="myWishesElDel">
+                                <img src="static/images/garbage.svg">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5 col-md-5 col-12">
+                    <div class="myWishesElData">
+                        <div class="myWishesElText">
+                            <div class="myWishesElTextName">Часы</div>
+                            <div class="myWishesElTextDate">04.04.2019</div>
+                        </div>
+                        <div>
+                            <div class="myWishesElImg">
+
+                            </div>
+                            <div class="myWishesElInfo">
+                                <img src="static/images/lookin_glass.svg">
+                            </div>
+                            <div class="myWishesElInfo">
+                                <img src="static/images/pensil.svg">
+                            </div>
+                            <div class="myWishesElDel">
+                                <img src="static/images/garbage.svg">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="myWishesElData">
+                        <div class="myWishesElText">
+                            <div class="myWishesElTextName">Часы</div>
+                            <div class="myWishesElTextDate">04.04.2019</div>
+                        </div>
+                        <div>
+                            <div class="myWishesElImg">
+
+                            </div>
+                            <div class="myWishesElInfo">
+                                <img src="static/images/lookin_glass.svg">
+                            </div>
+                            <div class="myWishesElInfo">
+                                <img src="static/images/pensil.svg">
+                            </div>
+                            <div class="myWishesElDel">
+                                <img src="static/images/garbage.svg">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="myWishesElData">
+                        <div class="myWishesElText">
+                            <div class="myWishesElTextName">Часы</div>
+                            <div class="myWishesElTextDate">04.04.2019</div>
+                        </div>
+                        <div>
+                            <div class="myWishesElImg">
+
+                            </div>
+                            <div class="myWishesElInfo">
+                                <img src="static/images/lookin_glass.svg">
+                            </div>
+                            <div class="myWishesElInfo">
+                                <img src="static/images/pensil.svg">
+                            </div>
+                            <div class="myWishesElDel">
+                                <img src="static/images/garbage.svg">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="myWishesElData">
+                        <div class="myWishesElText">
+                            <div class="myWishesElTextName">Часы</div>
+                            <div class="myWishesElTextDate">04.04.2019</div>
+                        </div>
+                        <div>
+                            <div class="myWishesElImg">
+
+                            </div>
+                            <div class="myWishesElInfo">
+                                <img src="static/images/lookin_glass.svg">
+                            </div>
+                            <div class="myWishesElInfo">
+                                <img src="static/images/pensil.svg">
+                            </div>
+                            <div class="myWishesElDel">
+                                <img src="static/images/garbage.svg">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="col-lg-1 col-md-1 col-12 d-flex flex-row justify-content-center align-items-center">
+                    <img class="myWishesElArr" src="static/images/arr_right.svg">
+                </button>
+            </div>
+        </div>
+    </div>
 </div>
 </body>
 <div class="footer">

@@ -562,21 +562,18 @@
     left: 108px;
 }
 
-.myWishesName {
-}
 
 .myWishesNameLogo {
-    float: left;
     width: 40px;
     height: 40px;
-    margin-left: 300px;
-
+    margin-right: 11px;
     background: #535452;
     border-radius: 10px;
 }
 
 .myWishesNameLogo img {
-    margin-top: 7px;
+    margin-bottom: 7px;
+    margin-left: 5px;
 }
 
 .myWishesNameText {
@@ -601,9 +598,7 @@
     padding-left: 139px;
 }
 
-.myWishesFilterEl {
-    margin-top: 9px;
-}
+
 
 .myWishesFilterTitle {
     font-family: Montserrat, sans-serif;
@@ -623,9 +618,11 @@
     line-height: normal;
 
     color: #535452;
-    padding: 0;
 }
 
+.myWishFilterRow {
+    margin-top: 20px;
+}
 .myWishesDropdown {
     width: 174px;
     height: 30px;
@@ -662,7 +659,6 @@
     height: 57px;
     background: #FDA736;
     border-radius: 20px;
-    margin-top: 20px;
 
     font-family: Montserrat, sans-serif;
     font-style: normal;
@@ -678,15 +674,13 @@
 }
 
 .myWishesElArr {
-    margin-top: 240px;
 }
 
 .myWishesElData {
     float: left;
     width: 269px;
     height: 101px;
-    margin-left: 40px;
-    margin-bottom: 36px;
+    margin: 20px;
 }
 
 .myWishesElText {
@@ -695,6 +689,20 @@
 
     background: #7F2BC1;
     border-radius: 10px;
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: normal;
+    padding-left: 120px;
+    padding-top: 5px;
+
+    color: #FFFFFF;
+}
+
+.myWishesElTextDate {
+    font-weight: normal;
+    font-size: 16px;
 }
 .myWishesElImg {
     float: left;
@@ -714,6 +722,7 @@
     height: 40px;
     margin-top: 7px;
     margin-left: 16px;
+    padding-left: 10px;
 
     background: #F5BA3D;
     border-radius: 10px;
@@ -729,6 +738,7 @@
     height: 40px;
     margin-top: 7px;
     margin-left: 16px;
+    padding-left: 10px;
 
     background: #DC4E41;
     border-radius: 10px;
@@ -984,4 +994,21 @@
 .userEditDataDataMent input {
     position: relative;
     float: left;
+}
+
+
+
+.filter h2 {
+    font-size: 36px;
+    color: #535452;
+    margin-top: 30px;
+}
+
+.filter h3 {
+    font-size: 24px;
+    color: #535452;
+}
+
+.myWishesH2 {
+    text-align: center;
 }
