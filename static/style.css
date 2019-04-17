@@ -209,12 +209,12 @@
 .aboutUs{
     background: url("images/aboutBG.png"), no-repeat;
     background-size: cover;
-    min-height: 700px;
-    max-width: 100%;
+    min-height: 846px;
+    /*max-width: 100%;*/
     margin: 0;
-    padding-bottom: 50px;
-    padding-left: 30px;
-    padding-right: 30px;
+    /*padding-bottom: 50px;*/
+    /*padding-left: 30px;*/
+    /*padding-right: 30px;*/
 }
 
 .aboutUsHeader{
@@ -227,11 +227,15 @@
     /*max-height: 100px;*/
 }
 
+.aboutLeft{
+    min-height: 753px;
+}
+
 .aboutLeft h3, .aboutRight h3{
     font-family: Montserrat, sans-serif;
     font-style: normal;
     font-weight: 600;
-    font-size: 36px;
+    font-size: 24px;
     line-height: normal;
     color: #535452;
 }
@@ -240,9 +244,13 @@
     font-family: Montserrat, sans-serif;
     font-style: normal;
     font-weight: 300;
-    font-size: 24px;
+    font-size: 18px;
     line-height: normal;
     color: #535452;
+}
+
+.leftText{
+    padding-left: 20px!important;
 }
 
 .aboutUs img{
