@@ -2,7 +2,6 @@
     /*line-height: 1;*/
 /*}*/
 
-
 .title{
     margin: auto;
     width: 100%;
@@ -41,8 +40,9 @@
 
 .regBtnTitle{
     height: 40px;
+    max-width: 190px;
     background: #7F2BC1;
-    border-radius: 20px;
+    border-radius: 10px;
     font-family: Montserrat, sans-serif;
     font-style: normal;
     font-weight: bold;
@@ -53,13 +53,13 @@
 }
 
 .menu{
-    font-family: Montserrat, sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-style: normal;
     font-weight: bold;
     font-size: 14px;
     line-height: normal;
     color: #7F2BC1;
-    /*padding-top: 20px;*/
+    padding-top: 34px;
     /*padding-bottom: 20px;*/
     /*padding-left: 216px;*/
 }
