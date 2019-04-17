@@ -2,11 +2,6 @@
     /*line-height: 1;*/
 /*}*/
 
-.container{
-    max-width: 1440px;
-    padding: 0;
-    margin: auto;
-}
 
 .title{
     margin: auto;
@@ -34,39 +29,39 @@
     color: white;
 }
 
-.logoTitle img{
-    width: 413px;
-    height: 132px;
-    margin: auto;
+/*.logoTitle img{*/
+    /*width: 380px;*/
+    /*height: 110px;*/
+    /*margin: auto;*/
+/*}*/
+
+.logoTitle{
+    padding-top: 54px;
 }
 
 .regBtnTitle{
-    height: 60px;
+    height: 40px;
     background: #7F2BC1;
     border-radius: 20px;
     font-family: Montserrat, sans-serif;
     font-style: normal;
     font-weight: bold;
-    font-size: 3.5vw;
+    font-size: 14px;
     line-height: normal;
     color: #FFFFFF;
     outline: none!important;
-}
-
-.logoTitle{
-    padding: 20px 40px;
 }
 
 .menu{
     font-family: Montserrat, sans-serif;
     font-style: normal;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 14px;
     line-height: normal;
     color: #7F2BC1;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    padding-left: 216px;
+    /*padding-top: 20px;*/
+    /*padding-bottom: 20px;*/
+    /*padding-left: 216px;*/
 }
 
 .mainTitle{
@@ -99,7 +94,7 @@
 }
 
 .giftBtn{
-    max-height: 60px;
+    height: 40px;
     margin-top: 20px;
     background: #7F2BC1;
     border-radius: 20px;
@@ -324,45 +319,45 @@
     width: 100%;
 }
 
-@media (min-width: 768px) {
-    .regBtn{
-        font-size: 2vw!important;
-    }
-    .regBtnTitle{
-        font-size: 1.5vw!important;
-    }
-    .giftBtn{
-        font-size: 1.5vw!important;
-    }
-}
+/*@media (min-width: 768px) {*/
+    /*.regBtn{*/
+        /*font-size: 2vw!important;*/
+    /*}*/
+    /*.regBtnTitle{*/
+        /*font-size: 1.5vw!important;*/
+    /*}*/
+    /*.giftBtn{*/
+        /*font-size: 1.5vw!important;*/
+    /*}*/
+/*}*/
 
-@media (max-width: 576px) {
-    .giftBtn{
-        height: 40px;
-        padding: 0;
-    }
-}
+/*@media (max-width: 576px) {*/
+    /*.giftBtn{*/
+        /*height: 40px;*/
+        /*padding: 0;*/
+    /*}*/
+/*}*/
 
-@media (max-width: 992px) {
-    .menu{
-        padding: 0!important;
-    }
-    .regForm input{
-        height: 40px!important;
-    }
-    .regBtn{
-        height: 40px!important;
-        font-size: 2.5vw!important;
-    }
-    .regBtnTitle{
-        height: 40px!important;
-        font-size: 2.5vw!important;
-    }
-    .giftBtn{
-        max-height: 40px!important;
-        font-size: 2.5vw!important;
-    }
-}
+/*@media (max-width: 992px) {*/
+    /*.menu{*/
+        /*padding: 0!important;*/
+    /*}*/
+    /*.regForm input{*/
+        /*height: 40px!important;*/
+    /*}*/
+    /*.regBtn{*/
+        /*height: 40px!important;*/
+        /*font-size: 2.5vw!important;*/
+    /*}*/
+    /*.regBtnTitle{*/
+        /*height: 40px!important;*/
+        /*font-size: 2.5vw!important;*/
+    /*}*/
+    /*.giftBtn{*/
+        /*max-height: 40px!important;*/
+        /*font-size: 2.5vw!important;*/
+    /*}*/
+/*}*/
 
 /*.imgFooter{*/
 /*position: relative;*/
