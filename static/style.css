@@ -66,7 +66,7 @@
     color: #7F2BC1;
     margin-top: 34px;
     /*padding-bottom: 20px;*/
-    /*padding-left: 216px;*/
+    padding-left: 40px!important;
 }
 
 .mainLeft{
@@ -115,27 +115,27 @@
 /*}*/
 
 .mainRight img{
-    margin-top: 70px;
+    margin-top: 55px;
 }
 
 .ourServices{
-    margin-top: 50px;
-    margin-bottom: 50px;
+    margin-top: 238px;
+    margin-bottom: 277px;
 }
 
 .servicesHeader{
     font-family: Montserrat, sans-serif;
-    margin-bottom: 30px;
+    margin-bottom: 139px;
     font-style: normal;
     font-weight: bold;
-    font-size: 48px;
+    font-size: 36px;
     line-height: normal;
     color: #535452;
 }
 
-.servicesItems img{
-    max-height: 400px;
-}
+/*.servicesItems img{*/
+    /*max-height: 400px;*/
+/*}*/
 
 .serviceItem{
     position: relative;
@@ -143,18 +143,18 @@
 
 .servicesText{
     position: absolute;
-    top: 67%;
+    top: 70%;
     left: 0;
     width: 100%;
-    padding: 0 23%;
+    padding: 0 17%;
 
 }
 
 .servicesText h3{
     font-family: Montserrat, sans-serif;
-    font-style: normal;
+    font-style: normal!important;
     font-weight: 600;
-    font-size: 24px;
+    font-size: 18px;
     line-height: 0!important;
     color: #FFFFFF;
 }
@@ -162,10 +162,10 @@
 .servicesText span{
     margin-top: 10px;
     font-family: Montserrat, sans-serif;
-    font-style: normal;
+    font-style: normal!important;
     font-weight: 300;
     line-height: normal;
-    font-size: 20px;
+    font-size: 14px;
     text-align: center;
     color: #FFFFFF;
 }
