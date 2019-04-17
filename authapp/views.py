@@ -105,5 +105,8 @@ def verify(request, email, activation_key):
 class UserViewSet(viewsets.ModelViewSet):
     queryset = GiftUser.objects.all().order_by('-date_joined')
     serializer_class = GiftUserSerializer
-    permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
+    # permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
 
+
+class ProfileViewSet(viewsets.ViewSet):
+    queryset = GiftUser.objects.filter()

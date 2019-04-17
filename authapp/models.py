@@ -55,11 +55,12 @@ class GiftUser(AbstractUser):
         (FEMALE, 'Женщина')
     )
 
-    middle_name = models.CharField(verbose_name='middle_name', max_length=150, blank=True)
+    middle_name = models.CharField(verbose_name='отчество', max_length=150, blank=True)
     address = models.CharField(verbose_name='адрес', max_length=500, blank=True)
     avatar = models.ImageField(upload_to='client_avatars', blank=True)
     age = models.PositiveIntegerField(verbose_name='возраст', blank=True, null=True)
     email = models.EmailField(verbose_name='почта', unique=True)
+    # phone = models.
     gender = models.CharField(verbose_name='пол', max_length=1, choices=GENDER_CHOICE, blank=True)
 
     active_key = models.CharField(max_length=128, verbose_name='код подтверждения', blank=True)
