@@ -40,7 +40,7 @@
 /*}*/
 
 .logoTitle{
-    padding-top: 54px;
+    margin-top: 54px;
 }
 
 .regBtnTitle{
@@ -64,17 +64,13 @@
     font-size: 14px;
     line-height: normal;
     color: #7F2BC1;
-    padding-top: 34px;
+    margin-top: 34px;
     /*padding-bottom: 20px;*/
     /*padding-left: 216px;*/
 }
 
-.mainTitle{
-    padding-top: 40px;
-}
-
 .mainLeft{
-    padding-left: 50px;
+    margin-top: 113px;
     font-family: Montserrat, sans-serif;
     font-style: normal;
     font-weight: normal;
@@ -88,37 +84,38 @@
     font-family: Montserrat, sans-serif;
     font-style: normal;
     font-weight: 800;
-    font-size: 72px;
+    font-size: 48px;
     line-height: normal;
     color: #535452;
 }
 
 .mainLeft span{
     padding-bottom: 20px;
-    font-size: 48px;
+    font-size: 36px;
+    font-weight: normal;
 }
 
-.giftBtn{
-    height: 40px;
-    margin-top: 20px;
-    background: #7F2BC1;
-    border-radius: 20px;
-    font-family: Montserrat, sans-serif;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 20px;
-    line-height: normal;
-    color: #FFFFFF;
-    outline: none!important;
-}
+/*.giftBtn{*/
+    /*height: 40px;*/
+    /*margin-top: 20px;*/
+    /*background: #7F2BC1;*/
+    /*border-radius: 20px;*/
+    /*font-family: Montserrat, sans-serif;*/
+    /*font-style: normal;*/
+    /*font-weight: bold;*/
+    /*font-size: 14px;*/
+    /*line-height: normal;*/
+    /*color: #FFFFFF;*/
+    /*outline: none!important;*/
+/*}*/
 
-.mainRight{
-    max-width: 564.71px!important;
-    max-height: 564.71px!important;
-}
+/*.mainRight{*/
+    /*max-width: 564.71px!important;*/
+    /*max-height: 564.71px!important;*/
+/*}*/
 
 .mainRight img{
-    width: 100%;
+    margin-top: 70px;
 }
 
 .ourServices{
@@ -173,14 +170,14 @@
     color: #FFFFFF;
 }
 
-@media (max-width: 980px) {
-    .servicesText span{
-        font-size: 13px;
-    }
-    .servicesText h3{
-        font-size: 20px;
-    }
-}
+/*@media (max-width: 980px) {*/
+    /*.servicesText span{*/
+        /*font-size: 13px;*/
+    /*}*/
+    /*.servicesText h3{*/
+        /*font-size: 20px;*/
+    /*}*/
+/*}*/
 
 .leftItem{
     background: url("images/LIST.svg"), no-repeat;
