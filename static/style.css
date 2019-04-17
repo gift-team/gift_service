@@ -397,7 +397,7 @@
 }
 
 .footerMenu{
-    margin-top: 30px;
+    margin-top: 36px;
     padding: 0;
 }
 
@@ -415,44 +415,52 @@
     font-family: Montserrat, sans-serif;
     font-style: normal;
     font-weight: normal;
-    font-size: 20px;
+    font-size: 14px;
     line-height: normal;
     color: #FFFFFF;
 }
 
 .footerBottom img{
-    padding-left: 48px;
-    padding-top: 33px;
+    padding-left: 7px;
+    padding-top: 17px;
 }
 
 /*.footerBottom{*/
 /*clear: both;*/
 /*}*/
 
-@media (max-width: 768px) {
-    .footerMenu p{
-        font-size: 15px;
-        margin: 10px!important;
-    }
-    .copyright{
-        font-size: 15px!important;
-        padding: 10px!important;
-    }
-    .social i{
-        padding-top: 10px!important;
-    }
+/*@media (max-width: 768px) {*/
+    /*.footerMenu p{*/
+        /*font-size: 15px;*/
+        /*margin: 10px!important;*/
+    /*}*/
+    /*.copyright{*/
+        /*font-size: 15px!important;*/
+        /*padding: 10px!important;*/
+    /*}*/
+    /*.social i{*/
+        /*padding-top: 10px!important;*/
+    /*}*/
+/*}*/
+
+.left{
+    position: relative;
+    margin-top: 36px;
 }
 
 .copyright{
     /*padding-top: 105px;*/
-    padding-left: 20px;
-    padding-bottom: 20px;
+    /*padding-left: 20px;*/
+    /*padding-bottom: 20px;*/
+    position: absolute;
     font-family: Montserrat, sans-serif;
     font-style: normal;
     font-weight: normal;
-    font-size: 20px;
+    font-size: 14px;
     line-height: normal;
     color: #FFFFFF;
+    z-index: 100;
+    bottom: 17px;
 }
 
 .social img{
@@ -463,9 +471,9 @@
     /*padding-top: 90px;*/
 }
 
-@media (min-width: 768px) {
-    .footer{
-        padding-left: 40px!important;
-        padding-right: 80px!important;
-    }
-}
+/*@media (min-width: 768px) {*/
+    /*.footer{*/
+        /*padding-left: 40px!important;*/
+        /*padding-right: 80px!important;*/
+    /*}*/
+/*}*/
