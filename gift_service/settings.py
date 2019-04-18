@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'corsheaders',
     'rest_framework',
     'rest_framework_swagger',
     'address',
@@ -51,6 +52,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
 ]
 
 ROOT_URLCONF = 'gift_service.urls'
@@ -144,3 +147,7 @@ EMAIL_PORT = '465'
 EMAIL_HOST_USER = 'djangolesson2019@yandex.ru'
 EMAIL_HOST_PASSWORD = 'djangolesson'
 EMAIL_USE_SSL = True
+
+#CORS
+#TODO залатать дыры по этому куску, если найдутся
+CORS_ORIGIN_ALLOW_ALL = True
