@@ -1,11 +1,3 @@
-/*body{*/
-/*line-height: 1;*/
-/*}*/
-
-@font-face {
-    font-family: 'MontB';
-    src: url("fonts/MontB.ttf");
-}
 
 .title{
     margin: auto;
