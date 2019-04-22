@@ -148,6 +148,6 @@ EMAIL_HOST_USER = 'djangolesson2019@yandex.ru'
 EMAIL_HOST_PASSWORD = 'djangolesson'
 EMAIL_USE_SSL = True
 
-#CORS
-#TODO залатать дыры по этому куску, если найдутся
+# CORS
+# TODO залатать дыры по этому куску, если найдутся
 CORS_ORIGIN_ALLOW_ALL = True
