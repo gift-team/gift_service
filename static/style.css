@@ -373,29 +373,23 @@
     border: 3px solid #7F2BC1;
     box-sizing: border-box;
     box-shadow: 0px 8px 4px rgba(0, 0, 0, 0.25);
-    width: 258.67px;
-    height: 258.67px;
+    width: 285px;
+    height: 285px;
     border-radius: 50%;
-    /*left: 105px;*/
-
 }
 
 
 .userItemName {
-    width: 217.72px;
-    height: 250.77px;
+    width: 239.88px;
+    height: 276.29px;
     background: #7F2BC1;
     border-radius: 20px;
-    margin-top: -86px;
-
-
-
-
+    margin-top: -117px;
 }
 
 .userItemNameText {
     position: relative;
-    top: 108px;
+    top: 140px;
     font-family: Montserrat, sans-serif;
     font-style: normal;
     font-weight: bold;
@@ -407,7 +401,7 @@
 
 .userItemNameTextEdit{
     position: relative;
-    margin-top: 120px;
+    margin-top: 148px;
 }
 
 
@@ -417,7 +411,7 @@
     font-family: Montserrat, sans-serif;
     font-style: normal;
     font-weight: 600;
-    font-size: 48px;
+    font-size: 36px;
     line-height: normal;
     margin-left: 0;
 
@@ -425,19 +419,18 @@
 }
 
 .userDataWish {
-    /*display: inline-block;*/
     padding-top: 20px;
-    width: 230px;
-    height: 270px;
+    width: 150px;
+    height: 165.14px;
     background: #7F2BC1;
     border-radius: 20px;
 }
 
 .userDataWishImg {
     position: relative;
-    width: 177px;
-    height: 177px;
-    margin-left: 26px;
+    width: 110px;
+    height: 102px;
+    margin-left: 20px;
 
     background: url("images/apple_watch.png") #FFFFFF center center;
     background-size: cover;
@@ -450,7 +443,7 @@
     font-family: Montserrat, sans-serif;
     font-style: normal;
     font-weight: 600;
-    font-size: 24px;
+    font-size: 18px;
     line-height: normal;
 
     color: #FFFFFF;
@@ -459,15 +452,15 @@
 }
 
 .userDataNewWish {
-    width: 230px;
-    height: 270px;
+    width: 150px;
+    height: 165.14px;
     background: #F5BA3D;
     border-radius: 20px;
 
     font-family: Montserrat, sans-serif;
     font-style: normal;
-    font-weight: bold;
-    font-size: 24px;
+    font-weight: 600;
+    font-size: 18px;
     line-height: normal;
 
     color: #FFFFFF;
@@ -475,16 +468,16 @@
 }
 
 .userDataWishLook {
-    width: 230px;
-    height: 57px;
+    width: 150px;
+    height: 40px;
     margin-top: 22px;
     background: #FDA736;
-    border-radius: 20px;
+    border-radius: 10px;
 
     font-family: Montserrat, sans-serif;
     font-style: normal;
     font-weight: bold;
-    font-size: 24px;
+    font-size: 14px;
     line-height: normal;
 
     color: #FFFFFF;
@@ -621,10 +614,10 @@
 }
 
 .myWishFilterRow {
-    margin-top: 20px;
+    margin-top: 12px;
 }
 .myWishesDropdown {
-    width: 174px;
+    width: 160px;
     height: 30px;
 
     background: #FFFDFD;
@@ -677,16 +670,19 @@
 }
 
 .myWishesElData {
-    float: left;
-    width: 269px;
-    height: 101px;
-    margin: 20px;
+    margin-top: 51px;
+}
+
+.myWishesElData :after {
+    content: "";
+    display: block;
+    clear: both;
 }
 
 .myWishesElText {
-    width: 269px;
-    height: 52px;
-
+    width: 191px;
+    height: 43.72px;
+    text-align: center;
     background: #7F2BC1;
     border-radius: 10px;
     font-family: Montserrat, sans-serif;
@@ -694,8 +690,7 @@
     font-weight: 600;
     font-size: 18px;
     line-height: normal;
-    padding-left: 120px;
-    padding-top: 5px;
+    padding-top: 3px;
 
     color: #FFFFFF;
 }
@@ -706,10 +701,9 @@
 }
 .myWishesElImg {
     float: left;
-    width: 100px;
-    height: 100px;
-    margin-top: -53px;
-
+    width: 95px;
+    height: 95px;
+    display: inline-block;
     background: url("images/apple_watch.png") #FFFFFF center center;
     background-size: cover;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -717,37 +711,41 @@
 }
 
 .myWishesElInfo {
-    float: left;
-    width: 40px;
-    height: 40px;
-    margin-top: 7px;
-    margin-left: 16px;
-    padding-left: 10px;
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    margin-top: 9.28px;
+    margin-left: 4px;
+    padding-left: 5px;
 
     background: #F5BA3D;
     border-radius: 10px;
 }
 
 .myWishesElInfo img {
-    margin-top: 9px;
+    /*margin-top: 9px;*/
 }
 
 .myWishesElDel {
-    float: left;
-    width: 40px;
-    height: 40px;
-    margin-top: 7px;
-    margin-left: 16px;
-    padding-left: 10px;
+    display: inline-block;
+
+    width: 25px;
+    height: 25px;
+    margin-top: 9.28px;
+    margin-left: 4px;
+    padding-left: 5px;
 
     background: #DC4E41;
     border-radius: 10px;
 }
 
 .myWishesElDel img {
-    margin-top: 9px;
 }
 
+.buttons_div {
+    margin-top: 30px;
+    margin-bottom: 60px;
+}
 
 /*Edit*/
 
