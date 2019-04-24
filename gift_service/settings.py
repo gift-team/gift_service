@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'rest_framework',
     'rest_framework_swagger',
+    'rest_framework.authtoken',
     'address',
     'authapp',
 ]
@@ -151,3 +152,13 @@ EMAIL_USE_SSL = True
 # CORS
 # TODO залатать дыры по этому куску, если найдутся
 CORS_ORIGIN_ALLOW_ALL = True
+
+
+# REST
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+    )
+}

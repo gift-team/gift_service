@@ -1,7 +1,13 @@
 from django.core.mail import send_mail
 from django.db import transaction
 from django.shortcuts import render, HttpResponseRedirect
-from rest_framework import viewsets, permissions
+from pytz import unicode
+from rest_framework import viewsets, permissions, generics
+from rest_framework.authentication import SessionAuthentication, BasicAuthentication
+from rest_framework.generics import CreateAPIView
+from rest_framework.permissions import IsAuthenticated
+from rest_framework.response import Response
+from rest_framework.views import APIView
 
 from authapp.forms import GiftUserLoginForm, GiftUserRegisterForm, GiftUserEditForm
 from django.contrib import auth
@@ -102,11 +108,30 @@ def verify(request, email, activation_key):
 
 
 #REST
-class UserViewSet(viewsets.ModelViewSet):
+class UserListView(generics.ListAPIView):
     queryset = GiftUser.objects.all().order_by('-date_joined')
     serializer_class = GiftUserSerializer
-    # permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
 
 
-class ProfileViewSet(viewsets.ViewSet):
-    queryset = GiftUser.objects.filter()
+class ProfileView(generics.RetrieveAPIView):
+    queryset = GiftUser.objects.all()
+    serializer_class = GiftUserSerializer
+
+
+class LoginView(generics.RetrieveAPIView):
+    authentication_classes = (SessionAuthentication, BasicAuthentication)
+    permission_classes = (IsAuthenticated,)
+
+    def get(self, request, format=None):
+        content = {
+            'email': unicode(request.user),  # `django.contrib.auth.User` instance.
+            'auth': unicode(request.auth),  # None
+            'message': 'congrats, youve authentificated',
+        }
+        return Response(content)
+
+
+class CreateUserView(generics.CreateAPIView):
+    model = GiftUser
+    permission_classes = (permissions.AllowAny, )
+    serializer_class = GiftUserSerializer
