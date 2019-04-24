@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'rest_framework_swagger',
     'address',
     'authapp',
+    'phonenumber_field',
 ]
 
 MIDDLEWARE = [
