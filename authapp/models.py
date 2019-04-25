@@ -59,7 +59,7 @@ class GiftUser(AbstractUser):
     address = models.CharField(verbose_name='адрес', max_length=500, blank=True)
     avatar = models.ImageField(upload_to='client_avatars', blank=True)
     age = models.PositiveIntegerField(verbose_name='возраст', blank=True, null=True)
-    email = models.EmailField(_('email address'), verbose_name='почта', unique=True)
+    email = models.EmailField(verbose_name='почта', unique=True)
     phone = PhoneNumberField(verbose_name='телефон', unique=True, blank=True, null=True)
     gender = models.CharField(verbose_name='пол', max_length=1, choices=GENDER_CHOICE, blank=True)
 

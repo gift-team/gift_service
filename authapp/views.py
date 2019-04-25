@@ -14,6 +14,7 @@ from django.conf import settings
 
 from authapp.models import GiftUser
 from authapp.serializers import GiftUserSerializer
+from authapp.permissions import IsOwnerOrReadOnly
 
 
 def send_verify_mail(user):
@@ -111,7 +112,8 @@ class UserListView(generics.ListAPIView):
     serializer_class = GiftUserSerializer
 
 
-class ProfileView(generics.RetrieveAPIView):
+class ProfileView(generics.RetrieveUpdateAPIView):
+    permission_classes = (IsOwnerOrReadOnly, )
     queryset = GiftUser.objects.all()
     serializer_class = GiftUserSerializer
 
