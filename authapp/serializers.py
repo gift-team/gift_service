@@ -1,6 +1,4 @@
-from django.contrib.auth.hashers import make_password
 from rest_framework import serializers
-
 from authapp.models import GiftUser
 
 
@@ -15,7 +13,7 @@ class GiftUserSerializer(serializers.HyperlinkedModelSerializer):
         password = validated_data.pop('password', None)
         instance = self.Meta.model(**validated_data)
         if password is not None:
-            instance.set_password(make_password(password))
+            instance.set_password(password)
         instance.save()
         return instance
 
