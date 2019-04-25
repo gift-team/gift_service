@@ -8,6 +8,7 @@ django-address==0.2.1
 django-cors-headers==2.5.2
 django-rest-swagger==2.1.2
 django-social-auth==0.7.28
+django-phonenumber-field==2.3.1
 djangorestframework==3.9.2
 httplib2==0.12.1
 idna==2.8
