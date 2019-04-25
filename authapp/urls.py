@@ -1,7 +1,7 @@
 import rest_framework
 from django.urls import include, path
 from rest_framework import routers
-from authapp import views
+from authapp import views, admin
 
 import authapp.views as authapp
 
@@ -13,13 +13,15 @@ router = routers.DefaultRouter()
 app_name = 'authapp'
 
 urlpatterns = [
+    # path('admin/', admin.site.urls),
     # path('login/', authapp.login, name='login'),
-    path('logout/', authapp.logout, name='logout'),
+    # path('logout/', authapp.logout, name='logout'),
     # path('register/', authapp.register, name='register'),
     path('edit/', authapp.edit, name='edit'),
     path('verify/<str:email>/<str:activation_key>', authapp.verify, name='verify'),
 
     path('login/', authapp.LoginView.as_view()),
+    path('logout/', authapp.LogoutView.as_view()),
     path('register/', authapp.CreateUserView.as_view()),
     path('users/', authapp.UserListView.as_view()),
     path('users/<int:pk>/', authapp.ProfileView.as_view()),

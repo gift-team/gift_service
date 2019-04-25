@@ -2,12 +2,10 @@ from django.core.mail import send_mail
 from django.db import transaction
 from django.shortcuts import render, HttpResponseRedirect
 from pytz import unicode
-from rest_framework import viewsets, permissions, generics
+from rest_framework import viewsets, permissions, generics, status
 from rest_framework.authentication import SessionAuthentication, BasicAuthentication
-from rest_framework.generics import CreateAPIView
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
-from rest_framework.views import APIView
 
 from authapp.forms import GiftUserLoginForm, GiftUserRegisterForm, GiftUserEditForm
 from django.contrib import auth
@@ -128,7 +126,17 @@ class LoginView(generics.RetrieveAPIView):
             'auth': unicode(request.auth),  # None
             'message': 'congrats, youve authentificated',
         }
-        return Response(content)
+        if request.user.is_active:
+            auth.login(request, request.user)
+            return Response(content)
+
+        return Response(status=status.HTTP_403_FORBIDDEN)
+
+
+class LogoutView(generics.RetrieveAPIView):
+    def get(self, request, format=None):
+        auth.logout(request)
+        return Response(status=status.HTTP_200_OK)
 
 
 class CreateUserView(generics.CreateAPIView):
