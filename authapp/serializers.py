@@ -6,7 +6,8 @@ class GiftUserSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = GiftUser
         fields = ('id', 'first_name', 'middle_name', 'last_name', 'address',
-                  'email', 'password', 'is_superuser', 'is_staff', 'is_active', 'date_joined', 'age', 'gender', 'avatar')
+                  'email', 'password', 'is_superuser', 'is_staff', 'is_active',
+                  'date_joined', 'age', 'gender', 'phone', 'avatar')
         read_only_fields = ('id',)
 
     def create(self, validated_data):
