@@ -1,5 +1,6 @@
 import requests
-import random, string
+import random
+import string
 from django.core.files import File
 from django.core.files.temp import NamedTemporaryFile
 
