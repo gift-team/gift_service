@@ -163,3 +163,6 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.SessionAuthentication',
     )
 }
+
+# For Address integration by Google API
+GOOGLE_API_KEY = 'AIzaSyD--your-google-maps-key-SjQBE'

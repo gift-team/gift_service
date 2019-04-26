@@ -4,6 +4,7 @@ import random
 from django import forms
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm, UserChangeForm
 from .models import GiftUser
+from address.forms import AddressField
 
 
 class GiftUserLoginForm(AuthenticationForm):
@@ -68,3 +69,7 @@ class GiftUserEditForm(UserChangeForm):
     #         raise forms.ValidationError("Вы слишком молоды!")
 
     #    return data
+
+
+class PersonForm(forms.Form):
+    address = AddressField()
