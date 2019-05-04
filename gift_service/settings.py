@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'address',
     'authapp',
     'phonenumber_field',
+    'addressapp',
 ]
 
 MIDDLEWARE = [
