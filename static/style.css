@@ -417,17 +417,17 @@
 /*}*/
 
 /*@media (max-width: 768px) {*/
-    /*.footerMenu p{*/
-        /*font-size: 15px;*/
-        /*margin: 10px!important;*/
-    /*}*/
-    /*.copyright{*/
-        /*font-size: 15px!important;*/
-        /*padding: 10px!important;*/
-    /*}*/
-    /*.social i{*/
-        /*padding-top: 10px!important;*/
-    /*}*/
+/*.footerMenu p{*/
+/*font-size: 15px;*/
+/*margin: 10px!important;*/
+/*}*/
+/*.copyright{*/
+/*font-size: 15px!important;*/
+/*padding: 10px!important;*/
+/*}*/
+/*.social i{*/
+/*padding-top: 10px!important;*/
+/*}*/
 /*}*/
 
 .left{
@@ -459,8 +459,111 @@
 }
 
 /*@media (min-width: 768px) {*/
-    /*.footer{*/
-        /*padding-left: 40px!important;*/
-        /*padding-right: 80px!important;*/
-    /*}*/
+/*.footer{*/
+/*padding-left: 40px!important;*/
+/*padding-right: 80px!important;*/
 /*}*/
+/*}*/
+
+.giftCreationForm{
+    width: 780px!important;
+    height: 720px;
+}
+
+.giftCreationHeader{
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 59px;/* identical to box height */
+    padding-top: 36px;
+    padding-bottom: 50px;
+    color: #535452;
+}
+
+.giftCreationInfo{
+    min-height: 100px;
+
+}
+
+.giftCard{
+    background: #7F2BC1;
+    border-radius: 20px;
+    padding: 24px 26px 8.7px;
+    min-height: 214.68px;
+}
+
+.giftInfoPrice{
+    margin-top: 17.32px;
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    color: #535452;
+}
+
+.giftInfoPrice input{
+    box-shadow: inset 4px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    height: 50px;
+}
+
+.giftInfoPrice input::placeholder{
+    padding-left: 15px;
+}
+
+.giftCreationInfo button{
+    margin-top: 122px;
+    height: 50px;
+    background: #7F2BC1;
+    border-radius: 10px;
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: normal;
+    color: #FFFFFF;
+    outline: none!important;
+}
+
+.giftCreationUrl{
+    margin-top: 41px;
+}
+
+.giftCreationDesc{
+    margin-top: 29px;
+    height: 179px!important;
+}
+
+.giftInfoPrice textarea{
+    box-shadow: inset 4px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    height: 50px;
+}
+
+.giftInfoPrice textarea::placeholder{
+    padding-left: 22px;
+    padding-top: 19px;
+}
+
+.giftCreationName::placeholder{
+    padding-left: 22px!important;
+}
+
+.giftCreationUrl::placeholder{
+    padding-left: 22px!important;
+}
+
+.giftCreationCollection{
+    margin-top: 27px;
+    text-align: left;
+}
+
+.collectionHeader{
+    margin-left: 21.5px;
+}
+
+.collectionImages{
+    margin-top: 13px;
+}

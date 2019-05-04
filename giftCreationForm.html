@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="static/bootstrap4/css/bootstrap.min.css">
+
+    <script src="static/bootstrap4/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="static/style.css">
+    <title>Gift-Creation</title>
+</head>
+<body>
+<div class="container text-center giftCreationForm p-0">
+    <div class="giftCreationHeader">
+        <span>ПОЖЕЛАНИЕ</span>
+    </div>
+    <div class="giftCreationInfo d-flex">
+        <div class="col-1 p-0"></div>
+        <div class="col-3 p-0 d-flex flex-column">
+            <div class="giftCard d-flex flex-column justify-content-between">
+                <img class="d-flex w-100" src="static/images/giftCreationForm/giftImg.svg" alt="no image">
+                <a href="#">
+                    <img src="static/images/giftCreationForm/cloud.svg" alt="">
+                </a>
+            </div>
+            <div class="giftInfoPrice d-flex">
+                <input class="w-100" placeholder="Цена:" type="text">
+            </div>
+            <button>СОЗДАТЬ</button>
+        </div>
+        <div class="col-1 p-0"></div>
+        <div class="col-6 p-0 d-flex flex-column giftInfoPrice m-0">
+            <input class="giftCreationName" placeholder="Название:" type="text">
+            <input class="giftCreationUrl" placeholder="Ссылка:" type="text">
+            <textarea class="giftCreationDesc" placeholder="Описание:" type="text"></textarea>
+            <div class="giftCreationCollection">
+                <div class="collectionHeader">Коллекция:</div>
+                <div class="collectionImages d-flex justify-content-between">
+                    <img src="static/images/giftCreationForm/iconHouse.svg" alt="">
+                    <img src="static/images/giftCreationForm/iconPerson.svg" alt="">
+                    <img src="static/images/giftCreationForm/iconCar.svg" alt="">
+                    <img src="static/images/giftCreationForm/iconPortfolio.svg" alt="">
+                    <img src="static/images/giftCreationForm/iconFoto.svg" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="col-1 p-0"></div>
+    </div>
+</div>
+</body>
+</html>
