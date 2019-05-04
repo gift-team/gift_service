@@ -1,9 +1,7 @@
 from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import AbstractUser, BaseUserManager
-from django.utils.translation import ugettext_lazy as _
 from phonenumber_field.modelfields import PhoneNumberField
-from address.models import AddressField
 
 
 class UserManager(BaseUserManager):
@@ -57,7 +55,7 @@ class GiftUser(AbstractUser):
     )
 
     middle_name = models.CharField(verbose_name='отчество', max_length=150, blank=True)
-    address = AddressField(related_name='+', on_delete=models.CASCADE, blank=True, null=True)
+    address = models.ForeignKey('addressapp.Address', related_name='+', on_delete=models.CASCADE, blank=True, null=True)
     avatar = models.ImageField(upload_to='client_avatars', blank=True)
     age = models.PositiveIntegerField(verbose_name='возраст', blank=True, null=True)
     email = models.EmailField(verbose_name='почта', unique=True)
@@ -72,53 +70,3 @@ class GiftUser(AbstractUser):
             return False
         else:
             return True
-
-
-# class AddressName(models.Model):
-#     name = models.CharField(verbose_name='название адреса', max_length=20, unique=True, null=False, blank=False)
-#
-#
-# class Address(models.Model):
-#     user_id = models.ForeignKey(GiftUser, on_delete=models.CASCADE)
-#     name_id = models.ForeignKey(AddressName, on_delete=models.SET(1))
-#     address = AddressField(related_name='+', blank=True, null=True)
-
-
-# Моя пиздобратия до того, как увидел, что ты уже добавил django-address
-# class AddressName(models.Model):
-#     name = models.CharField(verbose_name='название адреса', max_length=20, unique=True, null=False, blank=False)
-#
-#
-# class Country(models.Model):
-#     name = models.CharField(verbose_name='название страны', max_length=30, unique=True, null=False, blank=False)
-#
-#
-# class Region(models.Model):
-#     country_id = models.ForeignKey(Country, on_delete=models.CASCADE)
-#     name = models.CharField(verbose_name='область', max_length=20, unique=True, null=False, blank=False)
-#
-#
-# class City(models.Model):
-#     region_id = models.ForeignKey(Region, on_delete=models.CASCADE)
-#     name = models.CharField(verbose_name='населенный пункт', max_length=20, unique=True, null=False, blank=False)
-#
-#
-# class Street(models.Model):
-#     city_id = models.ForeignKey(City, on_delete=models.CASCADE)
-#     name = models.CharField(verbose_name='улица', max_length=20, unique=True, null=False, blank=False)
-#
-#
-# class Building(models.Model):
-#     street_id = models.ForeignKey(Street, on_delete=models.CASCADE)
-#     number = models.IntegerField(verbose_name='дом', max_length=6, unique=True, null=False, blank=False)
-#
-#
-# class BuildingStructure(models.Model):
-#     building_id = models.ForeignKey(Building, on_delete=models.CASCADE)
-#     name = models.IntegerField(verbose_name='дом', max_length=6, unique=True, null=False, blank=False)
-#
-#
-# class Address(models.Model):
-#     user_id = models.ForeignKey(GiftUser, on_delete=models.CASCADE)
-#     name_id = models.ForeignKey(AddressName, on_delete=models.SET(1))
-#     country_id =
