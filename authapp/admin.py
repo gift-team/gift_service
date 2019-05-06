@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as DjangoUserAdmin
 from django.utils.translation import ugettext_lazy as _
 
-from .models import GiftUser
+from .models import GiftUser, Address, AddressName, Country, Region, City, Street, Building, Flat
 
 
 @admin.register(GiftUser)
@@ -25,3 +25,13 @@ class UserAdmin(DjangoUserAdmin):
     list_display = ('email', 'first_name', 'last_name', 'is_staff')
     search_fields = ('email', 'first_name', 'last_name')
     ordering = ('email',)
+
+
+admin.site.register(Address)
+admin.site.register(AddressName)
+admin.site.register(Country)
+admin.site.register(City)
+admin.site.register(Region)
+admin.site.register(Street)
+admin.site.register(Building)
+admin.site.register(Flat)

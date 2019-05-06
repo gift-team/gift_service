@@ -2,7 +2,7 @@ from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import AbstractUser, BaseUserManager
 from phonenumber_field.modelfields import PhoneNumberField
-from addressapp.models import Address
+# from addressapp.models import Address
 
 
 class UserManager(BaseUserManager):
@@ -56,7 +56,7 @@ class GiftUser(AbstractUser):
     )
 
     middle_name = models.CharField(verbose_name='отчество', max_length=150, blank=True)
-    address = models.ForeignKey(Address, on_delete=models.CASCADE, blank=True, null=True)
+    address = models.ManyToManyField('Address')
     avatar = models.ImageField(upload_to='client_avatars', blank=True)
     age = models.PositiveIntegerField(verbose_name='возраст', blank=True, null=True)
     email = models.EmailField(verbose_name='почта', unique=True)
@@ -71,3 +71,80 @@ class GiftUser(AbstractUser):
             return False
         else:
             return True
+
+
+class AddressName(models.Model):
+    name = models.CharField(verbose_name='название адреса', max_length=20, unique=True, null=False, blank=False)
+
+    def __str__(self):
+        return self.name
+
+
+class Country(models.Model):
+    name = models.CharField(verbose_name='название страны', max_length=30, unique=True, null=False, blank=False)
+
+    def __str__(self):
+        return self.name
+
+
+class Region(models.Model):
+    name = models.CharField(verbose_name='область', max_length=30, unique=True, null=False, blank=False)
+
+    def __str__(self):
+        return self.name
+
+
+class City(models.Model):
+    name = models.CharField(verbose_name='населенный пункт', max_length=30, unique=True, null=False, blank=False)
+
+    def __str__(self):
+        return self.name
+
+
+class Street(models.Model):
+    name = models.CharField(verbose_name='улица', max_length=30, unique=True, null=False, blank=False)
+
+    def __str__(self):
+        return self.name
+
+
+class Building(models.Model):
+    number = models.IntegerField(verbose_name='дом', unique=False, null=False, blank=False)
+    structure = models.CharField(verbose_name='к., стр., вл.', max_length=3, unique=False, null=True, blank=True)
+
+    def __str__(self):
+        return '{}{}{}'.format(self.number, '-', self.structure)
+
+
+class Flat(models.Model):
+    number = models.IntegerField(verbose_name='квартира', unique=True, null=False, blank=False)
+
+    def __str__(self):
+        return '%s' % self.number
+
+
+class Address(models.Model):
+    user = models.ForeignKey(GiftUser,
+                             related_name='+',
+                             verbose_name='владелец',
+                             unique=False,
+                             null=False,
+                             blank=False,
+                             on_delete=models.CASCADE)
+    name = models.ForeignKey(AddressName, on_delete=models.SET(1))
+    country = models.ForeignKey(Country, on_delete=models.CASCADE)
+    region = models.ForeignKey(Region, on_delete=models.CASCADE)
+    city = models.ForeignKey(City, on_delete=models.CASCADE)
+    street = models.ForeignKey(Street, on_delete=models.CASCADE)
+    building = models.ForeignKey(Building, on_delete=models.CASCADE)
+    flat = models.ForeignKey(Flat, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return 'Владелец: {}, адрес: {}. {}, {}, {}, {}, {}-{}'.format(self.user.get_full_name(),
+                                                                       self.name,
+                                                                       self.country,
+                                                                       self.region,
+                                                                       self.city,
+                                                                       self.street,
+                                                                       self.building,
+                                                                       self.flat)
