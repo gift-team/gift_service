@@ -2,6 +2,7 @@ from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import AbstractUser, BaseUserManager
 from phonenumber_field.modelfields import PhoneNumberField
+from addressapp.models import Address
 
 
 class UserManager(BaseUserManager):
@@ -55,7 +56,7 @@ class GiftUser(AbstractUser):
     )
 
     middle_name = models.CharField(verbose_name='отчество', max_length=150, blank=True)
-    address = models.ForeignKey('addressapp.Address', related_name='+', on_delete=models.CASCADE, blank=True, null=True)
+    address = models.ForeignKey(Address, on_delete=models.CASCADE, blank=True, null=True)
     avatar = models.ImageField(upload_to='client_avatars', blank=True)
     age = models.PositiveIntegerField(verbose_name='возраст', blank=True, null=True)
     email = models.EmailField(verbose_name='почта', unique=True)
