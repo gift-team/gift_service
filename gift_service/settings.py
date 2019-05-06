@@ -43,7 +43,6 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'authapp',
     'phonenumber_field',
-    'addressapp',
     'address',
 ]
 
