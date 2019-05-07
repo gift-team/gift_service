@@ -56,7 +56,7 @@ class GiftUser(AbstractUser):
     )
 
     middle_name = models.CharField(verbose_name='отчество', max_length=150, blank=True)
-    address = models.ForeignKey('Address', related_name='address', on_delete=models.CASCADE, null=True, blank=True)
+    address = models.ManyToManyField('Address', related_name='address', null=True, blank=True)
     avatar = models.ImageField(upload_to='client_avatars', blank=True)
     age = models.PositiveIntegerField(verbose_name='возраст', blank=True, null=True)
     email = models.EmailField(verbose_name='почта', unique=True)
