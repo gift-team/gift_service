@@ -56,7 +56,7 @@ class GiftUser(AbstractUser):
     )
 
     middle_name = models.CharField(verbose_name='отчество', max_length=150, blank=True)
-    address = models.ManyToManyField('Address')
+    address = models.ForeignKey('Address', related_name='address', on_delete=models.CASCADE, null=True, blank=True)
     avatar = models.ImageField(upload_to='client_avatars', blank=True)
     age = models.PositiveIntegerField(verbose_name='возраст', blank=True, null=True)
     email = models.EmailField(verbose_name='почта', unique=True)
@@ -73,6 +73,7 @@ class GiftUser(AbstractUser):
             return True
 
 
+# TODO Убрать после тестирования переопределение метода __str__. Красоту наводят на фронте
 class AddressName(models.Model):
     name = models.CharField(verbose_name='название адреса', max_length=20, unique=True, null=False, blank=False)
 
@@ -123,15 +124,7 @@ class Flat(models.Model):
         return '%s' % self.number
 
 
-class Address(models.Model):
-    user = models.ForeignKey(GiftUser,
-                             related_name='+',
-                             verbose_name='владелец',
-                             unique=False,
-                             null=False,
-                             blank=False,
-                             on_delete=models.CASCADE)
-    name = models.ForeignKey(AddressName, on_delete=models.SET(1))
+class Addresses(models.Model):
     country = models.ForeignKey(Country, on_delete=models.CASCADE)
     region = models.ForeignKey(Region, on_delete=models.CASCADE)
     city = models.ForeignKey(City, on_delete=models.CASCADE)
@@ -139,12 +132,24 @@ class Address(models.Model):
     building = models.ForeignKey(Building, on_delete=models.CASCADE)
     flat = models.ForeignKey(Flat, on_delete=models.CASCADE)
 
+
+class Address(models.Model):
+    user = models.ForeignKey(GiftUser,
+                             related_name='users',
+                             verbose_name='владелец',
+                             unique=False,
+                             null=False,
+                             blank=False,
+                             on_delete=models.CASCADE)
+    name = models.ForeignKey(AddressName, on_delete=models.CASCADE)
+    addresses = models.ForeignKey(Addresses, on_delete=models.CASCADE, related_name='addresses')
+
     def __str__(self):
         return 'Владелец: {}, адрес: {}. {}, {}, {}, {}, {}-{}'.format(self.user.get_full_name(),
                                                                        self.name,
-                                                                       self.country,
-                                                                       self.region,
-                                                                       self.city,
-                                                                       self.street,
-                                                                       self.building,
-                                                                       self.flat)
+                                                                       self.addresses.country,
+                                                                       self.addresses.region,
+                                                                       self.addresses.city,
+                                                                       self.addresses.street,
+                                                                       self.addresses.building,
+                                                                       self.addresses.flat)

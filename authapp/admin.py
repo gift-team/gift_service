@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as DjangoUserAdmin
 from django.utils.translation import ugettext_lazy as _
 
-from .models import GiftUser, Address, AddressName, Country, Region, City, Street, Building, Flat
+from .models import GiftUser, Address, AddressName, Country, Region, City, Street, Building, Flat, Addresses
 
 
 @admin.register(GiftUser)
@@ -11,7 +11,7 @@ class UserAdmin(DjangoUserAdmin):
 
     fieldsets = (
         (None, {'fields': ('email', 'password')}),
-        (_('Personal info'), {'fields': ('first_name', 'middle_name', 'last_name')}),
+        (_('Personal info'), {'fields': ('first_name', 'middle_name', 'last_name', 'address')}),
         (_('Permissions'), {'fields': ('is_active', 'is_staff', 'is_superuser',
                                        'groups', 'user_permissions')}),
         (_('Important dates'), {'fields': ('last_login', 'date_joined')}),
@@ -28,6 +28,7 @@ class UserAdmin(DjangoUserAdmin):
 
 
 admin.site.register(Address)
+admin.site.register(Addresses)
 admin.site.register(AddressName)
 admin.site.register(Country)
 admin.site.register(City)
