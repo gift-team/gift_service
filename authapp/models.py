@@ -131,13 +131,6 @@ class Addresses(models.Model):
     street = models.ForeignKey(Street, on_delete=models.CASCADE)
     building = models.ForeignKey(Building, on_delete=models.CASCADE)
     flat = models.ForeignKey(Flat, on_delete=models.CASCADE)
-    str_name = models.CharField(max_length=500, blank=True)
-
-    def save(self, force_insert=False, force_update=False):
-        self.str_name = self.country.__str__() + self.region.__str__() + \
-                        self.city.__str__() + self.street.__str__() + \
-                        self.building.__str__() + self.flat.__str__()
-        super(Addresses, self).save(force_insert, force_update)
 
     def __str__(self):
         result = str(self.country) + ', '+ str(self.region) + ', ' + \
