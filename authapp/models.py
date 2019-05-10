@@ -114,7 +114,10 @@ class Building(models.Model):
     structure = models.CharField(verbose_name='к., стр., вл.', max_length=3, unique=False, null=True, blank=True)
 
     def __str__(self):
-        return '{}{}{}'.format(self.number, '-', self.structure)
+        if self.structure is not None:
+            return '{}{}{}'.format(self.number, '-', self.structure)
+        else:
+            return '{}'.format(self.number)
 
 
 class Flat(models.Model):
