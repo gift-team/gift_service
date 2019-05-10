@@ -2,7 +2,6 @@ from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import AbstractUser, BaseUserManager
 from phonenumber_field.modelfields import PhoneNumberField
-# from addressapp.models import Address
 
 
 class UserManager(BaseUserManager):
@@ -56,7 +55,7 @@ class GiftUser(AbstractUser):
     )
 
     middle_name = models.CharField(verbose_name='отчество', max_length=150, blank=True)
-    address = models.ManyToManyField('Address', related_name='address', blank=True)
+    address_list = models.ManyToManyField('AddressList', related_name='address_list', blank=True)
     avatar = models.ImageField(upload_to='client_avatars', blank=True)
     age = models.PositiveIntegerField(verbose_name='возраст', blank=True, null=True)
     email = models.EmailField(verbose_name='почта', unique=True)
@@ -127,7 +126,7 @@ class Flat(models.Model):
         return '%s' % self.number
 
 
-class Addresses(models.Model):
+class Address(models.Model):
     country = models.ForeignKey(Country, on_delete=models.CASCADE)
     region = models.ForeignKey(Region, on_delete=models.CASCADE)
     city = models.ForeignKey(City, on_delete=models.CASCADE)
@@ -142,7 +141,7 @@ class Addresses(models.Model):
         return result
 
 
-class Address(models.Model):
+class AddressList(models.Model):
     user = models.ForeignKey(GiftUser,
                              related_name='users',
                              verbose_name='владелец',
@@ -151,14 +150,14 @@ class Address(models.Model):
                              blank=False,
                              on_delete=models.CASCADE)
     name = models.ForeignKey(AddressName, on_delete=models.CASCADE)
-    addresses = models.ForeignKey(Addresses, on_delete=models.CASCADE, related_name='addresses')
+    address = models.ForeignKey(Address, on_delete=models.CASCADE)
 
     def __str__(self):
         return 'Владелец: {}, адрес: {}. {}, {}, {}, {}, {}-{}'.format(self.user.get_full_name(),
                                                                        self.name,
-                                                                       self.addresses.country,
-                                                                       self.addresses.region,
-                                                                       self.addresses.city,
-                                                                       self.addresses.street,
-                                                                       self.addresses.building,
-                                                                       self.addresses.flat)
+                                                                       self.address.country,
+                                                                       self.address.region,
+                                                                       self.address.city,
+                                                                       self.address.street,
+                                                                       self.address.building,
+                                                                       self.address.flat)

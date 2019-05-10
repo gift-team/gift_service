@@ -1,22 +1,22 @@
 from rest_framework import serializers
-from authapp.models import GiftUser, Address, AddressName, Addresses
+from authapp.models import GiftUser, AddressList
 
 
-class AddressSerializer(serializers.ModelSerializer):
+class AddressListSerializer(serializers.ModelSerializer):
     name = serializers.StringRelatedField()
-    addresses = serializers.StringRelatedField()
+    address = serializers.StringRelatedField()
 
     class Meta:
-        model = Address
-        fields = ('name', 'addresses')
+        model = AddressList
+        fields = ('name', 'address')
 
 
 class GiftUserSerializer(serializers.HyperlinkedModelSerializer):
-    address = AddressSerializer(many=True, read_only=True)
+    address_list = AddressListSerializer(many=True, read_only=True)
 
     class Meta:
         model = GiftUser
-        fields = ('id', 'first_name', 'middle_name', 'last_name', 'address',
+        fields = ('id', 'first_name', 'middle_name', 'last_name', 'address_list',
                   'email', 'password', 'is_superuser', 'is_staff', 'is_active',
                   'date_joined', 'age', 'gender', 'phone', 'avatar')
         read_only_fields = ('id',)
