@@ -2,20 +2,9 @@ from rest_framework import serializers
 from authapp.models import GiftUser, Address, AddressName, Addresses
 
 
-class AddressNameSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = AddressName
-        fields = ('name')
-
-
-class AddressesSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Addresses
-
-
 class AddressSerializer(serializers.ModelSerializer):
-    name = AddressNameSerializer
-    addresses = AddressesSerializer
+    name = serializers.StringRelatedField()
+    addresses = serializers.StringRelatedField()
 
     class Meta:
         model = Address

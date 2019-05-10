@@ -56,7 +56,7 @@ class GiftUser(AbstractUser):
     )
 
     middle_name = models.CharField(verbose_name='отчество', max_length=150, blank=True)
-    address = models.ManyToManyField('Address', related_name='address', null=True, blank=True)
+    address = models.ManyToManyField('Address', related_name='address', blank=True)
     avatar = models.ImageField(upload_to='client_avatars', blank=True)
     age = models.PositiveIntegerField(verbose_name='возраст', blank=True, null=True)
     email = models.EmailField(verbose_name='почта', unique=True)
@@ -131,6 +131,19 @@ class Addresses(models.Model):
     street = models.ForeignKey(Street, on_delete=models.CASCADE)
     building = models.ForeignKey(Building, on_delete=models.CASCADE)
     flat = models.ForeignKey(Flat, on_delete=models.CASCADE)
+    str_name = models.CharField(max_length=500, blank=True)
+
+    def save(self, force_insert=False, force_update=False):
+        self.str_name = self.country.__str__() + self.region.__str__() + \
+                        self.city.__str__() + self.street.__str__() + \
+                        self.building.__str__() + self.flat.__str__()
+        super(Addresses, self).save(force_insert, force_update)
+
+    def __str__(self):
+        result = str(self.country) + ', '+ str(self.region) + ', ' + \
+        str(self.city) + ', ' + str(self.street) + ', ' + \
+        str(self.building) + ', ' + str(self.flat)
+        return result
 
 
 class Address(models.Model):
