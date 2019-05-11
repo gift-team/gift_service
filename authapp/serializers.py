@@ -1,31 +1,91 @@
+from abc import ABC
+
 from rest_framework import serializers
-from authapp.models import GiftUser, AddressList
+from authapp import models
+
+#! TODO редактирование профиля
+#! TODO регистрация пользователя
+#! TODO смена пароля
+
+
+class AddressNameSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.AddressName
+        fields = ('id', 'name')
+
+
+class AddressCountrySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.Country
+        fields = ('id', 'name')
+
+
+class AddressRegionSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.Region
+        fields = ('id', 'name')
+
+
+class AddressCitySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.City
+        fields = ('id', 'name')
+
+
+class AddressStreetSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.Street
+        fields = ('id', 'name')
+
+
+class AddressBuildingSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.Building
+        fields = ('id', 'number', 'structure')
+
+
+class AddressFlatSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.Flat
+        fields = ('id', 'number')
+
+
+class AddressSerializer(serializers.ModelSerializer):
+    country = AddressCountrySerializer()
+    region = AddressRegionSerializer()
+    city = AddressCitySerializer()
+    street = AddressStreetSerializer()
+    building = AddressBuildingSerializer()
+    flat = AddressFlatSerializer()
+
+    class Meta:
+        model = models.Address
+        # fields = ('country', 'region', 'city', 'street', 'building', 'flat')
+        fields = ('id', 'country', 'region', 'city', 'street', 'building', 'flat')
 
 
 class AddressListSerializer(serializers.ModelSerializer):
-    name = serializers.StringRelatedField()
-    address = serializers.StringRelatedField()
+    name = AddressNameSerializer()
+    address = AddressSerializer()
 
     class Meta:
-        model = AddressList
+        model = models.AddressList
         fields = ('name', 'address')
 
 
-class LoginSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = GiftUser
-        fields = ('email', 'password')
-
-
-class GiftUserSerializer(serializers.HyperlinkedModelSerializer):
-    address_list = AddressListSerializer(many=True, read_only=True)
+class ProfileSerializer(serializers.ModelSerializer):
+    address_list = AddressListSerializer(many=True)
 
     class Meta:
-        model = GiftUser
+        model = models.GiftUser
         fields = ('id', 'first_name', 'middle_name', 'last_name', 'address_list',
-                  'email', 'password', 'is_superuser', 'is_staff', 'is_active',
-                  'date_joined', 'age', 'gender', 'phone', 'avatar')
-        read_only_fields = ('id',)
+                  'age', 'gender', 'phone', 'avatar', 'login', 'email')
+
+
+class AuthSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.GiftUser
+        fields = ('email', 'password')
 
     def create(self, validated_data):
         password = validated_data.pop('password', None)
@@ -35,11 +95,7 @@ class GiftUserSerializer(serializers.HyperlinkedModelSerializer):
         instance.save()
         return instance
 
-    def update(self, instance, validated_data):
-        for attr, value in validated_data.items():
-            if attr == 'password':
-                instance.set_password(value)
-            else:
-                setattr(instance, attr, value)
-        instance.save()
-        return instance
+
+class ChangePasswordSerializer(serializers.Serializer):
+    old_password = serializers.CharField(required=True)
+    new_password = serializers.CharField(required=True)

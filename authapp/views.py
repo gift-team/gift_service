@@ -13,7 +13,7 @@ from django.urls import reverse
 from django.conf import settings
 
 from authapp.models import GiftUser
-from authapp.serializers import GiftUserSerializer, LoginSerializer
+from authapp.serializers import ProfileSerializer, AuthSerializer, ChangePasswordSerializer
 
 
 def send_verify_mail(user):
@@ -108,19 +108,21 @@ def verify(request, email, activation_key):
 #REST
 class UserListView(generics.ListAPIView):
     queryset = GiftUser.objects.all().order_by('-date_joined')
-    serializer_class = GiftUserSerializer
+    serializer_class = ProfileSerializer
 
 
 class ProfileView(generics.RetrieveAPIView):
     queryset = GiftUser.objects.all()
-    serializer_class = GiftUserSerializer
+    serializer_class = ProfileSerializer
 
-
-class LoginView(generics.RetrieveAPIView):
-    serializer_class = LoginSerializer
     # authentication_classes = (SessionAuthentication, BasicAuthentication)
     # permission_classes = (IsAuthenticated,)
 
+
+class LoginView(generics.CreateAPIView):
+    serializer_class = AuthSerializer
+
+    #Login
     def post(self, request, format=None):
         content = {
             'email': unicode(request.user),  # `django.contrib.auth.User` instance.
@@ -135,7 +137,7 @@ class LoginView(generics.RetrieveAPIView):
 
 
 class LogoutView(generics.RetrieveAPIView):
-    def get(self, request, format=None):
+    def get(self, request):
         auth.logout(request)
         return Response(status=status.HTTP_200_OK)
 
@@ -143,4 +145,29 @@ class LogoutView(generics.RetrieveAPIView):
 class CreateUserView(generics.CreateAPIView):
     model = GiftUser
     permission_classes = (permissions.AllowAny, )
-    serializer_class = GiftUserSerializer
+    serializer_class = AuthSerializer
+
+
+class ChangePasswordView(generics.UpdateAPIView):
+    serializer_class = ChangePasswordSerializer
+    model = GiftUser
+    permission_classes = (IsAuthenticated,)
+
+    def get_object(self, queryset=None):
+        obj = self.request.user
+        return obj
+
+    def update(self, request, *args, **kwargs):
+        self.object = self.get_object()
+        serializer = self.get_serializer(data=request.data)
+
+        if serializer.is_valid():
+            # Check old password
+            if not self.object.check_password(serializer.data.get("old_password")):
+                return Response({"old_password": ["Wrong password."]}, status=status.HTTP_400_BAD_REQUEST)
+            # set_password also hashes the password that the user will get
+            self.object.set_password(serializer.data.get("new_password"))
+            self.object.save()
+            return Response("Success.", status=status.HTTP_200_OK)
+
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
