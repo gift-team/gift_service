@@ -58,7 +58,7 @@ class GiftUser(AbstractUser):
     address_list = models.ManyToManyField('AddressList', related_name='address_list', blank=True)
     login = models.CharField(verbose_name='логин', max_length=20, blank=True)
     avatar = models.ImageField(upload_to='client_avatars', blank=True)
-    birhdate = models.DateField(verbose_name='дата рождения', blank=True, null=True)
+    birthdate = models.DateField(verbose_name='дата рождения', blank=True, null=True)
     email = models.EmailField(verbose_name='почта', unique=True)
     phone = PhoneNumberField(verbose_name='телефон', unique=True, blank=True, null=True)
     gender = models.CharField(verbose_name='пол', max_length=1, choices=GENDER_CHOICE, blank=True)
