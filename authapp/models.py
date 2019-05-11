@@ -56,8 +56,9 @@ class GiftUser(AbstractUser):
 
     middle_name = models.CharField(verbose_name='отчество', max_length=150, blank=True)
     address_list = models.ManyToManyField('AddressList', related_name='address_list', blank=True)
+    login = models.CharField(verbose_name='логин', max_length=20, blank=True)
     avatar = models.ImageField(upload_to='client_avatars', blank=True)
-    age = models.PositiveIntegerField(verbose_name='возраст', blank=True, null=True)
+    age = models.DateField(verbose_name='возраст', blank=True, null=True)
     email = models.EmailField(verbose_name='почта', unique=True)
     phone = PhoneNumberField(verbose_name='телефон', unique=True, blank=True, null=True)
     gender = models.CharField(verbose_name='пол', max_length=1, choices=GENDER_CHOICE, blank=True)
@@ -134,11 +135,11 @@ class Address(models.Model):
     building = models.ForeignKey(Building, on_delete=models.CASCADE)
     flat = models.ForeignKey(Flat, on_delete=models.CASCADE)
 
-    def __str__(self):
-        result = str(self.country) + ', '+ str(self.region) + ', ' + \
-        str(self.city) + ', ' + str(self.street) + ', ' + \
-        str(self.building) + ', ' + str(self.flat)
-        return result
+    # def __str__(self):
+    #     result = str(self.country) + ', '+ str(self.region) + ', ' + \
+    #     str(self.city) + ', ' + str(self.street) + ', ' + \
+    #     str(self.building) + ', ' + str(self.flat)
+    #     return result
 
 
 class AddressList(models.Model):
@@ -152,12 +153,12 @@ class AddressList(models.Model):
     name = models.ForeignKey(AddressName, on_delete=models.CASCADE)
     address = models.ForeignKey(Address, on_delete=models.CASCADE)
 
-    def __str__(self):
-        return 'Владелец: {}, адрес: {}. {}, {}, {}, {}, {}-{}'.format(self.user.get_full_name(),
-                                                                       self.name,
-                                                                       self.address.country,
-                                                                       self.address.region,
-                                                                       self.address.city,
-                                                                       self.address.street,
-                                                                       self.address.building,
-                                                                       self.address.flat)
+    # def __str__(self):
+    #     return 'Владелец: {}, адрес: {}. {}, {}, {}, {}, {}-{}'.format(self.user.get_full_name(),
+    #                                                                    self.name,
+    #                                                                    self.address.country,
+    #                                                                    self.address.region,
+    #                                                                    self.address.city,
+    #                                                                    self.address.street,
+    #                                                                    self.address.building,
+    #                                                                    self.address.flat)

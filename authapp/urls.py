@@ -25,6 +25,7 @@ urlpatterns = [
     path('register/', authapp.CreateUserView.as_view()),
     path('users/', authapp.UserListView.as_view()),
     path('users/<int:pk>/', authapp.ProfileView.as_view()),
+    path('password/', authapp.ChangePasswordView.as_view()),
 
     path('rest/api-auth/', include('rest_framework.urls', namespace='rest_framework')),
 ]
