@@ -13,8 +13,7 @@ from django.urls import reverse
 from django.conf import settings
 
 from authapp.models import GiftUser
-from authapp.serializers import GiftUserSerializer
-from authapp.permissions import IsOwnerOrReadOnly
+from authapp.serializers import GiftUserSerializer, LoginSerializer
 
 
 def send_verify_mail(user):
@@ -112,17 +111,17 @@ class UserListView(generics.ListAPIView):
     serializer_class = GiftUserSerializer
 
 
-class ProfileView(generics.RetrieveUpdateAPIView):
-    permission_classes = (IsOwnerOrReadOnly, )
+class ProfileView(generics.RetrieveAPIView):
     queryset = GiftUser.objects.all()
     serializer_class = GiftUserSerializer
 
 
 class LoginView(generics.RetrieveAPIView):
-    authentication_classes = (SessionAuthentication, BasicAuthentication)
-    permission_classes = (IsAuthenticated,)
+    serializer_class = LoginSerializer
+    # authentication_classes = (SessionAuthentication, BasicAuthentication)
+    # permission_classes = (IsAuthenticated,)
 
-    def get(self, request, format=None):
+    def post(self, request, format=None):
         content = {
             'email': unicode(request.user),  # `django.contrib.auth.User` instance.
             'auth': unicode(request.auth),  # None
