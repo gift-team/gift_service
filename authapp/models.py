@@ -58,7 +58,7 @@ class GiftUser(AbstractUser):
     address_list = models.ManyToManyField('AddressList', related_name='address_list', blank=True)
     login = models.CharField(verbose_name='логин', max_length=20, blank=True)
     avatar = models.ImageField(upload_to='client_avatars', blank=True)
-    age = models.DateField(verbose_name='возраст', blank=True, null=True)
+    birhdate = models.DateField(verbose_name='дата рождения', blank=True, null=True)
     email = models.EmailField(verbose_name='почта', unique=True)
     phone = PhoneNumberField(verbose_name='телефон', unique=True, blank=True, null=True)
     gender = models.CharField(verbose_name='пол', max_length=1, choices=GENDER_CHOICE, blank=True)
@@ -73,7 +73,7 @@ class GiftUser(AbstractUser):
             return True
 
 
-# TODO Убрать после тестирования переопределение метода __str__. Красоту наводят на фронте
+# TODO Открытый вопрос в необходимости по переопределению метода __str__?
 class AddressName(models.Model):
     name = models.CharField(verbose_name='название адреса', max_length=20, unique=True, null=False, blank=False)
 

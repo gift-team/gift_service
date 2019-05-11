@@ -22,7 +22,7 @@ class GiftUserLoginForm(AuthenticationForm):
 class GiftUserRegisterForm(UserCreationForm):
     class Meta:
         model = GiftUser
-        fields = ('first_name', 'last_name', 'password1', 'password2', 'email', 'age', 'avatar', 'gender')
+        fields = ('first_name', 'last_name', 'password1', 'password2', 'email', 'birhdate', 'avatar', 'gender')
         # fields = '__all__'
 
     def __init__(self, *args, **kwargs):
@@ -52,7 +52,7 @@ class GiftUserRegisterForm(UserCreationForm):
 class GiftUserEditForm(UserChangeForm):
     class Meta:
         model = GiftUser
-        fields = ('first_name', 'middle_name', 'last_name', 'gender', 'address_list', 'age', 'password', 'avatar')
+        fields = ('first_name', 'middle_name', 'last_name', 'gender', 'address_list', 'birhdate', 'password', 'avatar')
 
     def __init__(self, *args, **kwargs):
         super(GiftUserEditForm, self).__init__(*args, **kwargs)
