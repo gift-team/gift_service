@@ -60,7 +60,6 @@ class AddressSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = models.Address
-        # fields = ('country', 'region', 'city', 'street', 'building', 'flat')
         fields = ('id', 'country', 'region', 'city', 'street', 'building', 'flat')
 
 
@@ -79,7 +78,7 @@ class ProfileSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.GiftUser
         fields = ('id', 'first_name', 'middle_name', 'last_name', 'address_list',
-                  'age', 'gender', 'phone', 'avatar', 'login', 'email')
+                  'birhdate', 'gender', 'phone', 'avatar', 'login', 'email')
 
 
 class AuthSerializer(serializers.ModelSerializer):
