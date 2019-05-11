@@ -11,6 +11,12 @@ class AddressListSerializer(serializers.ModelSerializer):
         fields = ('name', 'address')
 
 
+class LoginSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = GiftUser
+        fields = ('email', 'password')
+
+
 class GiftUserSerializer(serializers.HyperlinkedModelSerializer):
     address_list = AddressListSerializer(many=True, read_only=True)
 
