@@ -78,7 +78,7 @@ class ProfileSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.GiftUser
         fields = ('id', 'first_name', 'middle_name', 'last_name', 'address_list',
-                  'birhdate', 'gender', 'phone', 'avatar', 'login', 'email')
+                  'birthdate', 'gender', 'phone', 'avatar', 'login', 'email')
 
 
 class AuthSerializer(serializers.ModelSerializer):
