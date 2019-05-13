@@ -593,3 +593,7 @@
 .collectionImages div:nth-child(5){
     background: rgba(127, 43, 193, 0.5);
 }
+
+textarea {
+    resize: none;
+}
