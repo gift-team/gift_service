@@ -129,8 +129,12 @@ class LoginView(generics.CreateAPIView):
             'auth': unicode(request.auth),  # None
             'message': 'congrats, youve authentificated',
         }
-        if request.user.is_active:
-            auth.login(request, request.user)
+
+        user = auth.authenticate(username=request.data['email'],
+                                 password=request.data['password'])
+
+        if user.is_active:
+            auth.login(request, user)
             return Response(content)
 
         return Response(status=status.HTTP_403_FORBIDDEN)

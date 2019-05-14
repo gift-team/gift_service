@@ -1,11 +1,5 @@
-from abc import ABC
-
 from rest_framework import serializers
 from authapp import models
-
-#! TODO редактирование профиля
-#! TODO регистрация пользователя
-#! TODO смена пароля
 
 
 class AddressNameSerializer(serializers.ModelSerializer):
