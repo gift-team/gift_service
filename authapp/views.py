@@ -122,20 +122,27 @@ class ProfileView(generics.RetrieveAPIView):
 class LoginView(generics.CreateAPIView):
     serializer_class = AuthSerializer
 
+    def get(self, request):
+        if request.user.is_anonymous:
+            return Response(status=status.HTTP_403_FORBIDDEN)
+        else:
+            content = {'id': request.user.id,
+                       'first_name': request.user.first_name,
+                       }
+            return Response(content, status=status.HTTP_200_OK)
+
     #Login
     def post(self, request, format=None):
-        content = {
-            'email': unicode(request.user),  # `django.contrib.auth.User` instance.
-            'auth': unicode(request.auth),  # None
-            'message': 'congrats, youve authentificated',
-        }
-
         user = auth.authenticate(username=request.data['email'],
                                  password=request.data['password'])
 
+        content = {'name': user.first_name,
+                   'id': user.id}
+
         if user.is_active:
             auth.login(request, user)
-            return Response(content)
+            return Response(content, status=status.HTTP_200_OK)
+
 
         return Response(status=status.HTTP_403_FORBIDDEN)
 
