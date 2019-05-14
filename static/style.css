@@ -507,6 +507,7 @@
     box-shadow: inset 4px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
     height: 50px;
+    border: none;
 }
 
 .giftInfoPrice input::placeholder{
@@ -540,6 +541,8 @@
     box-shadow: inset 4px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
     height: 50px;
+    resize: none;
+    border: none;
 }
 
 .giftInfoPrice textarea::placeholder{
@@ -592,8 +595,4 @@
 
 .collectionImages div:nth-child(5){
     background: rgba(127, 43, 193, 0.5);
-}
-
-textarea {
-    resize: none;
 }
