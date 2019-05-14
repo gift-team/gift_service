@@ -135,30 +135,23 @@ class Address(models.Model):
     building = models.ForeignKey(Building, on_delete=models.CASCADE)
     flat = models.ForeignKey(Flat, on_delete=models.CASCADE)
 
-    # def __str__(self):
-    #     result = str(self.country) + ', '+ str(self.region) + ', ' + \
-    #     str(self.city) + ', ' + str(self.street) + ', ' + \
-    #     str(self.building) + ', ' + str(self.flat)
-    #     return result
+    def __str__(self):
+        result = str(self.country) + ', '+ str(self.region) + ', ' + \
+        str(self.city) + ', ' + str(self.street) + ', ' + \
+        str(self.building) + ', ' + str(self.flat)
+        return result
 
 
 class AddressList(models.Model):
-    user = models.ForeignKey(GiftUser,
-                             related_name='users',
-                             verbose_name='владелец',
-                             unique=False,
-                             null=False,
-                             blank=False,
-                             on_delete=models.CASCADE)
     name = models.ForeignKey(AddressName, on_delete=models.CASCADE)
     address = models.ForeignKey(Address, on_delete=models.CASCADE)
 
-    # def __str__(self):
-    #     return 'Владелец: {}, адрес: {}. {}, {}, {}, {}, {}-{}'.format(self.user.get_full_name(),
-    #                                                                    self.name,
-    #                                                                    self.address.country,
-    #                                                                    self.address.region,
-    #                                                                    self.address.city,
-    #                                                                    self.address.street,
-    #                                                                    self.address.building,
-    #                                                                    self.address.flat)
+    def __str__(self):
+        return 'Владелец: {}, адрес: {}. {}, {}, {}, {}, {}-{}'.format(self.user.get_full_name(),
+                                                                       self.name,
+                                                                       self.address.country,
+                                                                       self.address.region,
+                                                                       self.address.city,
+                                                                       self.address.street,
+                                                                       self.address.building,
+                                                                       self.address.flat)
