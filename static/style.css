@@ -1,3 +1,13 @@
+@font-face {
+    font-family: "MontEB";
+    src: url("fonts/Montserrat-ExtraBold.ttf");
+}
+
+@font-face {
+    font-family: "MontB";
+    src: url("fonts/Montserrat-Bold.ttf");
+}
+
 
 .title{
     margin: auto;
@@ -17,7 +27,7 @@
 }
 
 .navGroup .nav-link{
-    font-family: Montserrat, sans-serif;
+    font-family: MontB, sans-serif;
     font-style: normal;
     font-weight: bold;
     font-size: 20px;
@@ -37,10 +47,11 @@
 
 .regBtnTitle{
     height: 40px;
-    max-width: 190px;
+    width: 190px;
     background: #7F2BC1;
     border-radius: 10px;
     font-family: Montserrat, sans-serif;
+    letter-spacing: 0.5px;
     font-style: normal;
     font-weight: bold;
     font-size: 14px;
@@ -50,7 +61,7 @@
 }
 
 .menu{
-    font-family: Montserrat, sans-serif;
+    font-family: MontB, sans-serif;
     font-style: normal;
     font-weight: bold;
     font-size: 14px;
@@ -63,7 +74,7 @@
 
 .mainLeft{
     margin-top: 113px;
-    font-family: Montserrat, sans-serif;
+    font-family: MontB, sans-serif;
     font-style: normal;
     font-weight: normal;
     /*font-size: 72px;*/
@@ -73,7 +84,7 @@
 
 .mainLeft h1{
     margin: 0;
-    font-family: Montserrat, sans-serif;
+    font-family: MontEB, sans-serif;
     font-style: normal;
     font-weight: 800;
     font-size: 48px;
@@ -85,6 +96,7 @@
     padding-bottom: 20px;
     font-size: 36px;
     font-weight: normal;
+    font-family: Montserrat, sans-serif;
 }
 
 /*.giftBtn{*/
@@ -92,7 +104,7 @@
 /*margin-top: 20px;*/
 /*background: #7F2BC1;*/
 /*border-radius: 20px;*/
-/*font-family: Montserrat, sans-serif;*/
+/*font-family: MontB, sans-serif;*/
 /*font-style: normal;*/
 /*font-weight: bold;*/
 /*font-size: 14px;*/
@@ -116,7 +128,7 @@
 }
 
 .servicesHeader{
-    font-family: Montserrat, sans-serif;
+    font-family: MontB, sans-serif;
     margin-bottom: 139px;
     font-style: normal;
     font-weight: bold;
@@ -211,7 +223,7 @@
 }
 
 .aboutUsHeader{
-    font-family: Montserrat, sans-serif;
+    font-family: MontB, sans-serif;
     font-style: normal;
     font-weight: bold;
     font-size: 36px;
@@ -257,9 +269,13 @@
     background: #FFFFFF;
 }
 
+.authentication{
+    padding-bottom: 189px!important;
+}
+
 .regHeader{
     max-width: 100%;
-    font-family: Montserrat, sans-serif;
+    font-family: MontB, sans-serif;
     font-style: normal;
     font-weight: 600;
     font-size: 36px;
@@ -273,7 +289,7 @@
     box-shadow: inset 4px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
     outline: none;
-    font-family: Montserrat;
+    font-family: MontB, sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 20px;
@@ -288,7 +304,7 @@
 
 
 .check span{
-    font-family: Montserrat, sans-serif;
+    font-family: MontB, sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 20px;
@@ -300,7 +316,7 @@
 .regForm label{
     font-family: Montserrat, sans-serif;
     font-style: normal;
-    font-weight: 500;
+    font-weight: 800;
     font-size: 14px;
     text-align: center;
     color: #535452;
@@ -311,7 +327,7 @@
     color: #535452;
     font-family: Montserrat, sans-serif;
     font-style: normal;
-    font-weight: 500;
+    font-weight: 800;
     font-size: medium;
     line-height: normal;
 }
@@ -399,7 +415,7 @@
 }
 
 .footerMenu p{
-    font-family: Montserrat, sans-serif;
+    font-family: MontB, sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
@@ -440,7 +456,7 @@
     /*padding-left: 20px;*/
     /*padding-bottom: 20px;*/
     position: absolute;
-    font-family: Montserrat, sans-serif;
+    font-family: MontB, sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
@@ -471,7 +487,7 @@
 }
 
 .giftCreationHeader{
-    font-family: Montserrat, sans-serif;
+    font-family: MontB, sans-serif;
     font-style: normal;
     font-weight: 600;
     font-size: 48px;
@@ -497,7 +513,7 @@
     margin-top: 17.32px;
     font-family: Montserrat, sans-serif;
     font-style: normal;
-    font-weight: 500;
+    font-weight: 800;
     font-size: 18px;
     line-height: 22px;
     color: #535452;
@@ -512,6 +528,8 @@
 
 .giftInfoPrice input::placeholder{
     padding-left: 15px;
+    font-family: Montserrat, sans-serif;
+    font-weight: 800;
 }
 
 .giftCreationInfo button{
@@ -519,7 +537,7 @@
     height: 50px;
     background: #7F2BC1;
     border-radius: 10px;
-    font-family: Montserrat, sans-serif;
+    font-family: MontB, sans-serif;
     font-style: normal;
     font-weight: bold;
     font-size: 18px;
@@ -537,17 +555,21 @@
     height: 179px!important;
 }
 
+
 .giftInfoPrice textarea{
     box-shadow: inset 4px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
     height: 50px;
     resize: none;
     border: none;
+
 }
 
 .giftInfoPrice textarea::placeholder{
     padding-left: 22px;
     padding-top: 19px;
+    font-family: Montserrat, sans-serif;
+    font-weight: 800;
 }
 
 .giftCreationName::placeholder{
@@ -578,7 +600,7 @@
 }
 
 .collectionImages div:nth-child(1){
-    background: rgba(101, 187, 94, 0.5);
+    background: rgba(101, 187, 94, 1);
 }
 
 .collectionImages div:nth-child(2){
@@ -586,17 +608,21 @@
 }
 
 .collectionImages div:nth-child(3){
-    background: rgba(83, 84, 82, 0.5);
+    background: rgba(83, 84, 82, 1);
 }
 
 .collectionImages div:nth-child(4){
-    background: rgba(90, 102, 209, 0.5);
+    background: rgba(90, 102, 209, 1);
 }
 
 .collectionImages div:nth-child(5){
-    background: rgba(127, 43, 193, 0.5);
+    background: rgba(127, 43, 193, 1);
 }
 
 button {
     border: none;
+}
+
+textarea:focus, input:focus{
+    outline: none;
 }
