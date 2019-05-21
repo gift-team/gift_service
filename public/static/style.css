@@ -1,50 +1,11 @@
-<template>
-  <div id="app">
-    <router-view/>
-  </div>
-</template>
-
-<script>
-export default {
-  // mounted(){
-  //   let styles = document.createElement('link')
-  //   styles.setAttribute('rel', 'stylesheet')
-  //   styles.setAttribute('href', 'static/style.css')
-  //   document.head.appendChild(styles)
-  //   styles = document.createElement('link')
-  //   styles.setAttribute('rel', 'stylesheet')
-  //   styles.setAttribute('href', 'static/bootstrap4/css/bootstrap.min.css')
-  //   document.head.appendChild(styles)
-  //   styles = document.createElement('link')
-  //   styles.setAttribute('rel', 'stylesheet')
-  //   styles.setAttribute('href', 'https://fonts.googleapis.com/css?family=Montserrat')
-  //   document.head.appendChild(styles)
-  //   styles = document.createElement('link')
-  //   styles.setAttribute('rel', 'stylesheet')
-  //   styles.setAttribute('href', 'https://use.fontawesome.com/releases/v5.8.1/css/all.css')
-  //   document.head.appendChild(styles)
-  //   let script = document.createElement('script')
-  //   script.setAttribute('src', 'https://code.jquery.com/jquery-3.3.1.slim.min.js')
-  //   document.head.appendChild(script)
-  //   script = document.createElement('script')
-  //   script.setAttribute('src', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js')
-  //   document.head.appendChild(script)
-  //   script = document.createElement('script')
-  //   script.setAttribute('src', 'static/bootstrap4/js/bootstrap.min.js')
-  //   document.head.appendChild(script)
-  // }
-}
-</script>
-
-<style>
 @font-face {
     font-family: "MontEB";
-    src: url("../public/static/fonts/Montserrat-ExtraBold.ttf");
+    src: url("fonts/Montserrat-ExtraBold.ttf");
 }
 
 @font-face {
     font-family: "MontB";
-    src: url("../public/static/fonts/Montserrat-Bold.ttf");
+    src: url("fonts/Montserrat-Bold.ttf");
 }
 
 
@@ -112,7 +73,7 @@ export default {
 }
 
 .menu a {
-    text-decoration: none;
+    text-decoration: none!important;
     color: #7F2BC1;
 }
 
@@ -228,7 +189,7 @@ export default {
 /*}*/
 
 .leftItem{
-    background: url("../public/static/images/LIST.svg"), no-repeat;
+    background: url("images/LIST.svg"), no-repeat;
     background-size: contain;
     margin: auto;
     /*min-height: 300px;*/
@@ -237,7 +198,7 @@ export default {
 }
 
 .middleItem{
-    background: url("../public/static/images/CART.svg"), no-repeat;
+    background: url("images/CART.svg"), no-repeat;
     background-size: contain;
     margin: auto;
     /*min-height: 300px;*/
@@ -246,7 +207,7 @@ export default {
 }
 
 .rightItem{
-    background: url("../public/static/images/FRIENDS.svg"), no-repeat;
+    background: url("images/FRIENDS.svg"), no-repeat;
     background-size: contain;
     margin: auto;
     /*min-height: 300px;*/
@@ -255,7 +216,7 @@ export default {
 }
 
 .aboutUs{
-    background: url("../public/static/images/aboutBG.png"), no-repeat;
+    background: url("images/aboutBG.png"), no-repeat;
     background-size: cover;
     min-height: 846px;
     /*max-width: 100%;*/
@@ -670,4 +631,3 @@ button {
 textarea:focus, input:focus{
     outline: none;
 }
-</style>
