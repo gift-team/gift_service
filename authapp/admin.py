@@ -3,6 +3,7 @@ from django.contrib.auth.admin import UserAdmin as DjangoUserAdmin
 from django.utils.translation import ugettext_lazy as _
 
 from .models import GiftUser, Address, AddressName, Country, Region, City, Street, Building, Flat, AddressList
+from giftapp.models import Products, Collections
 
 
 @admin.register(GiftUser)
@@ -37,3 +38,5 @@ admin.site.register(Region)
 admin.site.register(Street)
 admin.site.register(Building)
 admin.site.register(Flat)
+admin.site.register(Products)
+admin.site.register(Collections)

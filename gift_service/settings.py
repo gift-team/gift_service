@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'authapp',
     'phonenumber_field',
     'address',
+    'giftapp',
 ]
 
 MIDDLEWARE = [
