@@ -12,4 +12,4 @@ class FriendshipRequestSerializer(serializers.ModelSerializer):
 class FriendsSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Friends
-        fields = ('__all__', )
+        fields = ('to_user', )

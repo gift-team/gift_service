@@ -1,8 +1,12 @@
+import coreapi
+import coreschema
 from rest_framework import viewsets, permissions, generics, status
 from rest_framework.renderers import JSONRenderer
 from rest_framework.response import Response
+from rest_framework.schemas import ManualSchema
 
 from authapp.models import GiftUser
+from friendsapp.permissions import IsOwnerOnly
 from friendsapp.serializers import FriendsSerializer, FriendshipRequestSerializer
 from friendsapp.models import Friends, FriendshipRequest
 from gift_service import settings
@@ -17,8 +21,9 @@ class FriendsView(generics.RetrieveAPIView):
 
     def get(self, request):
         user = request.user
-        friends = Friends.objects.select_related('from_user', 'to_user').filter(to_user=user).all()
-        return Response(friends)
+        qs = Friends.objects.select_related('from_user', 'to_user').filter(to_user=user).all()
+        result = FriendsSerializer(qs, many=True).data
+        return Response(result)
 
 
 class FriendshipRequestView(generics.ListCreateAPIView):
@@ -44,8 +49,20 @@ class FriendshipRequestView(generics.ListCreateAPIView):
 
 
 class FriendshipAcceptView(generics.CreateAPIView):
+    schema = ManualSchema(fields=[
+        coreapi.Field(
+            name="id",
+            required=True,
+            location="form",
+            schema=coreschema.Integer()
+        )
+    ])
+
     serializer_class = FriendshipRequestSerializer
+    permission_classes = (IsOwnerOnly, )
 
     def post(self, request):
-        return
+        object = FriendshipRequest.objects.get(id=request.data['id'], to_user=request.user)
+        object.accept()
+        return Response(status=status.HTTP_201_CREATED)
 
