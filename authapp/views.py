@@ -13,6 +13,7 @@ from django.urls import reverse
 from django.conf import settings
 
 from authapp.models import GiftUser
+from authapp.permissions import IsOwnerOnly
 from authapp.serializers import ProfileSerializer, AuthSerializer, ChangePasswordSerializer
 
 
@@ -111,12 +112,10 @@ class UserListView(generics.ListAPIView):
     serializer_class = ProfileSerializer
 
 
-class ProfileView(generics.RetrieveAPIView):
+class ProfileView(generics.RetrieveUpdateAPIView):
     queryset = GiftUser.objects.all()
     serializer_class = ProfileSerializer
-
-    # authentication_classes = (SessionAuthentication, BasicAuthentication)
-    # permission_classes = (IsAuthenticated,)
+    permission_classes = (IsOwnerOnly, IsAuthenticated)
 
 
 class LoginView(generics.CreateAPIView):
@@ -135,13 +134,14 @@ class LoginView(generics.CreateAPIView):
     def post(self, request, format=None):
         user = auth.authenticate(username=request.data['email'],
                                  password=request.data['password'])
+        if user:
+            content = {'name': user.first_name if False else user.email,
+                       'id': user.id}
 
-        content = {'name': user.first_name,
-                   'id': user.id}
+            if user.is_active:
+                auth.login(request, user)
+                return Response(content, status=status.HTTP_200_OK)
 
-        if user.is_active:
-            auth.login(request, user)
-            return Response(content, status=status.HTTP_200_OK)
 
         return Response(status=status.HTTP_403_FORBIDDEN)
 
