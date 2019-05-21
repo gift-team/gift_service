@@ -1,5 +1,4 @@
 """gift_service URL Configuration
-
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/2.1/topics/http/urls/
 Examples:
@@ -17,7 +16,6 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls.static import static
 
-from authapp.urls import router
 from gift_service import settings
 from rest_framework_swagger.views import get_swagger_view
 
@@ -26,8 +24,9 @@ schema_view = get_swagger_view(title='Little brave API')
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('auth/', include('authapp.urls', namespace='auth')),
+    path('friends/', include('friendsapp.urls')),
     path('swagger/', schema_view),
-    path('rest/', include(router.urls)),
+    # path('rest/', include(router.urls)),
 ]
 
 
