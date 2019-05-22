@@ -13,6 +13,7 @@ from django.urls import reverse
 from django.conf import settings
 
 from authapp.models import GiftUser
+# from authapp.permissions import IsOwnerOnly
 from authapp.serializers import ProfileSerializer, AuthSerializer, ChangePasswordSerializer
 
 
@@ -23,28 +24,6 @@ def send_verify_mail(user):
         .format(domain_name = settings.DOMAIN_NAME, link = verify_link)
     from_address = 'djangolesson2019@yandex.ru'
     return send_mail(title, message, from_address, [user.email], fail_silently=False)
-
-
-def login(request):
-    title = 'Вход'
-
-    login_form = GiftUserLoginForm(data=request.POST or None)
-    if request.method == 'POST' and login_form.is_valid():
-        username = request.POST['username']
-        password = request.POST['password']
-
-        user = auth.authenticate(username=username, password=password)
-        if user and user.is_active:
-            auth.login(request, user)
-            return HttpResponseRedirect(reverse('authapp:edit'))
-
-    content = {'title': title, 'login_form': login_form}
-    return render(request, 'authapp/login.html', content)
-
-
-def logout(request):
-    auth.logout(request)
-    return HttpResponseRedirect(reverse('authapp:edit'))
 
 
 def register(request):
@@ -66,23 +45,6 @@ def register(request):
     content = {'title': title, 'register_form': register_form}
 
     return render(request, 'authapp/register.html', content)
-
-
-@transaction.atomic
-def edit(request):
-    title = 'Редактирование'
-
-    if request.method == 'POST':
-        edit_form = GiftUserEditForm(request.POST, request.FILES, instance=request.user)
-        if edit_form.is_valid():
-            edit_form.save()
-            return HttpResponseRedirect(reverse('auth:edit'))
-    else:
-        edit_form = GiftUserEditForm(instance=request.user)
-
-    content = {'title': title, 'edit_form': edit_form}
-
-    return render(request, 'authapp/edit.html', content)
 
 
 def verify(request, email, activation_key):
@@ -111,12 +73,10 @@ class UserListView(generics.ListAPIView):
     serializer_class = ProfileSerializer
 
 
-class ProfileView(generics.RetrieveAPIView):
+class ProfileView(generics.RetrieveUpdateAPIView):
     queryset = GiftUser.objects.all()
     serializer_class = ProfileSerializer
-
-    # authentication_classes = (SessionAuthentication, BasicAuthentication)
-    # permission_classes = (IsAuthenticated,)
+    # permission_classes = (IsOwnerOnly, )
 
 
 class LoginView(generics.CreateAPIView):
@@ -135,14 +95,13 @@ class LoginView(generics.CreateAPIView):
     def post(self, request, format=None):
         user = auth.authenticate(username=request.data['email'],
                                  password=request.data['password'])
+        if user:
+            content = {'name': user.first_name if False else user.email,
+                       'id': user.id}
 
-        content = {'name': user.first_name,
-                   'id': user.id}
-
-        if user.is_active:
-            auth.login(request, user)
-            return Response(content, status=status.HTTP_200_OK)
-
+            if user.is_active:
+                auth.login(request, user)
+                return Response(content, status=status.HTTP_200_OK)
 
         return Response(status=status.HTTP_403_FORBIDDEN)
 
