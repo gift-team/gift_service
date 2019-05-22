@@ -42,12 +42,12 @@
             </div>
             <div class="regForm d-flex">
                 <div class="col-3 p-0"></div>
-                <form class="text-center col-6 p-0" action="#">
+                <form @submit="submitForm(event)" class="text-center col-6 p-0" action="#">
                     <!--<input placeholder="Имя:" class="email col-12" type="text">-->
                     <!--<input placeholder="Фамилия:" class="email col-12" type="text">-->
-                    <input placeholder="E-mail:" class="email col-12" type="text">
-                    <input placeholder="Пароль:" class="password1 col-12" type="password">
-                    <input placeholder="Повторите пароль:" class="password2 col-12" type="password">
+                    <input v-model="email" placeholder="E-mail:" class="email col-12" type="text">
+                    <input v-model="password" placeholder="Пароль:" class="password1 col-12" type="password">
+                    <input v-model="password2" placeholder="Повторите пароль:" class="password2 col-12" type="password">
                     <div class="custom-control custom-checkbox">
                         <input type="checkbox" class="custom-control-input" id="customCheck1">
                         <label class="custom-control-label" for="customCheck1">Подтверждаю обработку персональных данных</label>
@@ -97,9 +97,30 @@
 </template>
 
 <script>
-  export default {
-    name: "registration"
+import {Users} from "../api/users";
+
+export default {
+  name: "registration",
+  data () {
+    return {
+      'email': '',
+      'password': '',
+      'password2': ''
+    }
+  },
+  methods: {
+    submitForm(event){
+      this.registerUser()
+      this.email = ''
+      this.password = ''
+      this.password2 = ''
+      event.preventDefault()
+    },
+    registerUser() {
+      Users.create({'email': this.email, 'password': this.password})
+    }
   }
+}
 </script>
 
 <style scoped>
