@@ -1,20 +1,17 @@
 from django.core.mail import send_mail
-from django.db import transaction
 from django.shortcuts import render, HttpResponseRedirect
-from pytz import unicode
-from rest_framework import viewsets, permissions, generics, status
-from rest_framework.authentication import SessionAuthentication, BasicAuthentication
+from rest_framework import permissions, generics, status
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 
-from authapp.forms import GiftUserLoginForm, GiftUserRegisterForm, GiftUserEditForm
+from backend.authapp import GiftUserRegisterForm
 from django.contrib import auth
 from django.urls import reverse
 from django.conf import settings
 
-from authapp.models import GiftUser
+from backend.authapp import GiftUser
 # from authapp.permissions import IsOwnerOnly
-from authapp.serializers import ProfileSerializer, AuthSerializer, ChangePasswordSerializer
+from backend.authapp import ProfileSerializer, AuthSerializer, ChangePasswordSerializer
 
 
 def send_verify_mail(user):

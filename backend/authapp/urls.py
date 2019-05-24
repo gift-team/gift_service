@@ -1,9 +1,7 @@
-import rest_framework
 from django.urls import include, path
 from rest_framework import routers
-from authapp import views, admin
 
-import authapp.views as authapp
+from backend import authapp as authapp
 
 router = routers.DefaultRouter()
 # router.register(r'users/', authapp.UserListView)

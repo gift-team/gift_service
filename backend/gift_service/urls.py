@@ -17,8 +17,8 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls.static import static
 
-from authapp.urls import router
-from gift_service import settings
+from backend.authapp import router
+from backend.gift_service import settings
 from rest_framework_swagger.views import get_swagger_view
 
 schema_view = get_swagger_view(title='Little brave API')

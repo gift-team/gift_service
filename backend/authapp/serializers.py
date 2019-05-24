@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from authapp import models
+from backend.authapp import models
 
 
 class AddressNameSerializer(serializers.ModelSerializer):
