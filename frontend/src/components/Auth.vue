@@ -42,11 +42,12 @@
             </div>
             <div class="regForm d-flex">
                 <div class="col-3 p-0"></div>
-                <form class="text-center col-6 p-0" action="#">
+                <form @submit="submitLoginForm()" class="text-center col-6 p-0" action="#">
                     <!--<input placeholder="Имя:" class="email col-12" type="text">-->
                     <!--<input placeholder="Фамилия:" class="email col-12" type="text">-->
-                    <input placeholder="E-mail:" class="email col-12" type="text">
-                    <input placeholder="Пароль:" class="password1 col-12" type="password">
+                    <input v-model="login" placeholder="E-mail:" class="email col-12" type="text">
+                    <input v-model="pass" placeholder="Пароль:" class="password1 col-12" type="password">
+                    {{d}}
                     <!--<input placeholder="Повторите пароль:" class="password2 col-12" type="password">-->
                     <div class="custom-control custom-checkbox">
                         <input type="checkbox" class="custom-control-input" id="customCheck1">
@@ -97,8 +98,28 @@
 </template>
 
 <script>
+import {Users} from "../api/users";
+
 export default {
   name: "auth",
-
+  data () {
+    return {
+      'login': '',
+      'pass': '',
+      'd': {}
+    }
+  },
+  methods: {
+    submitLoginForm () {
+      this.loginUser();
+      this.login = '';
+      this.pass = '';
+    },
+    loginUser () {
+      Users.login({'email': this.login, 'password': this.pass}).then(response => {
+        this.d = response
+      })
+    }
+  },
 }
 </script>

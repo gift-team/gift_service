@@ -110,11 +110,11 @@ export default {
   },
   methods: {
     submitForm(event){
-      this.registerUser()
-      this.email = ''
-      this.password = ''
-      this.password2 = ''
-      event.preventDefault()
+      this.registerUser();
+      this.email = '';
+      this.password = '';
+      this.password2 = '';
+      event.preventDefault();
     },
     registerUser() {
       Users.create({'email': this.email, 'password': this.password})
