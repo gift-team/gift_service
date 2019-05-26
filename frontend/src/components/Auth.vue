@@ -117,7 +117,7 @@ export default {
     },
     loginUser () {
       Users.login({'email': this.login, 'password': this.pass}).then(response => {
-        this.d = response
+        return this.d = response
       })
     }
   },
