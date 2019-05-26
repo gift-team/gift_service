@@ -116,7 +116,9 @@ export default {
       this.password2 = '';
     },
     registerUser() {
-      Users.create({'email': this.email, 'password': this.password})
+      Users.create({'email': this.email, 'password': this.password}).then(response => {
+        return this.$router.push({name: 'login'})
+      })
     }
   }
 }
