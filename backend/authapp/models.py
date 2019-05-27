@@ -55,12 +55,19 @@ class GiftUser(AbstractUser):
     )
 
     middle_name = models.CharField(verbose_name='отчество', max_length=150, blank=True)
-    address_list = models.ManyToManyField('AddressList', related_name='address_list', blank=True)
-    login = models.CharField(verbose_name='логин', max_length=20, blank=True)
-    avatar = models.ImageField(upload_to='client_avatars', blank=True)
+
+    country = models.CharField(verbose_name='название страны', max_length=30, null=True, blank=True)
+    region = models.CharField(verbose_name='область', max_length=30, null=True, blank=True)
+    city = models.CharField(verbose_name='населенный пункт', max_length=30,  null=True, blank=True)
+    street = models.CharField(verbose_name='улица', max_length=30,  null=True, blank=True)
+    building = models.CharField(verbose_name='дом', max_length=7,  null=True, blank=True)
+    flat = models.IntegerField(verbose_name='квартира',  null=True, blank=True)
+
+    login = models.CharField(verbose_name='логин', max_length=20, blank=True, null=True)
+    avatar = models.ImageField(upload_to='client_avatars', blank=True, null=True)
     birthdate = models.DateField(verbose_name='дата рождения', blank=True, null=True)
     email = models.EmailField(verbose_name='почта', unique=True)
-    phone = PhoneNumberField(verbose_name='телефон', unique=True, blank=True, null=True)
+    phone = PhoneNumberField(verbose_name='телефон', blank=True, null=True)
     gender = models.CharField(verbose_name='пол', max_length=1, choices=GENDER_CHOICE, blank=True)
 
     active_key = models.CharField(max_length=128, verbose_name='код подтверждения', blank=True)
