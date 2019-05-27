@@ -73,85 +73,17 @@ class GiftUser(AbstractUser):
             return True
 
 
-# TODO Открытый вопрос в необходимости по переопределению метода __str__?
-class AddressName(models.Model):
-    name = models.CharField(verbose_name='название адреса', max_length=20, unique=True, null=False, blank=False)
-
-    def __str__(self):
-        return self.name
-
-
-class Country(models.Model):
-    name = models.CharField(verbose_name='название страны', max_length=30, unique=True, null=False, blank=False)
-
-    def __str__(self):
-        return self.name
-
-
-class Region(models.Model):
-    name = models.CharField(verbose_name='область', max_length=30, unique=True, null=False, blank=False)
-
-    def __str__(self):
-        return self.name
-
-
-class City(models.Model):
-    name = models.CharField(verbose_name='населенный пункт', max_length=30, unique=True, null=False, blank=False)
-
-    def __str__(self):
-        return self.name
-
-
-class Street(models.Model):
-    name = models.CharField(verbose_name='улица', max_length=30, unique=True, null=False, blank=False)
-
-    def __str__(self):
-        return self.name
-
-
-class Building(models.Model):
-    number = models.IntegerField(verbose_name='дом', unique=False, null=False, blank=False)
-    structure = models.CharField(verbose_name='к., стр., вл.', max_length=3, unique=False, null=True, blank=True)
-
-    def __str__(self):
-        if self.structure is not None:
-            return '{}{}{}'.format(self.number, '-', self.structure)
-        else:
-            return '{}'.format(self.number)
-
-
-class Flat(models.Model):
-    number = models.IntegerField(verbose_name='квартира', unique=True, null=False, blank=False)
-
-    def __str__(self):
-        return '%s' % self.number
-
-
-class Address(models.Model):
-    country = models.ForeignKey(Country, on_delete=models.CASCADE)
-    region = models.ForeignKey(Region, on_delete=models.CASCADE)
-    city = models.ForeignKey(City, on_delete=models.CASCADE)
-    street = models.ForeignKey(Street, on_delete=models.CASCADE)
-    building = models.ForeignKey(Building, on_delete=models.CASCADE)
-    flat = models.ForeignKey(Flat, on_delete=models.CASCADE)
+class AddressList(models.Model):
+    name = models.CharField(verbose_name='название адреса', max_length=20, null=False, blank=False)
+    country = models.CharField(verbose_name='название страны', max_length=30, unique=False,  null=False, blank=False)
+    region = models.CharField(verbose_name='область', max_length=30, unique=False,  null=False, blank=False)
+    city = models.CharField(verbose_name='населенный пункт', max_length=30, unique=False,  null=False, blank=False)
+    street = models.CharField(verbose_name='улица', max_length=30, unique=False,  null=False, blank=False)
+    building = models.CharField(verbose_name='дом', max_length=7, unique=False, null=False, blank=False)
+    flat = models.IntegerField(verbose_name='квартира', unique=False, null=False, blank=False)
 
     def __str__(self):
         result = str(self.country) + ', '+ str(self.region) + ', ' + \
         str(self.city) + ', ' + str(self.street) + ', ' + \
         str(self.building) + ', ' + str(self.flat)
         return result
-
-
-class AddressList(models.Model):
-    name = models.ForeignKey(AddressName, on_delete=models.CASCADE)
-    address = models.ForeignKey(Address, on_delete=models.CASCADE)
-
-    def __str__(self):
-        return 'Владелец: {}, адрес: {}. {}, {}, {}, {}, {}-{}'.format(self.user.get_full_name(),
-                                                                       self.name,
-                                                                       self.address.country,
-                                                                       self.address.region,
-                                                                       self.address.city,
-                                                                       self.address.street,
-                                                                       self.address.building,
-                                                                       self.address.flat)
