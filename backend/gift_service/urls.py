@@ -26,6 +26,7 @@ schema_view = get_swagger_view(title='Little brave API')
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('auth/', include('authapp.urls', namespace='auth')),
+    path('friends/', include(('friendsapp.urls', 'friends'), namespace='friends')),
     path('swagger/', schema_view),
     # path('rest/', include(router.urls)),
 ]
