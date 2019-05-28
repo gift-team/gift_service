@@ -116,8 +116,8 @@ export default {
       this.pass = '';
     },
     loginUser () {
-      Users.login({'email': this.login, 'password': this.pass}).then(response => {
-        return this.d = response
+      Users.login({'email': this.login, 'password': this.pass}).then(() => {
+        return this.$router.push({name: 'profile_get'})
       })
     }
   },

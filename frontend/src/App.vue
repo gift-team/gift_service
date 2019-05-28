@@ -39,14 +39,19 @@ export default {
 <style>
 @font-face {
     font-family: "MontEB";
-    src: url("../public/static/fonts/Montserrat-ExtraBold.ttf");
+    src: url("fonts/Montserrat-ExtraBold.ttf");
 }
 
 @font-face {
     font-family: "MontB";
-    src: url("../public/static/fonts/Montserrat-Bold.ttf");
+    src: url("fonts/Montserrat-Bold.ttf");
 }
 
+.container{
+    max-width: 1440px;
+    padding: 0;
+    margin: auto;
+}
 
 .title{
     margin: auto;
@@ -112,7 +117,7 @@ export default {
 }
 
 .menu a {
-    text-decoration: none;
+    text-decoration: none!important;
     color: #7F2BC1;
 }
 
@@ -228,7 +233,7 @@ export default {
 /*}*/
 
 .leftItem{
-    background: url("../public/static/images/LIST.svg"), no-repeat;
+    background: url("images/LIST.svg"), no-repeat;
     background-size: contain;
     margin: auto;
     /*min-height: 300px;*/
@@ -237,7 +242,7 @@ export default {
 }
 
 .middleItem{
-    background: url("../public/static/images/CART.svg"), no-repeat;
+    background: url("images/CART.svg"), no-repeat;
     background-size: contain;
     margin: auto;
     /*min-height: 300px;*/
@@ -246,7 +251,7 @@ export default {
 }
 
 .rightItem{
-    background: url("../public/static/images/FRIENDS.svg"), no-repeat;
+    background: url("images/FRIENDS.svg"), no-repeat;
     background-size: contain;
     margin: auto;
     /*min-height: 300px;*/
@@ -255,7 +260,7 @@ export default {
 }
 
 .aboutUs{
-    background: url("../public/static/images/aboutBG.png"), no-repeat;
+    background: url("images/aboutBG.png"), no-repeat;
     background-size: cover;
     min-height: 846px;
     /*max-width: 100%;*/
@@ -669,5 +674,703 @@ button {
 
 textarea:focus, input:focus{
     outline: none;
+}
+
+.userItem {
+    position: relative;
+    width: 1100px;
+    margin-left: 170px;
+}
+
+.userItemData {
+    /*margin-top: 79px;*/
+}
+
+.userItemImg {
+    position: relative;
+    background: url("images/MeganFox.jpg") #FFFFFF center center;
+    background-size: cover;
+    border: 3px solid #7F2BC1;
+    box-sizing: border-box;
+    box-shadow: 0px 8px 4px rgba(0, 0, 0, 0.25);
+    width: 258.67px;
+    height: 258.67px;
+    border-radius: 50%;
+    /*left: 105px;*/
+
+}
+
+
+.userItemName {
+    width: 217.72px;
+    height: 250.77px;
+    background: #7F2BC1;
+    border-radius: 20px;
+    margin-top: -86px;
+
+
+
+
+}
+
+.userItemNameText {
+    position: relative;
+    top: 108px;
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: normal;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.userItemNameTextEdit{
+    position: relative;
+    margin-top: 120px;
+}
+
+
+.userDataName {
+    display: block;
+    /*height: 153px;*/
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 48px;
+    line-height: normal;
+    margin-left: 0;
+
+    color: #535452;
+}
+
+.userDataWish {
+    /*display: inline-block;*/
+    padding-top: 20px;
+    width: 230px;
+    height: 270px;
+    background: #7F2BC1;
+    border-radius: 20px;
+}
+
+.userDataWishImg {
+    position: relative;
+    width: 177px;
+    height: 177px;
+    margin-left: 26px;
+
+    background: url("images/apple_watch.png") #FFFFFF center center;
+    background-size: cover;
+    box-shadow: 0px 8px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+}
+
+.userDataWishName {
+    position: relative;
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: normal;
+
+    color: #FFFFFF;
+
+    margin-top: 12px;
+}
+
+.userDataNewWish {
+    width: 230px;
+    height: 270px;
+    background: #F5BA3D;
+    border-radius: 20px;
+
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: normal;
+
+    color: #FFFFFF;
+
+}
+
+.userDataWishLook {
+    width: 230px;
+    height: 57px;
+    margin-top: 22px;
+    background: #FDA736;
+    border-radius: 20px;
+
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: normal;
+
+    color: #FFFFFF;
+}
+
+/*Friend*/
+
+.userFriendsHeader {
+    margin-left: 105px;
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 48px;
+    line-height: normal;
+
+    color: #535452;
+}
+
+.userFriendItem {
+    position: relative;
+    width: 1100px;
+    margin-left: 170px;
+}
+
+.userFriendItemData {
+    margin-top: 37px;
+}
+
+.userFriendItemImg {
+    position: relative;
+    background: url("images/MeganFox.jpg") #FFFFFF center center;
+    background-size: cover;
+    border: 3px solid #7F2BC1;
+    box-sizing: border-box;
+    box-shadow: 0px 8px 4px rgba(0, 0, 0, 0.25);
+    width: 225px;
+    height: 225px;
+    border-radius: 50%;
+}
+
+
+.userFriendItemName {
+    width: 189.38px;
+    height: 218.12px;
+    background: #7F2BC1;
+    border-radius: 20px;
+    margin-top: -86px;
+    margin-left: 18px;
+}
+
+
+
+.userFriendItemNameText {
+    position: relative;
+    top: 108px;
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: normal;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+/*Wish*/
+
+.myWishesTitle {
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: normal;
+
+    color: #535452;
+    left: 108px;
+}
+
+
+.myWishesNameLogo {
+    width: 40px;
+    height: 40px;
+    margin-right: 11px;
+    background: #535452;
+    border-radius: 10px;
+}
+
+.myWishesNameLogo img {
+    margin-bottom: 7px;
+    margin-left: 5px;
+}
+
+.myWishesNameText {
+    position: relative;
+    float: left;
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: normal;
+    margin-left: 20px;
+
+    color: #535452;
+
+}
+
+.myWishesData {
+    margin-top: 25px;
+}
+
+.myWishesFilter {
+    padding-left: 139px;
+}
+
+
+
+.myWishesFilterTitle {
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: normal;
+
+    color: #535452;
+}
+
+.myWishesFilterName {
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: normal;
+
+    color: #535452;
+}
+
+.myWishFilterRow {
+    margin-top: 20px;
+}
+.myWishesDropdown {
+    width: 174px;
+    height: 30px;
+
+    background: #FFFDFD;
+    box-shadow: inset 4px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: normal;
+
+    color: #535452;
+}
+
+.myWishesCreate {
+    margin-top: 99px;
+}
+
+.myWishesCreateText {
+    font-family: Montserrat,sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: normal;
+
+    color: #535452;
+}
+
+.myWishesCreateButton {
+    width: 230px;
+    height: 57px;
+    background: #FDA736;
+    border-radius: 20px;
+
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: normal;
+
+    color: #FFFFFF;
+}
+
+.myWishesEl {
+    height: 580px;
+}
+
+.myWishesElArr {
+}
+
+.myWishesElData {
+    float: left;
+    width: 269px;
+    height: 101px;
+    margin: 20px;
+}
+
+.myWishesElText {
+    width: 269px;
+    height: 52px;
+
+    background: #7F2BC1;
+    border-radius: 10px;
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: normal;
+    padding-left: 120px;
+    padding-top: 5px;
+
+    color: #FFFFFF;
+}
+
+.myWishesElTextDate {
+    font-weight: normal;
+    font-size: 16px;
+}
+.myWishesElImg {
+    float: left;
+    width: 100px;
+    height: 100px;
+    margin-top: -53px;
+
+    background: url("images/apple_watch.png") #FFFFFF center center;
+    background-size: cover;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+}
+
+.myWishesElInfo {
+    float: left;
+    width: 40px;
+    height: 40px;
+    margin-top: 7px;
+    margin-left: 16px;
+    padding-left: 10px;
+
+    background: #F5BA3D;
+    border-radius: 10px;
+}
+
+.myWishesElInfo img {
+    margin-top: 9px;
+}
+
+.myWishesElDel {
+    float: left;
+    width: 40px;
+    height: 40px;
+    margin-top: 7px;
+    margin-left: 16px;
+    padding-left: 10px;
+
+    background: #DC4E41;
+    border-radius: 10px;
+}
+
+.myWishesElDel img {
+    margin-top: 9px;
+}
+
+
+/*Edit*/
+
+.userEditItemData {
+    margin-top: 79px;
+}
+
+.userEditData {
+    margin-top: 90px;
+}
+
+.userEditDataProfile {
+    width: 259px;
+}
+
+.userEditItemImg {
+    position: relative;
+    background: url("images/profile.svg") #FFFFFF center center;
+    background-size: cover;
+    border: 3px solid #7F2BC1;
+    box-sizing: border-box;
+    box-shadow: 0px 8px 4px rgba(0, 0, 0, 0.25);
+    width: 258.67px;
+    height: 258.67px;
+    border-radius: 50%;
+
+}
+
+
+.userEditItemName {
+    width: 217.72px;
+    height: 250.77px;
+    background: #7F2BC1;
+    border-radius: 20px;
+    margin-top: -86px;
+
+    margin-left: 20px;
+
+
+}
+
+.userEditItemNameText {
+    position: relative;
+    top: 108px;
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: normal;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.userEditItemNameTextCloud{
+    position: relative;
+    margin-top: 120px;
+}
+
+.userEditDataData {
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: normal;
+
+    color: #535452;
+}
+
+.userEditDataSecond {
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: normal;
+    margin-top: 90px;
+
+    color: #535452;
+}
+
+.userEditDataThird {
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: normal;
+
+
+    color: #535452;
+}
+
+.userEditDataDataSecond img {
+    position: relative;
+    bottom: 10px;
+    margin-left: 120px;
+}
+
+.userEditDataForm {
+    width: 100%;
+    height: 50px;
+
+    background: #FFFDFD;
+    box-shadow: inset 4px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+
+    margin-top: 18px;
+    margin-right: 15px;
+    margin-left: 15px;
+
+
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.userEditDataFormLogin {
+    width: 100%;
+    height: 50px;
+
+    background: #FFFDFD;
+    box-shadow: inset 4px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+
+    margin-top: 18px;
+    margin-right: 15px;
+
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.userEditDataFormSmall {
+    width: 100%;
+    height: 50px;
+
+    background: #FFFDFD;
+    box-shadow: inset 4px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+
+    margin-top: 18px;
+}
+
+
+.userEditDataFormDataName {
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: normal;
+
+    color: #535452;
+
+    margin-top: 11px;
+
+}
+
+.userEditDataFormData {
+    width: 189px;
+    height: 50px;
+
+    background: #FFFDFD;
+    box-shadow: inset 4px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+
+    margin-top: 11px;
+    /*margin-left: -15px;*/
+}
+
+.userEditDataFormGenderName {
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: normal;
+
+    margin-top: 11px;
+
+
+    color: #535452;
+}
+
+.userEditDataFormGenderDataMale {
+    float: left;
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: normal;
+    margin-top: 25px;
+
+    color: #535452;
+}
+
+.userEditDataFormGenderDataFemale {
+    float: left;
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: normal;
+    margin-left: 30px;
+    margin-top: 25px;
+
+    color: #535452;
+}
+
+.userEditDataCheck {
+    height: 40px;
+    width: 100%;
+    margin-top: 23px;
+    margin-bottom: 5px;
+
+    background: #7F2BC1;
+    border-radius: 10px;
+
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: normal;
+
+    color: #FFFFFF;
+}
+
+.userEditDataAdd {
+    height: 40px;
+    width: 100%;
+    margin-top: 23px;
+    margin-bottom: 5px;
+
+    background: #7F2BC1;
+    border-radius: 10px;
+
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: normal;
+
+    color: #FFFFFF;
+}
+
+.userEditDataSave {
+    height: 40px;
+    width: 100%;
+    margin-top: 23px;
+    margin-bottom: 5px;
+
+
+    background: #7F2BC1;
+    border-radius: 10px;
+
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: normal;
+
+    color: #FFFFFF;
+}
+
+.userEditDataDataProfType {
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: normal;
+    margin-top: 34px;
+    margin-bottom: 12px;
+
+    color: #535452;
+}
+
+.userEditDataDataMent {
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: normal;
+    margin-top: 30px;
+    margin-left: 15px;
+
+    color: #535452;
+
+    position: relative;
+}
+
+.userEditDataDataMent input {
+    position: relative;
+    float: left;
+}
+
+
+
+.filter h2 {
+    font-size: 36px;
+    color: #535452;
+    margin-top: 30px;
+}
+
+.filter h3 {
+    font-size: 24px;
+    color: #535452;
+}
+
+.myWishesH2 {
+    text-align: center;
 }
 </style>

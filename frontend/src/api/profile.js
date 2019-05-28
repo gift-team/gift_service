@@ -1,8 +1,8 @@
 import {HTTP} from './common'
 
 export const Profile = {
-    put(user) {
-        return HTTP.put(`/auth/users/${user.id}/`).then(response => {
+    put(config) {
+        return HTTP.put(`/auth/users/${config.id}/`, config).then(response => {
             return response.data
         })
     },

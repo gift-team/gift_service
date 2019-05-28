@@ -21,6 +21,16 @@ export default new Router({
       path: '/auth/register/',
       name: 'register',
       component: () => import('./views/Register.vue')
+    },
+    {
+      path: '/profile_get/',
+      name: 'profile_get',
+      component: () => import('./views/Profile_get.vue')
+    },
+    {
+      path: '/profile_put/',
+      name: 'profile_put',
+      component: () => import('./views/Profile_put.vue')
     }
   ]
 })
