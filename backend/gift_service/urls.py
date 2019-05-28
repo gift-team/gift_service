@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls.static import static
 
-from authapp.urls import router
+# from authapp import router
 from gift_service import settings
 from rest_framework_swagger.views import get_swagger_view
 
@@ -28,7 +28,7 @@ urlpatterns = [
     path('auth/', include('authapp.urls', namespace='auth')),
     path('friends/', include(('friendsapp.urls', 'friends'), namespace='friends')),
     path('swagger/', schema_view),
-    path('rest/', include(router.urls)),
+    # path('rest/', include(router.urls)),
 ]
 
 
