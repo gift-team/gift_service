@@ -15,7 +15,8 @@ class ProfileSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = models.GiftUser
-        fields = ('id', 'first_name', 'middle_name', 'last_name','birthdate', 'gender', 'phone', 'avatar', 'login', 'email', 'country', 'region', 'city', 'street',
+        fields = ('id', 'first_name', 'middle_name', 'last_name', 'birthdate', 'gender',
+                  'phone', 'avatar', 'login', 'email', 'country', 'region', 'city', 'street',
                   'building', 'flat')
         depth = 1
 
