@@ -13,5 +13,10 @@ export const Users = {
     return HTTP.get('/auth/users').then(response => {
       return response.data
     })
+  },
+  login (config) {
+    return HTTP.post('auth/login/', config).then(response => {
+      return response.data
+    })
   }
 }

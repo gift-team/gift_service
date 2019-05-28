@@ -7,14 +7,14 @@ from rest_framework.authentication import SessionAuthentication, BasicAuthentica
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 
-from authapp.forms import GiftUserLoginForm, GiftUserRegisterForm, GiftUserEditForm
+# from authapp.forms import GiftUserLoginForm, GiftUserRegisterForm, GiftUserEditForm
 from django.contrib import auth
 from django.urls import reverse
 from django.conf import settings
 
 from authapp.models import GiftUser
 # from authapp.permissions import IsOwnerOnly
-from authapp.serializers import ProfileSerializer, AuthSerializer, ChangePasswordSerializer
+from authapp.serializers import ProfileSerializer, AuthSerializer, ChangePasswordSerializer, AddressListSerializer
 
 
 def send_verify_mail(user):
@@ -26,45 +26,45 @@ def send_verify_mail(user):
     return send_mail(title, message, from_address, [user.email], fail_silently=False)
 
 
-def register(request):
-    title = 'Регистрация'
-
-    if request.method == 'POST':
-        register_form = GiftUserRegisterForm(request.POST, request.FILES)
-
-        if register_form.is_valid():
-            user = register_form.save()
-            # if send_verify_mail(user):
-            #     print('mail sent')
-            # else:
-            #     print('mail NOT sent')
-            return HttpResponseRedirect(reverse('auth:login'))
-    else:
-        register_form = GiftUserRegisterForm()
-
-    content = {'title': title, 'register_form': register_form}
-
-    return render(request, 'authapp/register.html', content)
-
-
-def verify(request, email, activation_key):
-    try:
-        user = GiftUser.objects.get(email=email)
-        if user.active_key == activation_key and not user.is_activation_key_expired():
-            print(f'user {user} is activated')
-            user.is_active = True
-            user.save()
-            auth.login(request, user)
-
-            return render(request, 'authapp/verification.html')
-        else:
-            print(f'error activating user: {user}')
-            return render(request, 'authapp/verification.html')
-
-    except Exception as e:
-        print(f'error activating user : {e.args}')
-
-    return HttpResponseRedirect(reverse('main'))
+# def register(request):
+#     title = 'Регистрация'
+#
+#     if request.method == 'POST':
+#         register_form = GiftUserRegisterForm(request.POST, request.FILES)
+#
+#         if register_form.is_valid():
+#             user = register_form.save()
+#             # if send_verify_mail(user):
+#             #     print('mail sent')
+#             # else:
+#             #     print('mail NOT sent')
+#             return HttpResponseRedirect(reverse('auth:login'))
+#     else:
+#         register_form = GiftUserRegisterForm()
+#
+#     content = {'title': title, 'register_form': register_form}
+#
+#     return render(request, 'authapp/register.html', content)
+#
+#
+# def verify(request, email, activation_key):
+#     try:
+#         user = GiftUser.objects.get(email=email)
+#         if user.active_key == activation_key and not user.is_activation_key_expired():
+#             print(f'user {user} is activated')
+#             user.is_active = True
+#             user.save()
+#             auth.login(request, user)
+#
+#             return render(request, 'authapp/verification.html')
+#         else:
+#             print(f'error activating user: {user}')
+#             return render(request, 'authapp/verification.html')
+#
+#     except Exception as e:
+#         print(f'error activating user : {e.args}')
+#
+#     return HttpResponseRedirect(reverse('main'))
 
 
 #REST

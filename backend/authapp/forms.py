@@ -6,30 +6,30 @@ from django.contrib.auth.forms import AuthenticationForm, UserCreationForm, User
 from .models import GiftUser
 from address.forms import AddressField
 
-
-class GiftUserLoginForm(AuthenticationForm):
-    class Meta:
-        model = GiftUser
-        fields = ('email', 'password')
-
-    def __init__(self, *args, **kwargs):
-        super(GiftUserLoginForm, self).__init__(*args, **kwargs)
-        for field_name, field in self.fields.items():
-            field.widget.attrs['class'] = 'form-control'
-            field.widget.attrs['placeholder'] = field_name
-
-
-class GiftUserRegisterForm(UserCreationForm):
-    class Meta:
-        model = GiftUser
-        fields = ('first_name', 'last_name', 'password1', 'password2', 'email', 'birthdate', 'avatar', 'gender')
-        # fields = '__all__'
-
-    def __init__(self, *args, **kwargs):
-        super(GiftUserRegisterForm, self).__init__(*args, **kwargs)
-        for field_name, field in self.fields.items():
-            field.widget.attrs['class'] = 'form-control'
-            field.help_text = ''
+#
+# class GiftUserLoginForm(AuthenticationForm):
+#     class Meta:
+#         model = GiftUser
+#         fields = ('email', 'password')
+#
+#     def __init__(self, *args, **kwargs):
+#         super(GiftUserLoginForm, self).__init__(*args, **kwargs)
+#         for field_name, field in self.fields.items():
+#             field.widget.attrs['class'] = 'form-control'
+#             field.widget.attrs['placeholder'] = field_name
+#
+#
+# class GiftUserRegisterForm(UserCreationForm):
+#     class Meta:
+#         model = GiftUser
+#         fields = ('first_name', 'last_name', 'password1', 'password2', 'email', 'birthdate', 'avatar', 'gender')
+#         # fields = '__all__'
+#
+#     def __init__(self, *args, **kwargs):
+#         super(GiftUserRegisterForm, self).__init__(*args, **kwargs)
+#         for field_name, field in self.fields.items():
+#             field.widget.attrs['class'] = 'form-control'
+#             field.help_text = ''
 
     # def clean_age(self):
     #     data = self.cleaned_data['age']
@@ -49,19 +49,19 @@ class GiftUserRegisterForm(UserCreationForm):
     #
 
 
-class GiftUserEditForm(UserChangeForm):
-    class Meta:
-        model = GiftUser
-        fields = ('first_name', 'middle_name', 'last_name', 'gender', 'address_list', 'birthdate', 'password', 'avatar')
-
-    def __init__(self, *args, **kwargs):
-        super(GiftUserEditForm, self).__init__(*args, **kwargs)
-        for field_name, field in self.fields.items():
-            field.widget.attrs['class'] = 'form-control'
-
-            field.help_text = ''
-            if field_name == 'password':
-                field.widget = forms.HiddenInput()
+# class GiftUserEditForm(UserChangeForm):
+#     class Meta:
+#         model = GiftUser
+#         fields = ('first_name', 'middle_name', 'last_name', 'gender', 'address_list', 'birthdate', 'password', 'avatar')
+#
+#     def __init__(self, *args, **kwargs):
+#         super(GiftUserEditForm, self).__init__(*args, **kwargs)
+#         for field_name, field in self.fields.items():
+#             field.widget.attrs['class'] = 'form-control'
+#
+#             field.help_text = ''
+#             if field_name == 'password':
+#                 field.widget = forms.HiddenInput()
 
     # def clean_age(self):
     #     data = self.cleaned_data['age']
@@ -70,6 +70,6 @@ class GiftUserEditForm(UserChangeForm):
 
     #    return data
 
-
-class PersonForm(forms.Form):
-    address = AddressField()
+#
+# class PersonForm(forms.Form):
+#     address = AddressField()
