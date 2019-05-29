@@ -61,7 +61,7 @@ class GiftUser(AbstractUser):
     city = models.CharField(verbose_name='населенный пункт', max_length=30,  null=True, blank=True)
     street = models.CharField(verbose_name='улица', max_length=30,  null=True, blank=True)
     building = models.CharField(verbose_name='дом', max_length=7,  null=True, blank=True)
-    flat = models.IntegerField(verbose_name='квартира',  null=True, blank=True)
+    flat = models.CharField(verbose_name='квартира', max_length=5, null=True, blank=True)
 
     login = models.CharField(verbose_name='логин', max_length=20, blank=True, null=True)
     avatar = models.ImageField(upload_to='client_avatars', blank=True, null=True)

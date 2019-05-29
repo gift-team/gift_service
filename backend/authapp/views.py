@@ -67,7 +67,7 @@ def send_verify_mail(user):
 #     return HttpResponseRedirect(reverse('main'))
 
 
-#REST
+# REST
 class UserListView(generics.ListAPIView):
     queryset = GiftUser.objects.all().order_by('-date_joined')
     serializer_class = ProfileSerializer
