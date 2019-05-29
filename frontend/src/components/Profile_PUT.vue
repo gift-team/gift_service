@@ -33,7 +33,9 @@
                 <div class="menu col-lg-6 col-12 justify-content-between d-flex align-items-center p-0">
                     <span>ПОЖЕЛАНИЯ</span>
                     <router-link to="/auth/login/"><span>ВОЙТИ</span></router-link>
-                    <router-link to="/auth/register/"><button class="regBtnTitle ">РЕГИСТРАЦИЯ</button></router-link>
+                    <router-link to="/auth/register/">
+                        <button class="regBtnTitle ">РЕГИСТРАЦИЯ</button>
+                    </router-link>
                 </div>
                 <div class="col-1 p-0"></div>
             </div>
@@ -46,8 +48,8 @@
                         <div class="userEditItemImg"></div>
                         <div class="userEditItemName text-center">
                             <div class="userEditItemNameText">
-                                <span class="text-uppercase">Фибаначи</span><br/>
-                                <span>Борис Семенович</span>
+                                <span class="text-uppercase">{{last_name}}</span><br/>
+                                <span>{{first_name}}</span>
                             </div>
                             <img class="userEditItemNameTextCloud" src="../../public/static/images/cloud.svg">
                         </div>
@@ -59,14 +61,17 @@
                         Основные данные
                     </div>
                     <div class="row">
-                        <input v-model="first_name" class="colform-control userEditDataForm" type="text" placeholder="Имя">
+                        <input v-model="first_name" class="colform-control userEditDataForm" type="text"
+                               placeholder="Имя">
                     </div>
                     <div class="row">
-                        <input v-model="last_name" class="form-control userEditDataForm" type="text" placeholder="Фамилия">
+                        <input v-model="last_name" class="form-control userEditDataForm" type="text"
+                               placeholder="Фамилия">
                     </div>
                     <div class="row">
                         <div class="col-xl-7">
-                            <input v-model="login" class="form-control userEditDataFormLogin" type="text" placeholder="Логин">
+                            <input v-model="login" class="form-control userEditDataFormLogin" type="text"
+                                   placeholder="Логин">
                         </div>
                         <div class="col-xl-1"></div>
                         <div class="col-xl-4">
@@ -74,7 +79,8 @@
                         </div>
                     </div>
                     <div class="row">
-                        <input v-model="email" type="email" class="form-control userEditDataForm" id="exampleInputEmail1"
+                        <input v-model="email" type="email" class="form-control userEditDataForm"
+                               id="exampleInputEmail1"
                                aria-describedby="emailHelp"
                                placeholder="Enter email">
                     </div>
@@ -130,6 +136,9 @@
                         <input v-model="region" class="form-control userEditDataForm" type="text" placeholder="Регион">
                     </div>
                     <div class="row">
+                        <input v-model="region" class="form-control userEditDataForm" type="text" placeholder="Город">
+                    </div>
+                    <div class="row">
                         <div class="col-xl-5">
                             <button class="userEditDataAdd">Добавить</button>
                         </div>
@@ -144,7 +153,8 @@
                     </div>
                     <div class="row">
                         <div class="col-xl-6">
-                            <input v-model="building" class="form-control userEditDataFormSmall" type="text" placeholder="Дом">
+                            <input v-model="building" class="form-control userEditDataFormSmall" type="text"
+                                   placeholder="Дом">
                         </div>
                         <div class="col-xl-6">
                             <input class="form-control userEditDataFormSmall" type="text" placeholder="Корпус">
@@ -152,7 +162,8 @@
                     </div>
                     <div class="row">
                         <div class="col-xl-6">
-                            <input v-model="flat" class="form-control userEditDataFormSmall" type="text" placeholder="Квартира">
+                            <input v-model="flat" class="form-control userEditDataFormSmall" type="text"
+                                   placeholder="Квартира">
                         </div>
                         <div class="col-xl-6">
                             <input class="form-control userEditDataFormSmall" type="text" placeholder="Индекс">
@@ -241,53 +252,68 @@
 </template>
 
 <script>
-  import {Profile} from "../api/profile";
+    import {Profile} from "../api/profile";
 
-  export default {
-    name: "Profile_PUT",
-    data() {
-      return {
-        "id": Number,
-        "first_name": '',
-        "last_name": '',
-        "birthdate": '',
-        "gender": '',
-        "phone": '',
-        "avatar": '',
-        "login": '',
-        "email": '',
-        "country": '',
-        "region": '',
-        "city": '',
-        "street": '',
-        "building": '',
-        "flat": 0
-      }
-    },
-    methods: {
-      submitForm() {
-        this.profilePut()
-      },
-      profilePut() {
-        Profile.put({
-          "id": this.$root.$data.userId,
-          "first_name": this.first_name,
-          "last_name": this.last_name,
-          "birthdate": this.birthdate,
-          "gender": this.gender,
-          "phone": this.phone,
-          "login": this.login,
-          "email": this.email,
-          "country": this.country,
-          "region": this.region,
-          "city": this.city,
-          "street": this.street,
-          "building": this.building,
-          "flat": this.flat
-        }).catch(e => console.log(e))
-      }
+    export default {
+        name: "Profile_PUT",
+        data() {
+            return {
+                "id": Number,
+                "first_name": '',
+                "last_name": '',
+                "birthdate": '',
+                "gender": '',
+                "phone": '',
+                "avatar": '',
+                "login": '',
+                "email": '',
+                "country": '',
+                "region": '',
+                "city": '',
+                "street": '',
+                "building": '',
+                "flat": 0
+            }
+        },
+        methods: {
+            submitForm() {
+                this.profilePut();
+                return this.$router.push({name: 'profile_get'})
+            },
+            profilePut() {
+                Profile.put({
+                    "id": this.id,
+                    "first_name": this.first_name,
+                    "last_name": this.last_name,
+                    "birthdate": this.birthdate,
+                    "gender": this.gender,
+                    "phone": this.phone,
+                    "login": this.login,
+                    "email": this.email,
+                    "country": this.country,
+                    "region": this.region,
+                    "city": this.city,
+                    "street": this.street,
+                    "building": this.building,
+                    "flat": this.flat
+                }).catch(e => console.log(e))
+            },
+            getCookie(name) {
+                let a = document.cookie.split('; ');
+                for (let c in a) {
+                    let tmp = a[c].split('=');
+                    if (name === tmp[0]) {
+                        return (Number(tmp[1]));
+                    }
+                }
+            }
+        },
+        beforeMount() {
+            this.id = this.getCookie('userId');
+            this.profilePut()
+        }
+
     }
-  }
 </script>
 
 <style scoped>
