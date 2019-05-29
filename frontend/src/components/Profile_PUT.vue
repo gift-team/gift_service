@@ -237,7 +237,6 @@
             </div>
             <div class="col-1 p-0"></div>
         </div>
-        {{id}} {{first_name}} {{last_name}} {{email}}
     </div>
 </template>
 
@@ -248,7 +247,7 @@
     name: "Profile_PUT",
     data() {
       return {
-        "id": 1,
+        "id": Number,
         "first_name": '',
         "last_name": '',
         "birthdate": '',
@@ -271,7 +270,7 @@
       },
       profilePut() {
         Profile.put({
-          "id": 1,
+          "id": this.$root.$data.userId,
           "first_name": this.first_name,
           "last_name": this.last_name,
           "birthdate": this.birthdate,
