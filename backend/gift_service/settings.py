@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'friendsapp',
     'phonenumber_field',
     'address',
+    'giftapp',
 ]
 
 MIDDLEWARE = [
