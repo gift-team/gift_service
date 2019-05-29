@@ -1,6 +1,7 @@
 <template>
   <div class="container-fluid p-0 text-center">
     <div class="title">
+      {{d}}
       <div class="titleMenu d-lg-flex">
         <div class="pos-f-t d-sm-none">
           <div class="collapse" id="navbarToggleExternalContent">
@@ -161,7 +162,7 @@
 		name: "Profile_GET",
 		data() {
 			return {
-				"id": this.$root.$data.userId,
+				"id": Number,
 				"first_name": '',
 				"middle_name": '',
 				"last_name": '',
@@ -176,7 +177,8 @@
 				"city": '',
 				"street": '',
 				"building": '',
-				"flat": ''
+				"flat": '',
+        'd': this.$root.$data.d
 			}
 		},
 		methods: {
@@ -184,26 +186,36 @@
 				this.profileGet()
 			},
 			profileGet() {
-				Profile.read({'id': this.id}).then(response => {
+				Profile.read({'id': this.id,}).then(response => {
 					this.first_name = response.first_name;
-          this.middle_name = response.middle_name;
-          this.last_name = response.last_name;
-          this.birthdate = response.birthdate;
-          this.gender = response.gender;
-          this.phone = response.phone;
-          this.avatar = response.avatar;
-          this.login = response.login;
-          this.email = response.email;
-          this.country = response.country;
-          this.region = response.region;
-          this.city = response.city;
-          this.street = response.street;
-          this.building = response.building;
-          this.flat = response.flat;
+					this.middle_name = response.middle_name;
+					this.last_name = response.last_name;
+					this.birthdate = response.birthdate;
+					this.gender = response.gender;
+					this.phone = response.phone;
+					this.avatar = response.avatar;
+					this.login = response.login;
+					this.email = response.email;
+					this.country = response.country;
+					this.region = response.region;
+					this.city = response.city;
+					this.street = response.street;
+					this.building = response.building;
+					this.flat = response.flat;
 				})
+			},
+			getCookie(name) {
+				let a = document.cookie.split('; ');
+				for (let c in a) {
+					let tmp = a[c].split('=');
+					if (name === tmp[0]) {
+						return (Number(tmp[1]));
+					}
+				}
 			}
 		},
     beforeMount() {
+			this.id = this.getCookie('userId');
 			this.profileGet()
     }
 	}

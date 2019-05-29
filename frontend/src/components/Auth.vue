@@ -107,7 +107,7 @@
 			return {
 				'login': '',
 				'pass': '',
-				'd': this.$root.$data
+				'd': null
 			}
 		},
 		methods: {
@@ -119,8 +119,37 @@
 			loginUser () {
 				Users.login({'email': this.login, 'password': this.pass}).then(response => {
 					this.$root.$data.userId = response.id
+          this.setCookie('userId', response.id, {expires: 3600, path: '/'})
 					return this.$router.push({name: 'profile_get'})
 				})
+			},
+			setCookie(name, value, options) {
+				options = options || {};
+
+				let expires = options.expires;
+
+				if (typeof expires == "number" && expires) {
+					let d = new Date();
+					d.setTime(d.getTime() + expires * 1000);
+					expires = options.expires = d;
+				}
+				if (expires && expires.toUTCString) {
+					options.expires = expires.toUTCString();
+				}
+
+				value = encodeURIComponent(value);
+
+				let updatedCookie = name + "=" + value;
+
+				for (let propName in options) {
+					updatedCookie += "; " + propName;
+					let propValue = options[propName];
+					if (propValue !== true) {
+						updatedCookie += "=" + propValue;
+					}
+				}
+
+				document.cookie = updatedCookie;
 			}
 		},
 	}
