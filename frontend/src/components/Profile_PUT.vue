@@ -242,6 +242,7 @@
 
 <script>
   import {Profile} from "../api/profile";
+  // import getCookie from
 
   export default {
     name: "Profile_PUT",
