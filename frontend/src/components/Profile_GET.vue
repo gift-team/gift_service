@@ -57,7 +57,8 @@
         <div class="col-xl-2"></div>
         <div class="col-xl-5">
           <div class="row userEditDataData">
-            Основные данные
+            <div class="col-8">Основные данные</div>
+            <img v-on:click="submitForm" class="col-4" src="../../public/static/images/edit_blue.svg">
           </div>
           <div class="row userEditDataDataProfType">
             Имя: {{first_name}}
@@ -156,69 +157,72 @@
 </template>
 
 <script>
-	import {Profile} from "../api/profile";
-	function getCookie(name) {
-		let a = document.cookie.split('; ');
-		for (let c in a) {
-			let tmp = a[c].split('=');
-			if (name === tmp[0]) {
-				return (Number(tmp[1]));
-			}
-		}
-	}
+  import {Profile} from "../api/profile";
+  function getCookie(name) {
+    let a = document.cookie.split('; ');
+    for (let c in a) {
+      let tmp = a[c].split('=');
+      if (name === tmp[0]) {
+        return (Number(tmp[1]));
+      }
+    }
+  }
 
-	export default {
-		name: "Profile_GET",
-		data() {
-			return {
-				"id": Number,
-				"first_name": '',
-				"middle_name": '',
-				"last_name": '',
-				"birthdate": '',
-				"gender": '',
-				"phone": '',
-				"avatar": '',
-				"login": '',
-				"email": '',
-				"country": '',
-				"region": '',
-				"city": '',
-				"street": '',
-				"building": '',
-				"flat": ''
-			}
-		},
-		methods: {
-			profileGet() {
-				Profile.read({'id': this.id,}).then(response => {
-					this.first_name = response.first_name;
-					this.middle_name = response.middle_name;
-					this.last_name = response.last_name;
-					this.birthdate = response.birthdate;
-					this.gender = response.gender;
-					this.phone = response.phone;
-					this.avatar = response.avatar;
-					this.login = response.login;
-					this.email = response.email;
-					this.country = response.country;
-					this.region = response.region;
-					this.city = response.city;
-					this.street = response.street;
-					this.building = response.building;
-					this.flat = response.flat;
-				})
-			},
+  export default {
+    name: "Profile_GET",
+    data() {
+      return {
+        "id": Number,
+        "first_name": '',
+        "middle_name": '',
+        "last_name": '',
+        "birthdate": '',
+        "gender": '',
+        "phone": '',
+        "avatar": '',
+        "login": '',
+        "email": '',
+        "country": '',
+        "region": '',
+        "city": '',
+        "street": '',
+        "building": '',
+        "flat": ''
+      }
+    },
+    methods: {
+      submitForm() {
+        return this.$router.push({name: 'profile_put'});
+      },
+      profileGet() {
+        Profile.read({'id': this.id,}).then(response => {
+          this.first_name = response.first_name;
+          this.middle_name = response.middle_name;
+          this.last_name = response.last_name;
+          this.birthdate = response.birthdate;
+          this.gender = response.gender;
+          this.phone = response.phone;
+          this.avatar = response.avatar;
+          this.login = response.login;
+          this.email = response.email;
+          this.country = response.country;
+          this.region = response.region;
+          this.city = response.city;
+          this.street = response.street;
+          this.building = response.building;
+          this.flat = response.flat;
+        })
+      },
       getCookieMethod() {
-				return getCookie('userId')
+        return getCookie('userId')
       }
 
-		},
+    },
     beforeMount() {
-			this.id = this.getCookieMethod();
-			this.profileGet()
+      this.id = this.getCookieMethod();
+      this.profileGet()
     }
-	}
+  }
 </script>
 
 <style scoped>

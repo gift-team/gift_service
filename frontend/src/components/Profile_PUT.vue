@@ -47,8 +47,8 @@
                         <div class="userEditItemImg"></div>
                         <div class="userEditItemName text-center">
                             <div class="userEditItemNameText">
-                                <span class="text-uppercase">Фибаначи</span><br/>
-                                <span>Борис Семенович</span>
+                                <span class="text-uppercase">{{last_name}}</span><br/>
+                                <span>{{first_name}}</span>
                             </div>
                             <img class="userEditItemNameTextCloud" src="../../public/static/images/cloud.svg">
                         </div>
@@ -129,6 +129,9 @@
                     </div>
                     <div class="row">
                         <input v-model="region" class="form-control userEditDataForm" type="text" placeholder="Регион">
+                    </div>
+                    <div class="row">
+                        <input v-model="city" class="form-control userEditDataForm" type="text" placeholder="Город">
                     </div>
                     <div class="row">
                         <div class="col-xl-5">
