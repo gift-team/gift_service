@@ -1,7 +1,6 @@
 <template>
   <div class="container-fluid p-0 text-center">
     <div class="title">
-      {{d}}
       <div class="titleMenu d-lg-flex">
         <div class="pos-f-t d-sm-none">
           <div class="collapse" id="navbarToggleExternalContent">
@@ -33,7 +32,7 @@
         </div>
         <div class="menu col-lg-6 col-12 justify-content-between d-flex align-items-center p-0">
           <span>ПОЖЕЛАНИЯ</span>
-          <router-link v-if="getCookie('userId')" to="/auth/login/"><span>ВЫЙТИ</span></router-link>
+          <router-link v-if="getCookieMethod()" to="/auth/login/"><span>ВЫЙТИ</span></router-link>
           <router-link v-else to="/auth/logout/"><span>ВОЙТИ</span></router-link>
           <router-link to="/auth/register/"><button class="regBtnTitle ">РЕГИСТРАЦИЯ</button></router-link>
         </div>
@@ -158,6 +157,15 @@
 
 <script>
 	import {Profile} from "../api/profile";
+	function getCookie(name) {
+		let a = document.cookie.split('; ');
+		for (let c in a) {
+			let tmp = a[c].split('=');
+			if (name === tmp[0]) {
+				return (Number(tmp[1]));
+			}
+		}
+	}
 
 	export default {
 		name: "Profile_GET",
@@ -178,14 +186,10 @@
 				"city": '',
 				"street": '',
 				"building": '',
-				"flat": '',
-        'd': this.$root.$data.d
+				"flat": ''
 			}
 		},
 		methods: {
-			submitForm() {
-				this.profileGet()
-			},
 			profileGet() {
 				Profile.read({'id': this.id,}).then(response => {
 					this.first_name = response.first_name;
@@ -205,18 +209,13 @@
 					this.flat = response.flat;
 				})
 			},
-			getCookie(name) {
-				let a = document.cookie.split('; ');
-				for (let c in a) {
-					let tmp = a[c].split('=');
-					if (name === tmp[0]) {
-						return (Number(tmp[1]));
-					}
-				}
-			}
+      getCookieMethod() {
+				return getCookie('userId')
+      }
+
 		},
     beforeMount() {
-			this.id = this.getCookie('userId');
+			this.id = this.getCookieMethod();
 			this.profileGet()
     }
 	}

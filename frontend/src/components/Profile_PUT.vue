@@ -32,7 +32,8 @@
                 </div>
                 <div class="menu col-lg-6 col-12 justify-content-between d-flex align-items-center p-0">
                     <span>ПОЖЕЛАНИЯ</span>
-                    <router-link to="/auth/login/"><span>ВОЙТИ</span></router-link>
+                    <router-link v-if="getCookieMethod()" to="/auth/login/"><span>ВЫЙТИ</span></router-link>
+                    <router-link v-else to="/auth/logout/"><span>ВОЙТИ</span></router-link>
                     <router-link to="/auth/register/"><button class="regBtnTitle ">РЕГИСТРАЦИЯ</button></router-link>
                 </div>
                 <div class="col-1 p-0"></div>
@@ -242,13 +243,21 @@
 
 <script>
   import {Profile} from "../api/profile";
-  // import getCookie from
+  function getCookie(name) {
+		let a = document.cookie.split('; ');
+		for (let c in a) {
+			let tmp = a[c].split('=');
+			if (name === tmp[0]) {
+				return (Number(tmp[1]));
+			}
+		}
+	}
 
   export default {
     name: "Profile_PUT",
     data() {
       return {
-        "id": Number,
+        "id": getCookie('userId'),
         "first_name": '',
         "last_name": '',
         "birthdate": '',
@@ -271,7 +280,7 @@
       },
       profilePut() {
         Profile.put({
-          "id": this.$root.$data.userId,
+          "id": this.id,
           "first_name": this.first_name,
           "last_name": this.last_name,
           "birthdate": this.birthdate,
@@ -285,9 +294,18 @@
           "street": this.street,
           "building": this.building,
           "flat": this.flat
+        }).then(() => {
+            this.$router.push({name: 'profile_get'})
         }).catch(e => console.log(e))
+      },
+      getCookieMethod() {
+				return getCookie('userId')
       }
-    }
+    },
+    // beforeMount() {
+    //     this.id = this.getCookieMethod();
+    //     console.log(this.id)
+    // }
   }
 </script>
 
