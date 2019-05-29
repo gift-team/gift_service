@@ -42,7 +42,7 @@
             </div>
             <div class="regForm d-flex">
                 <div class="col-3 p-0"></div>
-                <form @submit="submitForm()" class="text-center col-6 p-0" action="#">
+                <form v-on:submit.prevent="submitForm" class="text-center col-6 p-0" action="#">
                     <!--<input placeholder="Имя:" class="email col-12" type="text">-->
                     <!--<input placeholder="Фамилия:" class="email col-12" type="text">-->
                     <input v-model="email" placeholder="E-mail:" class="email col-12" type="text">

@@ -33,7 +33,7 @@
                 <div class="menu col-lg-6 col-12 justify-content-between d-flex align-items-center p-0">
                     <span>ПОЖЕЛАНИЯ</span>
                     <router-link to="/auth/login/"><span>ВОЙТИ</span></router-link>
-                    <button class="regBtnTitle">РЕГИСТРАЦИЯ</button>
+                    <router-link to="/auth/register/"><button class="regBtnTitle ">РЕГИСТРАЦИЯ</button></router-link>
                 </div>
                 <div class="col-1 p-0"></div>
             </div>

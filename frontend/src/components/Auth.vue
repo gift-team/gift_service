@@ -42,7 +42,7 @@
       </div>
       <div class="regForm d-flex">
         <div class="col-3 p-0"></div>
-        <form @submit="submitLoginForm()" class="text-center col-6 p-0" action="#">
+        <form v-on:submit.prevent="submitLoginForm" class="text-center col-6 p-0" action="#">
           <!--<input placeholder="Имя:" class="email col-12" type="text">-->
           <!--<input placeholder="Фамилия:" class="email col-12" type="text">-->
           <input v-model="login" placeholder="E-mail:" class="email col-12" type="text">
@@ -100,30 +100,7 @@
 	import {Users} from "../api/users";
 	// import Profile_GET from './Profile_GET';
 	// let USER_ID = 0;
-
-	export default {
-		name: "auth",
-		data () {
-			return {
-				'login': '',
-				'pass': '',
-				'd': null
-			}
-		},
-		methods: {
-			submitLoginForm () {
-				this.loginUser();
-				this.login = '';
-				this.pass = '';
-			},
-			loginUser () {
-				Users.login({'email': this.login, 'password': this.pass}).then(response => {
-					this.$root.$data.userId = response.id
-          this.setCookie('userId', response.id, {expires: 3600, path: '/'})
-					return this.$router.push({name: 'profile_get'})
-				})
-			},
-			setCookie(name, value, options) {
+  function setCookie(name, value, options) {
 				options = options || {};
 
 				let expires = options.expires;
@@ -150,6 +127,29 @@
 				}
 
 				document.cookie = updatedCookie;
+			}
+
+	export default {
+		name: "auth",
+		data () {
+			return {
+				'login': '',
+				'pass': '',
+				'd': null
+			}
+		},
+		methods: {
+			submitLoginForm (event) {
+				this.loginUser();
+				this.login = '';
+				this.pass = '';
+				event.preventDefault()
+			},
+			loginUser () {
+				Users.login({'email': this.login, 'password': this.pass}).then(response => {
+          setCookie('userId', response.id, {expires: 3600, path: '/'});
+					return this.$router.push({name: 'profile_get'});
+				})
 			}
 		},
 	}
