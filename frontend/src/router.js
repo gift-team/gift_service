@@ -16,7 +16,6 @@ export default new Router({
       path: '/auth/login/',
       name: 'login',
       component: () => import('./views/Login.vue'),
-      data: 'hello'
     },
     {
       path: '/auth/register/',
@@ -27,7 +26,6 @@ export default new Router({
       path: '/profile_get/',
       name: 'profile_get',
       component: () => import('./views/Profile_get.vue'),
-      props: { default: true }
     },
     {
       path: '/profile_put/',
