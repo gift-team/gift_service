@@ -37,6 +37,11 @@ export default new Router({
       path: '/profile_put/',
       name: 'profile_put',
       component: () => import('./views/Profile_put.vue')
+    },
+    {
+      path: '/profile_gift/',
+      name: 'profile_gift',
+      component: () => import('./views/Profile_gift.vue')
     }
   ]
 })

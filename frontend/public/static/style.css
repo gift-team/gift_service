@@ -1042,6 +1042,7 @@ textarea:focus, input:focus{
 
 .userEditDataProfile {
     width: 259px;
+    /*margin-top: 40px;*/
 }
 
 .userEditItemImg {
@@ -1333,4 +1334,190 @@ textarea:focus, input:focus{
 
 .myWishesH2 {
     text-align: center;
+}
+
+.profileGiftsInfo{
+    padding-top: 40px;
+}
+
+.profileGiftLogin{
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 44px;
+
+    color: #535452;
+
+}
+
+.profileGiftBirthdate{
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 44px;
+
+    color: #535452;
+
+}
+
+.profileGiftGifts{
+    margin-top: 103px;
+}
+
+.profileGiftGiftsItem img{
+    border-radius: 20px;
+}
+
+.profileGiftGiftsItem span{
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    color: #FFFFFF;
+}
+
+.GiftsInfo{
+    width: 150px!important;
+    height: 165px!important;
+    padding-top: 19px;
+    background: #7F2BC1;
+    border-radius: 5px;
+}
+
+.GiftsButton{
+    margin-top: 8px;
+    width: 150px;
+    height: 40px;
+    background: #F5BA3D;
+    border-radius: 5px;
+    font-family: Montserrat, sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    color: #FFFFFF;
+}
+
+.myGiftsHeader{
+    margin-top: 109px;
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 36px;
+    color: #535452;
+}
+
+.GiftsNavIcons{
+    margin-top: 272px;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.profileGiftNavIcon{
+    width: 88px;
+    height: 75px;
+    background: #F5BA3D;
+    border-radius: 0 20px 20px 0;
+    margin-left: 0!important;
+    margin-right: 0!important;
+}
+
+.myGiftsGroups{
+    margin-top: 89px;
+}
+
+.giftGroupBtn{
+    width: 190px;
+    height: 50px;
+    border-radius: 10px;
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+    color: #FEFFF7;
+}
+
+.giftGroupBtn img{
+    padding-right: 13px;
+}
+
+.myGiftsInGroup{
+    margin-top: 123px;
+}
+
+.giftItemInfo{
+    background: #7F2BC1;
+    border-radius: 0 0 20px 20px;
+    height: 275px;
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    color: #FFFFFF;
+}
+
+.giftItemName{
+    margin-top: 21px;
+    margin-left: 11px;
+    margin-right: 11px;
+}
+
+.giftItemPrice{
+    margin-top: 12px;
+    margin-left: 11px;
+    margin-right: 11px;
+}
+
+.giftItemPrice span{
+    margin-right: 29px;
+}
+
+.giftItemDelete{
+    margin-left: 3px;
+}
+
+.giftIconNav div{
+    width: 15px;
+    height: 15px;
+    border: 2px solid #F5BA3D;
+    border-radius: 50px;
+    margin-left: 12.5px;
+    margin-right: 12.5px;
+    margin-top: 45px;
+}
+
+.giftIconNav div:nth-child(2){
+    background: #F5BA3D;
+}
+
+.giftCreate{
+    margin-top: 89px;
+}
+
+.giftCreate span{
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 44px;
+    color: #535452;
+}
+
+.giftCreateBtn{
+    margin-top: 26px!important;
+    margin-bottom: 92px!important;
+    width: 150px;
+    height: 40px;
+    background: #F5BA3D;
+    border-radius: 10px;
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 17px;
+    color: #FFFFFF;
+
 }

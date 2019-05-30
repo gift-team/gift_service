@@ -33,6 +33,7 @@ class CreateGiftView(viewsets.GenericViewSet,CreateModelMixin, ListModelMixin,
     model = Gift
     # permission_classes = (permissions.IsAuthenticated, )
     serializer_class = GiftSerializer
+    queryset = Gift.objects.all()
 
     # def post(self, request):
     #
