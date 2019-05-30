@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link rel="stylesheet" href="static/bootstrap4/css/bootstrap.min.css">
+
+  <script src="static/bootstrap4/js/bootstrap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <link rel="stylesheet" href="static/style.css">
+  <title>Profile-Gifts</title>
+</head>
+<body>
+<div class="container-fluid p-0 text-center">
+  <div class="title">
+    <div class="titleMenu d-lg-flex">
+      <div class="pos-f-t d-sm-none">
+        <div class="collapse" id="navbarToggleExternalContent">
+          <div class="bgNav">
+            <ul class="navbar-nav navGroup">
+              <li class="nav-item">
+                <a class="nav-link" href="#">ПОЖЕЛАНИЯ</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">ВОЙТИ</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">РЕГИСТРАЦИЯ</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <nav class="navbar navbar-light bgNav">
+          <button class="navbar-toggler" type="button" data-toggle="collapse"
+                  data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
+                  aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </nav>
+      </div>
+      <div class="col-1 p-0"></div>
+      <div class="w-100 logoTitle col-lg-4 col-12 d-flex p-0">
+        <router-link to="/"><img src="../../public/static/images/LOGO.svg" alt=""></router-link>
+      </div>
+      <div class="menu col-lg-6 col-12 justify-content-between d-flex align-items-center p-0">
+        <span>ПОЖЕЛАНИЯ</span>
+        <span>ВОЙТИ</span>
+        <router-link to="/auth/register/">
+          <button class="regBtnTitle ">РЕГИСТРАЦИЯ</button>
+        </router-link>
+      </div>
+      <div class="col-1 p-0"></div>
+    </div>
+  </div>
+  <div class="profileGiftsInfo d-flex">
+    <div class="col-1 p-0 m-0">
+      <div class="GiftsNavIcons d-flex flex-column p-0">
+        <div class="profileGiftNavIcon d-flex p-0 m-0 justify-content-center align-items-center">
+          <img src="../../public/static/images/house_icon.svg" alt="1.jpg">
+        </div>
+        <div class="profileGiftNavIcon d-flex p-0 m-0 justify-content-center align-items-center">
+          <img src="../../public/static/images/friends_icon.png" alt="1.jpg">
+        </div>
+      </div>
+    </div>
+    <div class="col-3 p-0">
+      <div class="userEditDataProfile">
+        <div class="userEditItemImg"></div>
+        <div class="userEditItemName text-center">
+          <div class="userEditItemNameText">
+            <span class="text-uppercase">{{last_name}}</span><br/>
+            <span>{{first_name}}</span>
+          </div>
+          <img class="userEditItemNameTextCloud" src="../../public/static/images/edit_white.svg" alt="1.jpg">
+        </div>
+      </div>
+    </div>
+    <div class="col-1 p-0"></div>
+    <div class="col-6 p-0">
+      <div class="profileGiftLogin text-left"><span>{{login}}</span></div>
+      <div class="profileGiftBirthdate text-left"><span>{{birthdate}}</span></div>
+      <div class="profileGiftGifts w-100 d-flex justify-content-between">
+        <div class="profileGiftGiftsItem">
+          <div class="GiftsInfo">
+            <div><img src="../../public/static/images/clock_img.svg" alt="1.jpg"></div>
+            <div><span>ЧАСЫ</span></div>
+          </div>
+          <div class="GiftsButton d-flex justify-content-center align-items-center">СМОТРЕТЬ</div>
+        </div>
+        <div class="profileGiftGiftsItem">
+          <div class="GiftsInfo">
+            <div><img src="../../public/static/images/clock_img.svg" alt="1.jpg"></div>
+            <div><span>ЧАСЫ</span></div>
+          </div>
+          <div class="GiftsButton d-flex justify-content-center align-items-center">СМОТРЕТЬ</div>
+        </div>
+        <div class="profileGiftGiftsItem">
+          <div style="padding-top: 63px;" class="GiftsButton m-0 GiftsInfo d-flex justify-content-center">СОЗДАТЬ</div>
+        </div>
+      </div>
+    </div>
+    <div class="col-1 p-0"></div>
+  </div>
+  <div class="myGiftsHeader text-left d-flex">
+    <div class="col-1"></div>
+    <div class="col-10">
+      <span>Мои пожелания:</span>
+    </div>
+    <div class="col-1"></div>
+  </div>
+  <div class="myGiftsGroups d-flex">
+    <div class="col-1"></div>
+    <div class="col-10 giftsGroupsBtns d-flex">
+      <div style="background: #DC4E41;" class="giftGroupBtn d-flex justify-content-center align-items-center">
+        <span>Все</span>
+      </div>
+      <div style="background: rgba(101, 187, 94, 0.5);" class="giftGroupBtn d-flex justify-content-center align-items-center">
+        <img src="../../public/static/images/mini-house.svg" alt="1.jpg">
+        <span>Дом</span>
+      </div>
+      <div style="background: rgba(90, 102, 209, 0.5);" class="giftGroupBtn d-flex justify-content-center align-items-center">
+        <img src="../../public/static/images/mini-portfolio.svg" alt="1.jpg">
+        <span>Работа</span>
+      </div>
+      <div style="background: rgba(127, 43, 193, 0.5);" class="giftGroupBtn d-flex justify-content-center align-items-center">
+        <img src="../../public/static/images/mini-photo-camera.svg" alt="1.jpg">
+        <span>Хобби</span>
+      </div>
+      <div style="background: rgba(83, 84, 82, 0.5);" class="giftGroupBtn d-flex justify-content-center align-items-center">
+        <img src="../../public/static/images/mini-car-compact.svg" alt="1.jpg">
+        <span>Машина</span>
+      </div>
+    </div>
+    <div class="col-1"></div>
+  </div>
+  <div class="myGiftsInGroup d-flex">
+    <div class="col-1"></div>
+    <div class="col-1 d-flex justify-content-center align-items-center">
+      <img src="../../public/static/images/to-left.svg" alt="1.jpg">
+    </div>
+    <div class="col-8 d-flex justify-content-between">
+      <div class="giftItemInGroup d-flex">
+        <div class="giftItemInfo">
+          <div class="giftItemImg"><img src="../../public/static/images/big_clock.svg" alt="1.jpg"></div>
+          <div class="giftItemName text-left">{{name}}</div>
+         <div class="giftItemPrice text-left d-flex p-0 justify-content-between">
+            <span>{{price}}</span>
+            <img src="../../public/static/images/mini-info.svg" alt="1.jpg">
+            <img src="../../public/static/images/mini-edit.svg" alt="1.jpg">
+          </div>
+        </div>
+        <div class="giftItemDelete">
+          <img src="../../public/static/images/mini-delete.svg" alt="1.jpg">
+        </div>
+      </div>
+      <div class="giftItemInGroup d-flex">
+        <div class="giftItemInfo">
+          <div class="giftItemImg"><img src="../../public/static/images/big_clock.svg" alt="1.jpg"></div>
+          <div class="giftItemName text-left">{{name}}</div>
+          <div class="giftItemPrice text-left d-flex p-0 justify-content-between">
+            <span>{{price}}</span>
+            <img src="../../public/static/images/mini-info.svg" alt="1.jpg">
+            <img src="../../public/static/images/mini-edit.svg" alt="1.jpg">
+          </div>
+        </div>
+        <div class="giftItemDelete">
+          <img src="../../public/static/images/mini-delete.svg" alt="1.jpg">
+        </div>
+      </div>
+      <div class="giftItemInGroup d-flex">
+        <div class="giftItemInfo">
+          <div class="giftItemImg"><img src="../../public/static/images/big_clock.svg" alt="1.jpg"></div>
+          <div class="giftItemName text-left">{{name}}</div>
+          <div class="giftItemPrice text-left d-flex p-0 justify-content-between">
+            <span>{{price}}</span>
+            <img src="../../public/static/images/mini-info.svg" alt="1.jpg">
+            <img src="../../public/static/images/mini-edit.svg" alt="1.jpg">
+          </div>
+        </div>
+        <div class="giftItemDelete">
+          <img src="../../public/static/images/mini-delete.svg" alt="1.jpg">
+        </div>
+      </div>
+    </div>
+    <div class="col-1 d-flex justify-content-center align-items-center">
+      <img src="../../public/static/images/to-right.svg" alt="1.jpg">
+    </div>
+    <div class="col-1"></div>
+  </div>
+  <div class="giftIconNav d-flex justify-content-center">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+  <div class="giftCreate">
+    <div class="text-center">
+      <span>Создайте новое пожелание!</span>
+    </div>
+    <div class="giftCreateBtn d-flex justify-content-center align-items-center m-auto">СОЗДАТЬ</div>
+  </div>
+</div>
+</body>
+</html>
