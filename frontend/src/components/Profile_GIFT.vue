@@ -247,8 +247,6 @@
 							this.gifts.push(c)
 						}
 					}
-					this.d = response;
-					console.log(this.gifts)
 				})
 			},
 			profileGet() {
