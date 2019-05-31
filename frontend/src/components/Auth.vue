@@ -152,7 +152,7 @@
             },
             loginUser() {
                 Users.login({'email': this.login, 'password': this.pass}).then(response => {
-                    setCookie('userId', response.id, {expires: 3600, path: '/'});
+                    setCookie('userId', response.id, {path: '/'});
                     return this.$router.push({name: 'profile_get'});
                 })
             }
