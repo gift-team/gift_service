@@ -68,17 +68,10 @@
         <div class="profileGiftLogin text-left"><span>{{login}}</span></div>
         <div class="profileGiftBirthdate text-left"><span>{{birthdate}}</span></div>
         <div class="profileGiftGifts w-100 d-flex justify-content-between">
-          <div class="profileGiftGiftsItem">
+          <div v-for="gift in gifts.slice(0, 2)" v-bind:key="gift.id" class="profileGiftGiftsItem">
             <div class="GiftsInfo">
               <div><img src="../../public/static/images/clock_img.svg" alt="1.jpg"></div>
-              <div><span>ЧАСЫ</span></div>
-            </div>
-            <div class="GiftsButton d-flex justify-content-center align-items-center">СМОТРЕТЬ</div>
-          </div>
-          <div class="profileGiftGiftsItem">
-            <div class="GiftsInfo">
-              <div><img src="../../public/static/images/clock_img.svg" alt="1.jpg"></div>
-              <div><span>ЧАСЫ</span></div>
+              <div><span>{{gift.name}}</span></div>
             </div>
             <div class="GiftsButton d-flex justify-content-center align-items-center">СМОТРЕТЬ</div>
           </div>
@@ -127,21 +120,7 @@
         <img src="../../public/static/images/to-left.svg" alt="1.jpg">
       </div>
       <div class="col-8 d-flex justify-content-between">
-<!--        <div class="giftItemInGroup d-flex">-->
-<!--          <div class="giftItemInfo">-->
-<!--            <div class="giftItemImg"><img src="../../public/static/images/big_clock.svg" alt="1.jpg"></div>-->
-<!--            <div class="giftItemName text-left">{{name}}</div>-->
-<!--            <div class="giftItemPrice text-left d-flex p-0 justify-content-between">-->
-<!--              <span>{{price}}</span>-->
-<!--              <img src="../../public/static/images/mini-info.svg" alt="1.jpg">-->
-<!--              <img src="../../public/static/images/mini-edit.svg" alt="1.jpg">-->
-<!--            </div>-->
-<!--          </div>-->
-<!--          <div class="giftItemDelete">-->
-<!--            <img src="../../public/static/images/mini-delete.svg" alt="1.jpg">-->
-<!--          </div>-->
-<!--        </div>-->
-        <div v-for="gift in gifts" v-bind:key="gift.id" class="giftItemInGroup d-flex">
+        <div v-for="gift in gifts.slice(0, 3)" v-bind:key="gift.id" class="giftItemInGroup d-flex">
           <div class="giftItemInfo">
             <div class="giftItemImg"><img src="../../public/static/images/big_clock.svg" alt="1.jpg"></div>
             <div class="giftItemName text-left">{{gift.name}}</div>
@@ -155,26 +134,14 @@
             <img src="../../public/static/images/mini-delete.svg" alt="1.jpg">
           </div>
         </div>
-<!--        <div class="giftItemInGroup d-flex">-->
-<!--          <div class="giftItemInfo">-->
-<!--            <div class="giftItemImg"><img src="../../public/static/images/big_clock.svg" alt="1.jpg"></div>-->
-<!--            <div class="giftItemName text-left">{{name}}</div>-->
-<!--            <div class="giftItemPrice text-left d-flex p-0 justify-content-between">-->
-<!--              <span>{{price}}</span>-->
-<!--              <img src="../../public/static/images/mini-info.svg" alt="1.jpg">-->
-<!--              <img src="../../public/static/images/mini-edit.svg" alt="1.jpg">-->
-<!--            </div>-->
-<!--          </div>-->
-<!--          <div class="giftItemDelete">-->
-<!--            <img src="../../public/static/images/mini-delete.svg" alt="1.jpg">-->
-<!--          </div>-->
-<!--        </div>-->
       </div>
+
       <div class="col-1 d-flex justify-content-center align-items-center">
         <img src="../../public/static/images/to-right.svg" alt="1.jpg">
       </div>
-      <div class="col-1"></div>
     </div>
+
+    <div class="col-1"></div>
     <div class="giftIconNav d-flex justify-content-center">
       <div></div>
       <div></div>
@@ -190,32 +157,45 @@
 </template>
 
 <script>
-  import {Gifts} from "../api/gifts";
-
-  export default {
-    name: "Profile_GIFT",
-    data () {
-      return {
-        // "user": 1,
-        // "name": "string",
-        // "description": "string",
-        // "photo": null,
-        // "link": null,
-        // "price": 50
-        'gifts': {}
+	import {Gifts} from "../api/gifts";
+	function getCookie(name) {
+    let a = document.cookie.split('; ');
+    for (let c in a) {
+      let tmp = a[c].split('=');
+      if (name === tmp[0]) {
+        return (Number(tmp[1]));
       }
-    },
-    methods: {
-      getGifts() {
-        Gifts.read().then(response => {
-          this.gifts = response
-        })
-      }
-    },
-    beforeMount() {
-      this.getGifts()
     }
   }
+
+	export default {
+		name: "Profile_GIFT",
+		data () {
+			return {
+				"userId": Number,
+				'gifts': {}
+			}
+		},
+		methods: {
+			getGifts() {
+				Gifts.read().then(response => {
+					let n = 0;
+					for(let c of response) {
+						this.gifts[n] = c
+            n += 1;
+          }
+					this.d = response
+					console.log(this.gifts)
+          console.log(this.d)
+
+				})
+			}
+		},
+		beforeMount() {
+			this.getGifts();
+      this.userId = getCookie('userId');
+		}
+	}
 </script>
 
 <style scoped>
